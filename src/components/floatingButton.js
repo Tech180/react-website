@@ -2,36 +2,34 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import "./floatingButton.css";
 
+const springConfig = {
+  transform: "translate3d(0, 0, 0)",
+  config: { mass: 1, tension: 140, friction: 14 },
+};
+
+const expandedSpringConfig = {
+  transform: "translate3d(0, -50px, 0)",
+  config: { mass: 1, tension: 140, friction: 14 },
+};
+
 const FloatingButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [firstButtonSpring, setFirstButtonSpring] = useSpring(() => ({
-    transform: "translate3d(0, 0, 0)",
-    config: { mass: 1, tension: 140, friction: 14 },
-  }));
-  const [secondButtonSpring, setSecondButtonSpring] = useSpring(() => ({
-    transform: "translate3d(0, 0, 0)",
-    config: { mass: 1, tension: 140, friction: 14 },
-  }));
-  const [thirdButtonSpring, setThirdButtonSpring] = useSpring(() => ({
-    transform: "translate3d(0, 0, 0)",
-    config: { mass: 1, tension: 140, friction: 14 },
-  }));
+  const [firstButtonSpring, setFirstButtonSpring] = useSpring(() => springConfig);
+  const [secondButtonSpring, setSecondButtonSpring] = useSpring(() => springConfig);
+  const [thirdButtonSpring, setThirdButtonSpring] = useSpring(() => springConfig);
+
+  const setButtonSprings = () => {
+    const transform = isExpanded ? springConfig.transform : expandedSpringConfig.transform;
+    setFirstButtonSpring({ transform });
+    setSecondButtonSpring({ transform });
+    setThirdButtonSpring({ transform });
+  };
 
   const onClick = () => {
     setIsExpanded(!isExpanded);
-
-    if (isExpanded) {
-      setFirstButtonSpring({ transform: "translate3d(0, 0, 0)" });
-      setSecondButtonSpring({ transform: "translate3d(0, 0, 0)" });
-      setThirdButtonSpring({ transform: "translate3d(0, 0, 0)" });
-    } 
-    else {
-      setFirstButtonSpring({ transform: "translate3d(0, -50px, 0)" });
-      setSecondButtonSpring({ transform: "translate3d(0, -50px, 0)" });
-      setThirdButtonSpring({ transform: "translate3d(0, -50px, 0)" });
-    }
+    setButtonSprings();
   };
-  
+
   return (
     <div className="floating-button-container">
       <div className="floating-button main-button" onClick={onClick}>

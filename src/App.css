@@ -6,7 +6,6 @@
 }
 
 .home,
-.resume,
 .about,
 .sign-up {
   display: flex;
@@ -16,29 +15,20 @@
   font-size: 3rem;
 }
 
-.resume {
-  background-image: url('/mnt/Backup/website/public/images/img-2.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
 .about {
-  background-image: url('/mnt/Backup/website/public/images/img-1.jpg');
+  background-image: url('/mnt/Backup/react-website/public/images/img-1.jpg');
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
-  color: #fff;
+  color: #F4F4F4;
   font-size: 100px;
 }
 
 .sign-up {
-  background-image: url('/mnt/Backup/website/public/images/img-8.jpg');
+  background-image: url('/mnt/Backup/react-website/public/images/img-8.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: #F4F4F4;
   font-size: 100px;
 }

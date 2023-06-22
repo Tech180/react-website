@@ -1,13 +1,43 @@
-.cards {
+  .cards,
+  .cards-dark {
     padding: 4rem;
-    background: #fff;
+    background: #F4F4F4;
   }
-  
-  h1 {
+
+  .cards-dark {
+    background: #242424;
+  }
+
+  /* Small Line Divider */
+  .cards::after,
+  .cards-dark:after {
+    content: "";
+    position: absolute;
+    bottom: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: #242424;
+  }
+
+  .cards-dark:after {
+    background-color: #F4F4F4;
+  }
+
+  .cards h1 {
     text-align: center;
+    padding-bottom: 4rem;
+  }
+
+  .cards-dark h1 {
+    text-align: center;
+    padding-bottom: 4rem;
+    color: #F4F4F4;
   }
   
-  .cards__container {
+  .cards__container,
+  .cards__container-dark {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -16,62 +46,79 @@
     margin: 0 auto;
   }
   
-  .cards__wrapper {
+  .cards__wrapper,
+  .cards__wrapper-dark {
     position: relative;
     margin: 50px 0 45px;
   }
   
-  .cards__items {
+  .cards__items,
+  .cards__items-dark {
     margin-bottom: 24px;
   }
   
-  .cards__item {
+  .cards__item,
+  .cards__item-dark {
     display: flex;
     flex: 1;
     margin: 0 1rem;
     border-radius: 10px;
+    transform: scale(1);
+    transition: 0.3s ease-out;
+  }
+
+  .cards__item:hover,
+  .cards__item-dark:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-out;
   }
   
-  .cards__item__link {
+  .cards__item__link,
+  .cards__item__link-dark {
     display: flex;
     flex-flow: column;
     width: 100%;
     box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
-    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
-    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
   }
+
+  .cards__item__link-dark {
+    box-shadow: 0 6px 20px #F4F4F4;
+  }
   
-  .cards__item__pic-wrap {
+  .cards__item__pic-wrap,
+  .cards__item__pic-wrap-dark {
     position: relative;
     width: 100%;
     padding-top: 67%;
     overflow: hidden;
   }
   
-  .fade-img {
-    animation-name: fade-img;
-    animation-duration: 2s;
-  }
-  
-  .cards__item__pic-wrap::after {
+  .cards__item__pic-wrap::after,
+  .cards__item__pic-wrap-dark::after {
     content: attr(data-category);
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     margin-left: 10px;
     padding: 6px 10px;
     max-width: calc((100%) - 60px);
     font-size: 12px;
     font-weight: 700;
-    color: #fff;
-    background-color: #8e5fd6;
+    color: #F4F4F4;
+    background-color: #9AC2E6;
     box-sizing: border-box;
     border-radius:25px;
   }
-  
-  .cards__item__img {
+
+  .cards__item__pic-wrap-dark::after {
+    color: #242424;
+    background-color: #8e5fd6;
+  }
+
+  .cards__item__img,
+  .cards__item__img-dark {
     position: absolute;
     top: 0;
     right: 0;
@@ -82,38 +129,47 @@
     max-width: 100%;
     height: 100%;
     max-height: 100%;
-    object-fit: cover;
-    transition: all 0.2s linear;
+    object-fit: contain;
   }
   
-  .cards__item__img:hover {
-    transform: scale(1.1);
-  }
-  
-  .cards__item__info {
+  .cards__item__info,
+  .cards__item__info-dark {
     padding: 20px 30px 30px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
   }
   
-  .cards__item__text {
-    color: #252e48;
+  .cards__item__text,
+  .cards__item__text-dark {
+    color: #242424;
     font-size: 18px;
     line-height: 24px;
   }
+
+  .cards__item__text-dark {
+    color: #F4F4F4;
+  }
   
   @media only screen and (min-width: 1200px) {
-    .content__blog__container {
+    .content__blog__container,
+    .content__blog__container-dark {
       width: 84%;
     }
   }
   
   @media only screen and (min-width: 1024px) {
-    .cards__items {
+    .cards__items,
+    .cards__items-dark {
       display: flex;
     }
   }
   
   @media only screen and (max-width: 1024px) {
-    .cards__item {
+    .cards__item,
+    .cards__item-dark {
       margin-bottom: 2rem;
     }
   }

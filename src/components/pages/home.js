@@ -1,16 +1,15 @@
 import React from 'react';
 import '../../App.css';
-import Hero from '../hero';
+import Header from '../header';
 import Cards from '../cards';
 import Footer from '../footer';
-import FloatingButton from '../floatingButton';
+//import FloatingButton from '../floatingButton';
 
 function home() {
     return (
         <>
-            <Hero />
+            <Header />
             <Cards />
-            <FloatingButton />
             <Footer />
         </>
     );

@@ -1,6 +1,17 @@
 import React from 'react';
 import '../../App.css';
+import ResumePage from '../resumepage';
+import Footer from '../footer';
+import ResumeHeader from '../resume-header';
 
-export default function resume() {
-    return <h1 className='resume'>Resume</h1>;
+function Resume() {
+    return (
+        <>
+            <ResumeHeader />
+            <ResumePage />
+            <Footer />
+        </>
+    );
 }
+
+export default Resume;

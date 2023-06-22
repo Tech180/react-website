@@ -1,87 +1,163 @@
-import React, { useState } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { BsPerson } from 'react-icons/bs';
-import { HiOutlineMenuAlt4 } from 'react-icons/hi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter} from 'react-icons/fa';
-//import { Button } from './button'
-import { Link } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
+import { Darklight } from './darklight';
 
 import './navbar2.css';
 
 function Navbar() {
-    const [nav, setNav] = useState(false)
-    const handleNav = () => setNav(!nav)
-    /*
-    const showButton = () => {
-        if(window.innerWidth <= 960) {
-            setButton(false);
-        }
-        else {
-            setButton(true);
-        }
+  const [nav, setNav] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [cookies, setCookie] = useCookies(['darkMode']);
+  const [darkMode, setDarkMode] = useState(cookies.darkMode === 'true');
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    setCookie('darkMode', newMode.toString(), { path: '/' });
+  };
+  
+  const toggleNav = () => setNav(!nav);
+
+  const isMobile = windowWidth <= 740;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
     };
 
-    useEffect(() => {
-        showButton();
-    }, []);
+    window.addEventListener('resize', handleResize);
 
-    window.addEventListener('resize', showButton);
-    */
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
+  useEffect(() => {
+    const body = document.body;
+    if (nav) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+  }, [nav]);
 
-    return (
-        <div name='home' className={nav ? 'navbar navbar-bg' : 'navbar'}>
-            <div className={nav ? 'logo dark' : 'logo'}>
-                <h2>Riley Lawson</h2>
+  return (
+    <div className="navbar">
+      {isMobile && (
+        <>
+          <i
+            className={`fas fa-bars ${nav ? 'active' : ''} ${darkMode ? 'fas fa-bars-dark' : 'fas fa-bars'}`}
+            onClick={toggleNav}
+          ></i>
+        </>
+      )}
+
+      <div className={darkMode ? 'logo-dark' : 'logo'}>
+        <h2>Riley Lawson</h2>
+      </div>
+
+      <ul className="nav-menu">
+        <li>
+          <a href="/" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/resume" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+            Resume
+          </a>
+        </li>
+        <li>
+          <a href="/about-me" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+            About Me
+          </a>
+        </li>
+
+        {!isMobile && (
+          <div className="darklight-container">
+            <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={true} />
+          </div>
+        )}
+      </ul>
+
+      <div className={`${nav ? 'mobile-menu active' : 'mobile-menu'} ${darkMode ? 'mobile-menu-dark' : 'mobile-menu'}`}>
+        <div className="mobile-menu-top">
+          <ul className="mobile-nav">
+            <li>
+              <a href="/" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/resume" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+                Resume
+              </a>
+            </li>
+            <li>
+              <a href="/about-me" className={`nav-link ${darkMode ? 'nav-link-dark' : 'nav-link'}`}>
+                About Me
+              </a>
+            </li>
+          </ul>
+
+          <div className="mobile-menu-bottom">
+            <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={true} />
+
+            <div className="social-icons">
+              <a
+                className="social-icon-link facebook"
+                href="https://www.facebook.com/riley.lawson.161/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <i className="fab fa-facebook-square" />
+              </a>
+              <a
+                className="social-icon-link instagram"
+                href="https://www.instagram.com/the_real_wild/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i className="fab fa-instagram" />
+              </a>
+              <a
+                className={darkMode ? 'social-icon-link github-dark' : 'social-icon-link github'}
+                href="https://github.com/Tech180"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+
+                <i className="fab fa-github-square" />
+              </a>
+              <a
+                className="social-icon-link twitter"
+                href="https://twitter.com/Tech1808"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <i className="fab fa-twitter-square" />
+              </a>
+              <a
+                className="social-icon-link linkedin"
+                href="https://www.linkedin.com/in/riley-lawson-a7a65b203/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i className="fab fa-linkedin" />
+              </a>
             </div>
-            <ul className="nav-menu">
-                <Link to='home' smooth={true} duration={500} >
-                    <li>Home</li>
-                </Link>
-                <Link to='about-me' smooth={true} duration={500} >
-                    <li>About Me</li>
-                </Link>
-            </ul>
-            {/*
-            <div className="nav-icons">
-                <BiSearch className='icon' style={{ marginRight: '1rem' }} />
-                <BsPerson className='icon' />
-            </div>
-            */}   
 
-            <div className="hamburger" onClick={handleNav}>
-                <i className={nav ? 'fas fa-times' : 'fas fa-bars'}/>
-            </div>
- 
-            <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
-                <ul className="mobile-nav">
-                    <Link to='home' smooth={true} duration={500} >
-                        <li>Home</li>
-                    </Link>
-                    <Link to='about-me' smooth={true} duration={500} >
-                        <li>About Me</li>
-                    </Link>
-                </ul>
-                <div className="mobile-menu-bottom">
-                    {/*
-                    <div className="menu-icons">
-                        <button>Search</button>
-                        <button>Account</button>
-                    </div>
-                    */}
-                    <div className="social-icons">
-                        <FaLinkedin className='icon' />
-                        <FaGithub className='icon' />
-                        <FaFacebook className='icon' />
-                        <FaInstagram className='icon' />
-                        <FaTwitter className='icon' />
-                    </div>
-                </div>
-            </div>
+            <i className={`fas fa-times ${nav ? 'active' : ''} ${darkMode ? 'fas fa-times' : 'fas fa-times-dark'}`} onClick={toggleNav}></i>
 
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Navbar;
