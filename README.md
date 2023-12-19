@@ -9,26 +9,21 @@ This project was meant to learn about the in's and out's of react. Lots of it wa
 ## Table of Contents
 
 - [Demo](#demo)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Dark Mode](#dark-mode)
 - [Email Sending](#email-sending)
 - [Mobile View](#mobile-view)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Demo
+![20231219172752_1](https://github.com/Tech180/react-website/assets/19378220/1abb5bf9-f519-4351-b50d-d31ad1c91160)
 
-Include screenshots, gifs, or a link to a live demo of your React website.
 
 ## Features
 
 - Dark mode
 - Email sending
 - Mobile view
-- Resume and inof about me
+- Resume and info about me
 
 ## Installation
 
