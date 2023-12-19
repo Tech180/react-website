@@ -43,7 +43,7 @@ function ResumeItem(props) {
           </figure>
           <div className={darkMode ? 'cardsItems_info-dark' : 'cardsItems_info'}>
             <h5 className={darkMode ? 'cardsItems_text-dark' : 'cardsItems_text'}>
-              {expanded ? 'Click to again to go back to reduced view!' : props.text}
+              {expanded ? 'Click again to go back to reduced view!' : props.text}
             </h5>
           </div>
         </a>

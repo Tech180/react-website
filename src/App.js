@@ -10,7 +10,7 @@ import AboutMe from './components/pages/about-me';
 export default function App() {
 
   useEffect(() => {
-    document.title = "Riley's React Website"; // Set the desired title
+    document.title = "Riley's React Website";
   }, []);
 
   return (

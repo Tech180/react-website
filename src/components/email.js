@@ -100,7 +100,7 @@ export default function Email() {
               ></textarea>
           </div>
           <div>
-            <button className={darkMode ? 'contact-btn btn-info-dark' : 'contact-btn btn-info'} type="submit">
+            <button className={darkMode ? 'contact-btn-dark btn-info-dark' : 'contact-btn btn-info'} type="submit">
               Send Message
             </button>
           </div>

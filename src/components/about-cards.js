@@ -36,20 +36,20 @@ function AboutCards() {
           <AboutCardItems
               src='/images/img-home.jpg'
               text='Founder of Lawson Mowing Service
-                    Software Engineer @ iS0-FORM'
+                    and previous Software Engineer Intern @ iS0-FORM'
               label='Experience'
           />
         </div>
         <div className={darkMode ? 'about-cards_column-dark about-cards_column-left' : 'about-cards_column about-cards_column-left'}>
           <AboutCardItems
-            src='/images/img-home.jpg'
+            src='/images/waterfall.jpeg'
             text='Android Enthusiast/Custom ROM Developer, Competitive Pokemon Enthusiast, Video Games, Running/Weight Lifting, Coding and Developing Software'
             label='Hobbies'
           />
         </div>
-        <div className={darkMode ? 'about-cards_column-dark cards_column-right' : 'about-cards_column about-cards_column-right'}>
+        <div className={darkMode ? 'about-cards_column-dark about-cards_column-graduation' : 'about-cards_column about-cards_column-graduation'}>
           <AboutCardItems
-            src='/images/img-home.jpg'
+            src = '/images/graduation.jpg'
             text='Graduated from Madrid High School,
                   took classes through DMACC, and
                   am a 5th year student at Iowa State University'
