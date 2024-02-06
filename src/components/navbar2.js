@@ -102,9 +102,9 @@ function Navbar() {
           <div className="mobile-menu-bottom">
             <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={true} />
 
-            <div className="social-icons">
+            <div className="social">
               <a
-                className="social-icon-link facebook"
+                className="social-link facebook"
                 href="https://www.facebook.com/riley.lawson.161/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -113,7 +113,7 @@ function Navbar() {
                 <i className="fab fa-facebook-square" />
               </a>
               <a
-                className="social-icon-link instagram"
+                className="social-link instagram"
                 href="https://www.instagram.com/the_real_wild/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,7 +122,7 @@ function Navbar() {
                 <i className="fab fa-instagram" />
               </a>
               <a
-                className={darkMode ? 'social-icon-link github-dark' : 'social-icon-link github'}
+                className={darkMode ? 'social-link github-dark' : 'social-link github'}
                 href="https://github.com/Tech180"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -132,7 +132,7 @@ function Navbar() {
                 <i className="fab fa-github-square" />
               </a>
               <a
-                className="social-icon-link twitter"
+                className="social-link twitter"
                 href="https://twitter.com/Tech1808"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -141,7 +141,7 @@ function Navbar() {
                 <i className="fab fa-twitter-square" />
               </a>
               <a
-                className="social-icon-link linkedin"
+                className="social-link linkedin"
                 href="https://www.linkedin.com/in/riley-lawson-a7a65b203/"
                 target="_blank"
                 rel="noopener noreferrer"

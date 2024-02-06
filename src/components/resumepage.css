@@ -83,7 +83,6 @@
     margin-right: 0.5rem;
   }
 
-
   /* 
         Resume Card 
   */
@@ -100,14 +99,14 @@
   
   .cardsItems,
   .cardsItems-dark {
-    margin-bottom: 24px;
+    padding-top: 20px;
     display: flex;
     flex: 1;
     margin: 0 1 1 1rem;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
     cursor: pointer;
     background-color: #242424;
+    transition: transform 0.3s ease-in-out;
   }
 
   .cardsItems-dark {
@@ -139,7 +138,7 @@
 
   .cardsItems_pic-wrap.expanded,
   .cardsItems_pic-wrap-dark.expanded {
-    height: 110vw;
+    height: 100vw;
     transition: 0.3 ease-in-out;
   }
   
@@ -169,11 +168,12 @@
     height: 100%;
     max-height: 100%;
     object-fit: cover;
+    object-position: top center;
   }
 
   .cardsItems_img.expanded {
     object-fit: contain;
-    transition: transform 0.3s ease-in-out;
+    transition: 0.3s ease-out;
   }
   
   .cardsItems_info,
@@ -197,18 +197,52 @@
     color: #242424;
   }
   
-  @media only screen and (min-width: 1024px) {
-    .cardsItems,
-    .cardsItems-dark {
-      display: flex;
 
+  @media (min-width: 1024px) {
+    .resumecard,
+    .resumecard-dark {
+      padding: 2rem;
     }
-  }
-  
-  @media only screen and (max-width: 1024px) {
+
     .cardsItems,
     .cardsItems-dark {
-      margin-bottom: 2rem;
+      margin: 0 6em 0rem 6rem; 
+    }
+
+    .cardsItems_pic-wrap.expanded,
+    .cardsItems_pic-wrap-dark.expanded {
+      height: 90vw;
+    }
+
+  }
+
+  @media (min-width: 750px) {
+    .resumecard,
+    .resumecard-dark {
+      padding: 2rem;
+    }
+
+    .cardsItems,
+    .cardsItems-dark {
+      margin: 0 6em 0rem 6rem; 
+    }
+
+
+    .cardsItems_pic-wrap.expanded,
+    .cardsItems_pic-wrap-dark.expanded {
+      height: 90vw;
+    }
+
+  }
+
+  @media (max-width: 450px) {
+    .resumecard,
+    .resumecard-dark {
+      padding: 1.5rem;
+    }
+
+    .cardsItems_pic-wrap.expanded,
+    .cardsItems_pic-wrap-dark.expanded {
+      height: 100vw;
     }
   }
-  

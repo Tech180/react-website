@@ -77,6 +77,9 @@
   .social-icon-link-dark {
     font-size: 24px;
     margin-bottom: 24px;
+    margin-top: 24px;
+    transition: 0.3s ease-in-out;
+
   }
 
   .social-icon-link.facebook i {
@@ -87,19 +90,36 @@
     color: #d62976;
   }
 
-  .social-icon-link.github i {
-    color: black; 
+  .social-icon-link.github i,
+  .social-icon-link.github-dark i {
+      color: black;
+      transform: scale(1);
+
   }
-  .social-icon-link.github-dark {
-    color: white;
+
+  .social-icon-link.github-dark i {
+      color: white;
   }
 
   .social-icon-link.twitter i {
-    color: #00acee; 
+      color: #00acee;
+      transform: scale(1);
+
   }
 
   .social-icon-link.linkedin i {
-    color: #0072b1;
+      color: #0072b1;
+      transform: scale(1);
+
+  }
+
+  .social-icon-link.facebook:hover,
+  .social-icon-link.instagram:hover,
+  .social-icon-link.github:hover,
+  .social-icon-link.twitter:hover,
+  .social-icon-link.linkedin:hover,
+  .social-icon-link.github-dark:hover {
+      transform: scale(1.15);
   }
 
   
