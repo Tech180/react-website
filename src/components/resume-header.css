@@ -1,6 +1,6 @@
 .resume-header-container,
 .resume-header-container-dark {
-  background: url('/mnt/Backup/react-website/public/images/resume.jpg') no-repeat;
+  background: url('../../public/images/resume.jpg') no-repeat;
   height: 100vh;
   width: 100%;
   display: flex;

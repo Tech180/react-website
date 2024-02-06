@@ -1,7 +1,7 @@
 .about-header-container,
 .about-header-container-dark {
-  background: url('/mnt/Backup/react-website/public/images/about-me.jpg') no-repeat;
-  height: 100vh;
+  background: url('../../public/images/about-me.jpg') no-repeat;
+  height: 101vh;
   width: 100%;
   display: flex;
   flex-direction: column;
