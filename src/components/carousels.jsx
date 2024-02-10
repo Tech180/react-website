@@ -4,6 +4,80 @@ import 'react-multi-carousel/lib/styles.css';
 import { Darklight } from './darklight';
 import { useCookies } from 'react-cookie';
 
+const CarouselItem = ({ item, darkMode }) => (
+  <div className="carousel-item">
+    <img src={item.imageSrc} alt={`Item ${item.id}`} className="carousel-img" />
+    <p className="label">{item.label}</p>
+    <p>{item.text}</p>
+    <style jsx>{`
+      .carousel-item {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-inline: 10%;
+        max-width: 80%;
+        max-height: 90%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        padding: 50px;
+        border: 1px ${darkMode ? '#242424' : '#F4F4F4'};;
+        border-style: dashed solid;
+        border-radius: 50px;
+        background: ${darkMode ? '#F4F4F4' : '#242424'};
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      .carousel-img {
+        max-width: 100%;
+        height: 85%; 
+        object-fit: cover;
+        border-radius: 50px;
+        background: ${darkMode ? '#242424' : '#242424'};
+        pointer-events: none;
+        draggable: false;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      .label {
+        position: absolute;
+        bottom: 15%;
+        left: 10px;
+        background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: ${darkMode ? '#242424' : '#242424'};
+      }
+
+      .carousel-item p {
+        margin: 20px 0;
+        color: ${darkMode ? '#242424' : '#F4F4F4'};
+      }
+
+      @media (min-width: 2000px) {
+        .carousel-item {
+          height: 100%;
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .carousel-item {
+          height: 80%;
+        }
+      }
+
+      @media (max-width: 450px) {
+        .carousel-item {
+          height: 100%;
+        }
+      }
+    `}</style>
+  </div>
+);
+
 const Carousels = () => {
   const [cookies, setCookie] = useCookies(['darkMode']);
   const [darkMode, setDarkMode] = useState(false);
@@ -87,86 +161,10 @@ const Carousels = () => {
         swipeable
         ssr={false}
       >
-        {carouselItems.map((item) => (
-          <div key={item.id} className="carousel-item">
-            <img src={item.imageSrc} alt={`Item ${item.id}`} className="carousel-img" />
-            <p className="label">{item.label}</p>
-            <p>{item.text}</p>
-          </div>
+        {carouselItems.map(item => (
+          <CarouselItem key={item.id} item={item} darkMode={darkMode} />
         ))}
       </Carousel>
-
-      <style jsx>{`
-        .carousel-container {
-          margin-top: 100px
-          width: 100%;
-        }
-
-        .carousel-item {
-          margin-top: 1em;
-          margin-bottom: 1em;
-          margin-inline: 10%;
-          max-width: 80%;
-          max-height: 90%;
-          height: 100%;
-          position: relative;
-          text-align: center;
-          padding: 50px;
-          border: 1px ${darkMode ? '#242424' : '#F4F4F4'};;
-          border-style: dashed solid;
-          border-radius: 50px;
-          background: ${darkMode ? '#F4F4F4' : '#242424'};
-          user-select: none;
-          -webkit-user-drag: none;
-        }
-
-        .carousel-img {
-          max-width: 100%;
-          height: 85%; 
-          object-fit: cover;
-          border-radius: 50px;
-          background: ${darkMode ? '#242424' : '#242424'};
-          pointer-events: none;
-          draggable: false;
-          user-select: none;
-          -webkit-user-drag: none;
-        }
-
-        .label {
-          position: absolute;
-          bottom: 15%;
-          left: 10px;
-          background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
-          padding: 5px 10px;
-          border-radius: 8px;
-          color: ${darkMode ? '#242424' : '#242424'};
-        }
-
-        .carousel-item p {
-          margin: 20px 0;
-          color: ${darkMode ? '#242424' : '#F4F4F4'};
-        }
-
-        @media (min-width: 2000px) {
-          .carousel-item {
-            height: 100%;
-            margin-top: 1em;
-            margin-bottom: 1em;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .carousel-item {
-            height: 80%;
-          }
-        }
-
-        @media (max-width: 450px) {
-          .carousel-item {
-            height: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 };
