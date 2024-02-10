@@ -1,5 +1,4 @@
 node_modules/
-server.js
 public/auth.txt
 public/musicAuth.txt
 build/

@@ -26,8 +26,6 @@ export default function Email() {
     setCookie('darkMode', newMode.toString(), { path: '/' });
   };
 
-  const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 

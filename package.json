@@ -56,15 +56,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
-  },
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
-  ]
+  }
 }
