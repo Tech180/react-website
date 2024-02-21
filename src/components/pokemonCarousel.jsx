@@ -8,28 +8,14 @@ import { useCookies } from 'react-cookie';
 
 const PokemonCarouselItem = ({ name, darkMode }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [showSparks, setShowSparks] = useState(false);
-
-  const sparksAnimation = useSpring({
-    from: { opacity: 1, scale: 0 },
-    to: { opacity: 0, scale: 2 },
-    config: { duration: 1000 },
-    immediate: !showSparks,
-    onRest: () => setShowSparks(false),
-  });
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
-    setShowSparks(true);
   };
 
   return (
     <div className={`pokemon-carousel-item ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
       <Pokemon name={name} />
-
-      {showSparks && (
-        <animated.div className="sparks" style={sparksAnimation}></animated.div>
-      )}
 
       <style jsx>{`
         .pokemon-carousel-item {
@@ -66,16 +52,6 @@ const PokemonCarouselItem = ({ name, darkMode }) => {
 
         .back {
           transform: rotateY(180deg);
-        }
-
-        .sparks {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center/cover;
-          pointer-events: none;
         }
 
         @media (min-width: 2000px) {

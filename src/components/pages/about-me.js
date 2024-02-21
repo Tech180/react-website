@@ -5,6 +5,7 @@ import AboutHeader from '../about-header';
 import Footer from '../footer';
 import Carousels from '../carousels';
 import PokemonCarousel from '../pokemonCarousel';
+import PokemonGrid from '../pokemonGrid';
 //import Music from '../music';
 
 function AboutMe() {
@@ -12,7 +13,7 @@ function AboutMe() {
         <>
             <AboutHeader />
             <Carousels />
-            <PokemonCarousel/>
+            <PokemonGrid/>
             <Footer />
         </>
     );

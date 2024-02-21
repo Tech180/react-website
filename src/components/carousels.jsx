@@ -7,57 +7,71 @@ import { useCookies } from 'react-cookie';
 const CarouselItem = ({ item, darkMode }) => (
   <div className="carousel-item">
     <img src={item.imageSrc} alt={`Item ${item.id}`} className="carousel-img" />
-    <p className="label">{item.label}</p>
-    <p>{item.text}</p>
+    <div className="text-container">
+      <p className="label">{item.label}</p>
+      <p>{item.text}</p>
+    </div>
     <style jsx>{`
       .carousel-item {
         margin-top: 1em;
         margin-bottom: 1em;
-        margin-inline: 10%;
-        max-width: 80%;
-        max-height: 90%;
-        height: 100%;
+        width: 100%; /* Set width to 100% */
+        height: 300px;
+        padding-top: 100%;
         position: relative;
         text-align: center;
-        padding: 50px;
-        border: 1px ${darkMode ? '#242424' : '#F4F4F4'};;
-        border-style: dashed solid;
+        border: 1px ${darkMode ? '#242424' : '#F4F4F4'};
         border-radius: 50px;
         background: ${darkMode ? '#F4F4F4' : '#242424'};
         user-select: none;
         -webkit-user-drag: none;
+        overflow: hidden;
+        transition: height 0.5s ease;
       }
 
       .carousel-img {
-        max-width: 100%;
-        height: 85%; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        border-radius: 50px;
-        background: ${darkMode ? '#242424' : '#242424'};
         pointer-events: none;
         draggable: false;
         user-select: none;
         -webkit-user-drag: none;
       }
 
-      .label {
+      .text-container {
         position: absolute;
-        bottom: 15%;
-        left: 10px;
-        background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
-        padding: 5px 10px;
-        border-radius: 8px;
-        color: ${darkMode ? '#242424' : '#242424'};
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        box-sizing: border-box;
+        color: #fff;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .carousel-item:hover .text-container {
+        transform: translateY(0);
+      }
+
+      .label {
+        margin: 0;
+        font-weight: bold;
       }
 
       .carousel-item p {
-        margin: 20px 0;
-        color: ${darkMode ? '#242424' : '#F4F4F4'};
+        margin: 0;
       }
 
       @media (min-width: 2000px) {
         .carousel-item {
-          height: 100%;
+          height: 80%;
+          max-width: 80%;
           margin-top: 1em;
           margin-bottom: 1em;
         }
@@ -65,13 +79,15 @@ const CarouselItem = ({ item, darkMode }) => (
 
       @media (min-width: 1024px) {
         .carousel-item {
-          height: 80%;
+          max-height: 20%;
+          height: 20%;
         }
       }
 
       @media (max-width: 450px) {
         .carousel-item {
-          height: 100%;
+          height: 60%;
+          max-height: 60%;
         }
       }
     `}</style>
