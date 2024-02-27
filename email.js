@@ -1,4 +1,3 @@
-// email.js
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
@@ -17,7 +16,6 @@ const pass = auth[1].trim();
 router.post('/send-email', (req, res) => {
   const { email, message } = req.body;
 
-  // Create a transporter using your email service provider's SMTP settings
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -32,7 +30,7 @@ router.post('/send-email', (req, res) => {
   const mailOptions = {
     from: user,
     to: email,
-    subject: 'New Email from Contact Form',
+    subject: `New Email from: ${email}`,
     text: `
       Email: ${email}
       Message: ${message}

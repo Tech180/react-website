@@ -24,7 +24,7 @@ const PokeAPI = (name) => {
     const fetchItem = async () => {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/item/${item}`);
-        setItem(response.item);
+        setItem(response.data);
       } catch (error) {
         console.error(`Error fetching ${item} data:`, error);
       }
