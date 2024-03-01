@@ -18,6 +18,9 @@ const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedInde
       height: isExpanded ? '400px' : '100px',
       borderRadius: isExpanded ? '20px' : '5px',
       opacity: isExpanded || hovered ? 1 : 0.5,
+      boxShadow: darkMode ? 
+      '0 6px 20px rgba(244, 244, 244, 0.50)': '0 6px 20px rgba(56, 125, 255, 0.50)',
+      config: { duration: 200 },
   });
 
   return (
@@ -27,10 +30,9 @@ const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedInde
           style={{
               margin: '10px',
               padding: '20px',
-              border: 'none',
-              outline: 'none',
-              boxShadow: `0 0 0 3px ${darkMode ? '#B39DDB' : '#9AC2E6'}`,
-              transition: 'box-shadow 0.3s ease',  
+              border: `3px solid ${darkMode ? '#B39DDB' : '#9AC2E6'}`,
+              borderRadius: '3px',
+              outline: 'none', 
               background: darkMode ? '#242424' : '#F4F4F4',
               textAlign: 'center',
               userSelect: 'none',
@@ -141,14 +143,6 @@ const gridStyles = ({ darkMode }) => (
             align-items: center;
         }
 
-        .pokemon-grid > :nth-child(3n) {
-            margin-right: 0;
-        }
-
-        .pokemon-grid > :nth-last-child(-n+3):not(:first-child) {
-            margin-bottom: 20px;
-        }
-
         .centered-image {
             display: flex;
             justify-content: center;
@@ -192,18 +186,16 @@ const PokemonGrid = () => {
         setDarkMode(newMode);
         setCookie('darkMode', newMode.toString(), { path: '/' });
     };
-  
+
+    <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+
     const pokemonNames = ['Cloyster', 'Flygon', 'Marowak', 'Zapdos', 'Serperior', 'Chandelure'];
-  
-  
-    const lastRowBoxCount = pokemonNames.length % 3;
   
     return (
       <div>
           {gridStyles({ darkMode })}
           <div className="pokemon-grid-container">
               <h1 className="heading" style = {{paddingTop: '50px'}}>My Favorite Pokemon</h1>
-              <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
               <div className="pokemon-grid" style = {{paddingBottom: '50px', paddingTop: '50px'}}>
                   {pokemonNames.map((name, index) => (
                       <PokemonGridItem
@@ -215,9 +207,6 @@ const PokemonGrid = () => {
                           setExpandedIndex={setExpandedIndex}
                       />
                   ))}
-                  {lastRowBoxCount !== 0 && (
-                      <div style={{ width: `${(3 - lastRowBoxCount) * 33.33}%` }}></div>
-                  )}
               </div>
           </div>
   

@@ -7,114 +7,128 @@ import { useCookies } from 'react-cookie';
 const CarouselItem = ({ item, darkMode }) => (
   <div className="carousel-item">
     <img src={item.imageSrc} alt={`Item ${item.id}`} className="carousel-img" />
-    <div className="label">
-      <p>{item.label}</p>
-    </div>
-    <div className="text-container">
-      <p>{item.text}</p>
-    </div>
+    <p className="label">{item.label}</p>
+    <p className="text">{item.text}</p>
     {styles(darkMode)}
   </div>
 );
 
 const styles = (darkMode) => (
   <style jsx>{`
-    .carousel-item {
-      margin-top: 1em;
-      width: 100%;
-      padding-top: 100%;
-      position: relative;
-      text-align: center;
-      border: 1px ${darkMode ? '#242424' : '#F4F4F4'};
-      border-radius: 50px;
-      background: ${darkMode ? '#F4F4F4' : '#242424'};
-      margin-left: auto;
-      margin-right: auto;
-      user-select: none;
-      -webkit-user-drag: none;
-      overflow: hidden;
-    }
+      .carousel-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-    .carousel-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-      draggable: false;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
+      .carousel-container {
+        position: relative;
+      }
 
-    .text-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 15%;
-      background: rgba(0, 0, 0, 0.7);
-      box-sizing: border-box;
-      color: #fff;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-      font-size: 1.2em;
-    }
-
-    .carousel-item:hover .text-container {
-      transform: translateY(0);
-    }
-
-    .label {
-      position: absolute;
-      bottom: 20%;
-      right: 80%;
-      width: 100px;
-      height: 25px;
-      color: #fff;
-      font-size: 1.2em;
-      margin: 0;
-      font-weight: bold;
-      font-size: 100%;
-      z-index: 1;
-      content: attr(data-category);
-      position: absolute;
-      background-color: #9AC2E6;
-      border-radius:25px;
-    }
-    
-
-
-    .carousel-item p {
-      margin: 0;
-    }
-
-    @media (min-width: 2000px) {
       .carousel-item {
+        margin-top: 10em;
+        margin-inline: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: auto;
+        max-height: auto;
+        height: 70%;
+        position: relative;
+        text-align: center;
+        border-radius: 60px;
+        background: ${darkMode ? '#242424' : '#F4F4F4'};
+        user-select: none;
+        -webkit-user-drag: none;
+        overflow: hidden;
+        box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.25)' : '0 6px 20px rgba(56, 125, 255, 0.25)'};
+      }
+
+
+      .carousel-img {
         max-width: 100%;
-        max-height: 80%;
-        #padding-top: 100%;
+        width: 100%;
+        height: 80%; 
+        object-fit: cover;
+        border-radius: 50px;
+        pointer-events: none;
+        draggable: false;
+        user-select: none;
+        -webkit-user-drag: none;
       }
-    }
 
-    @media (max-width: 1024px) {
-      .carousel-item {
-        max-width: 80%;
-        max-height: 80%;
-        #padding-top: 80%;
+      .carousel-item:hover .text-container {
+        transform: translateY(0);
       }
-    }
 
-    @media (max-width: 300px) {
-      .carousel-item {
-        max-width: 80%;
-        max-height: 80%;
-        #padding-top: 80%;
+      .label {
+        position: absolute;
+        bottom: 25%;
+        left: 20px;
+        background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: ${darkMode ? '#F4F4F4' : '#242424'};
       }
-    }
+
+      .text {
+        position: absolute;
+        color: ${darkMode ? '#F4F4F4' : '#242424'};
+      }
+      
+      .carousel-item p {
+        margin: 0;
+      }
+
+      @keyframes shadowFade {
+        0% {
+          box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.25)' : '0 6px 20px rgba(56, 125, 255, 0.25)'};
+        }
+        100% {
+          box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.5)' : '0 6px 20px rgba(56, 125, 255, 0.5)'};
+        }
+      }
+
+      @media (max-width: 2560px) {
+        .carousel-item {
+          max-width: 70%;
+          max-height: auto;
+          #padding-top: 100%;
+        }
+      }
+      @media (max-width: 1920px) {
+        .carousel-item {
+          max-width: 70%;
+          max-height: auto;
+          #padding-top: 100%;
+        }
+      }
+
+
+      @media (max-width: 1024px) {
+        .carousel-item {
+          max-width: 60%;
+          max-height: auto;
+          #padding-top: 80%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .carousel-item {
+          max-width: 70%;
+          max-height: auto;
+        }
+      }
+
+      @media (max-width: 0px) {
+        .carousel-item {
+          max-width: 80%;
+          max-height: 80%;
+          #padding-top: 80%;
+        }
+      }
   `}</style>
-);
+  );
 
 
 const Carousels = () => {
@@ -135,13 +149,13 @@ const Carousels = () => {
   const carouselItems = [
     {
       id: 1,
-      imageSrc: '/images/img-home.jpg',
+      imageSrc: '/images/caves.jpg',
       text: "I'm a determined, hardworking, eager-to-learn, and excited-for-the-future individual",
       label: 'Life',
     },
     {
       id: 2,
-      imageSrc: '/images/img-home.jpg',
+      imageSrc: '/images/experience.jpg',
       text: 'Founder of Lawson Mowing Service and previous Software Engineer Intern @ iS0-FORM',
       label: 'Experience',
     },
@@ -154,7 +168,7 @@ const Carousels = () => {
     {
       id: 4,
       imageSrc: '/images/graduation.jpg',
-      text: 'Graduated from Madrid High School, took classes through DMACC, and am a 5th-year student at Iowa State University',
+      text: 'Graduated from Madrid High School, took classes through DMACC, and Graduated at ISU',
       label: 'School',
     },
     {
@@ -168,14 +182,21 @@ const Carousels = () => {
   const responsive = {
     ultrawide: {
       breakpoint: { 
-        max: 5124, min: 2000 
+        max: 5124, min: 2560 
+      },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    biggerdesktop: {
+      breakpoint: { 
+        max: 2560, min: 1920 
       },
       items: 3,
       slidesToSlide: 1,
     },
     desktop: {
       breakpoint: { 
-        max: 2000, min: 1024 
+        max: 1920, min: 1024 
       },
       items: 2,
       slidesToSlide: 1,
@@ -189,11 +210,11 @@ const Carousels = () => {
     },
   };
   
+  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
 
   return (
     <div className="carousel-container" style={{ background: darkMode ? '#242424' : '#F4F4F4' }}>
-      <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
-      
+
       <Carousel
         responsive={responsive}
         autoPlay
@@ -201,7 +222,6 @@ const Carousels = () => {
         infinite
         swipeable
         ssr={false}
-        rtl
 
         //customLeftArrow={<Left/>}
         //customRightArrow={<Right />}
