@@ -3,6 +3,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Darklight } from './darklight';
 import { useCookies } from 'react-cookie';
+import AboutCarousel from './about-carousel';
+
 
 const CarouselItem = ({ item, darkMode }) => (
   <div className="carousel-item">
@@ -13,171 +15,120 @@ const CarouselItem = ({ item, darkMode }) => (
   </div>
 );
 
-const styles = (darkMode) => (
-  <style jsx>{`
-      .carousel-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+  const styles = (darkMode) => (
+    <style jsx>{`
+        .carousel-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
 
-      .carousel-container {
-        position: relative;
-      }
+        .carousel-container {
+          position: relative;
+        }
 
-      .carousel-item {
-        margin-top: 10em;
-        margin-inline: auto;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: auto;
-        max-height: auto;
-        height: 70%;
-        position: relative;
-        text-align: center;
-        border-radius: 60px;
-        background: ${darkMode ? '#242424' : '#F4F4F4'};
-        user-select: none;
-        -webkit-user-drag: none;
-        overflow: hidden;
-        box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.25)' : '0 6px 20px rgba(56, 125, 255, 0.25)'};
-      }
-
-
-      .carousel-img {
-        max-width: 100%;
-        width: 100%;
-        height: 80%; 
-        object-fit: cover;
-        border-radius: 50px;
-        pointer-events: none;
-        draggable: false;
-        user-select: none;
-        -webkit-user-drag: none;
-      }
-
-      .carousel-item:hover .text-container {
-        transform: translateY(0);
-      }
-
-      .label {
-        position: absolute;
-        bottom: 25%;
-        left: 20px;
-        background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
-        padding: 5px 10px;
-        border-radius: 8px;
-        color: ${darkMode ? '#F4F4F4' : '#242424'};
-      }
-
-      .text {
-        position: absolute;
-        color: ${darkMode ? '#F4F4F4' : '#242424'};
-      }
-      
-      .carousel-item p {
-        margin: 0;
-      }
-
-      @keyframes shadowFade {
-        0% {
+        .carousel-item {
+          margin-top: 10em;
+          margin-inline: auto;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: auto;
+          max-height: auto;
+          height: 70%;
+          position: relative;
+          text-align: center;
+          border-radius: 60px;
+          background: ${darkMode ? '#242424' : '#F4F4F4'};
+          user-select: none;
+          -webkit-user-drag: none;
+          overflow: hidden;
           box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.25)' : '0 6px 20px rgba(56, 125, 255, 0.25)'};
         }
-        100% {
-          box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.5)' : '0 6px 20px rgba(56, 125, 255, 0.5)'};
-        }
-      }
 
-      @media (max-width: 2560px) {
-        .carousel-item {
-          max-width: 70%;
-          max-height: auto;
-          #padding-top: 100%;
+        .carousel-img {
+          max-width: 100%;
+          width: 100%;
+          height: 80%; 
+          object-fit: cover;
+          border-radius: 50px;
+          pointer-events: none;
+          draggable: false;
+          user-select: none;
+          -webkit-user-drag: none;
         }
-      }
-      @media (max-width: 1920px) {
-        .carousel-item {
-          max-width: 70%;
-          max-height: auto;
-          #padding-top: 100%;
-        }
-      }
 
-
-      @media (max-width: 1024px) {
-        .carousel-item {
-          max-width: 60%;
-          max-height: auto;
-          #padding-top: 80%;
+        .carousel-item:hover .text-container {
+          transform: translateY(0);
         }
-      }
 
-      @media (max-width: 500px) {
-        .carousel-item {
-          max-width: 70%;
-          max-height: auto;
+        .label {
+          position: absolute;
+          bottom: 25%;
+          left: 20px;
+          background: ${darkMode ? 'rgba(36, 36, 36, 0.5)' : 'rgba(244, 244, 244, 0.5)'};
+          padding: 5px 10px;
+          border-radius: 8px;
+          color: ${darkMode ? '#F4F4F4' : '#242424'};
         }
-      }
 
-      @media (max-width: 0px) {
-        .carousel-item {
-          max-width: 80%;
-          max-height: 80%;
-          #padding-top: 80%;
+        .text {
+          position: absolute;
+          color: ${darkMode ? '#F4F4F4' : '#242424'};
         }
-      }
-  `}</style>
+        
+        .carousel-item p {
+          margin: 0;
+        }
+
+        @keyframes shadowFade {
+          0% {
+            box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.25)' : '0 6px 20px rgba(56, 125, 255, 0.25)'};
+          }
+          100% {
+            box-shadow: ${darkMode ? '0 6px 20px rgba(244, 244, 244, 0.5)' : '0 6px 20px rgba(56, 125, 255, 0.5)'};
+          }
+        }
+
+        @media (max-width: 2560px) {
+          .carousel-item {
+            max-width: 70%;
+            max-height: auto;
+            #padding-top: 100%;
+          }
+        }
+        @media (max-width: 1920px) {
+          .carousel-item {
+            max-width: 70%;
+            max-height: auto;
+            #padding-top: 100%;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .carousel-item {
+            max-width: 60%;
+            max-height: auto;
+            #padding-top: 80%;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .carousel-item {
+            max-width: 70%;
+            max-height: auto;
+          }
+        }
+
+        @media (max-width: 0px) {
+          .carousel-item {
+            max-width: 80%;
+            max-height: 80%;
+            #padding-top: 80%;
+          }
+        }
+    `}</style>
   );
-
-
-const Carousels = () => {
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  const carouselItems = [
-    {
-      id: 1,
-      imageSrc: '/images/caves.jpg',
-      text: "I'm a determined, hardworking, eager-to-learn, and excited-for-the-future individual",
-      label: 'Life',
-    },
-    {
-      id: 2,
-      imageSrc: '/images/experience.jpg',
-      text: 'Founder of Lawson Mowing Service and previous Software Engineer Intern @ iS0-FORM',
-      label: 'Experience',
-    },
-    {
-      id: 3,
-      imageSrc: '/images/waterfall.jpeg',
-      text: 'Android Enthusiast/Custom ROM Developer, Competitive Pokemon Enthusiast, Video Games, Running/Weight Lifting, Coding and Developing Software',
-      label: 'Hobbies',
-    },
-    {
-      id: 4,
-      imageSrc: '/images/graduation.jpg',
-      text: 'Graduated from Madrid High School, took classes through DMACC, and Graduated at ISU',
-      label: 'School',
-    },
-    {
-      id: 5,
-      imageSrc: '/images/family.jpg',
-      text: 'My parents are Heidi and Brad along with my brother Tate',
-      label: 'Family',
-    },
-  ];
 
   const responsive = {
     ultrawide: {
@@ -209,7 +160,22 @@ const Carousels = () => {
       slidesToSlide: 1,
     },
   };
-  
+
+const Carousels = ({ items }) => {
+  const [cookies, setCookie] = useCookies(['darkMode']);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = cookies.darkMode === 'true';
+    setDarkMode(savedDarkMode);
+  }, [cookies.darkMode]);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    setCookie('darkMode', newMode.toString(), { path: '/' });
+  };
+
   <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
 
   return (
@@ -227,8 +193,8 @@ const Carousels = () => {
         //customRightArrow={<Right />}
         
       >
-        {carouselItems.map(item => (
-          <CarouselItem key={item.id} item={item} darkMode={darkMode} />
+        {items.map(item => (
+          <CarouselItem key={item.id} item={item} darkMode={darkMode}/>
         ))}
       </Carousel>
     </div>

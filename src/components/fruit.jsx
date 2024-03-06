@@ -1,30 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 const Fruit = () => {
-  const [fruits, setFruits] = useState([]);
+  const [fruit, setFruit] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchFruits = async () => {
       try {
-        const response = await fetch('/fruits');
-      
-        // Log the status code and status text
-        console.log('Response Body:', await response.text());
-
-        console.log('Status Code:', response.status);
-        console.log('Status Text:', response.statusText);
-      
-        // Log the response headers
-        //console.log('Response Headers:', response.headers);
-      
-        // Log the response body
+        const response = await fetch('/api/fruits');
         const data = await response.json();
-        //const data = await response.text();
-        console.log('Response Body:', data);
-      
-        setFruits(data);
-      } catch (error) {
+
+        // Randomly select a fruit from the list
+        const randomIndex = Math.floor(Math.random() * data.length);
+        const randomFruit = data[randomIndex];
+
+        setFruit(randomFruit);
+      } 
+      catch (error) {
         setError('Internal Server Error');
         console.error('Error fetching fruits:', error);
       }
@@ -35,13 +27,16 @@ const Fruit = () => {
 
   return (
     <div>
-      <h1>Fruits</h1>
+      <h1>Fruit Facts</h1>
       {error && <p>{error}</p>}
-      <ul>
-        {fruits.map((fruit, index) => (
-          <li key={index}>{fruit.name}</li>
-        ))}
-      </ul>
+      {fruit && (
+        <div>
+          <p>Name: {fruit.name}</p>
+          <p>Family: {fruit.family}</p>
+          <p>Genus: {fruit.genus}</p>
+          <p>Order: {fruit.nutritions.calories}</p>
+        </div>
+      )}
     </div>
   );
 };

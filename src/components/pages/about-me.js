@@ -3,7 +3,7 @@ import '../../App.css';
 import AboutHeader from '../about-header';
 //import Cards2 from '../about-cards';
 import Footer from '../footer';
-import Carousels from '../carousels';
+import AboutCarousel from '../about-carousel';
 import PokemonCarousel from '../pokemonCarousel';
 import PokemonGrid from '../pokemonGrid';
 import IGDB from '../IGDB';
@@ -14,9 +14,9 @@ function AboutMe() {
     return (
         <>
             <AboutHeader />
-            <Carousels />
+            <AboutCarousel />
             <PokemonGrid />
-            {///<IGDB />
+            {<IGDB />
             }
             {//<Fruit />
             }

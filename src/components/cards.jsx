@@ -58,8 +58,8 @@ function Cards() {
         color: #F4F4F4;
       }
       
-      .cards__container,
-      .cards__container-dark {
+      .container,
+      .container-dark {
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -68,15 +68,22 @@ function Cards() {
         margin: 0 auto;
       }
       
-      .cards__wrapper,
-      .cards__wrapper-dark {
+      .wrapper,
+      .wrapper-dark {
         position: relative;
         margin: 50px 0 45px;
       }
     
-      .cards__items,
-      .cards__items-dark {
-        margin-bottom: 24px;
+      .items,
+      .items-dark {
+        margin-bottom: 5%;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .items,
+        .items-dark {
+          display: flex;
+        }
       }
     `}</style>
   );
@@ -87,9 +94,9 @@ function Cards() {
     <>
       <div className={darkMode ? 'cards-dark' : 'cards'}>
         <h1>Check out what I have been up to!</h1>
-        <div className={darkMode ? 'cards__container-dark' : 'cards__container'}>
-          <div className={darkMode ? 'cards__wrapper-dark' : 'cards__wrapper'}>
-            <ul className={darkMode ? 'cards__items-dark' : 'cards__items'}>
+        <div className={darkMode ? 'container-dark' : 'container'}>
+          <div className={darkMode ? 'wrapper-dark' : 'wrapper'}>
+            <ul className={darkMode ? 'items-dark' : 'items'}>
               <CardItem
                 src="/images/github.png"
                 text="Explore my GitHub and check out some of the projects that I've been working on!"
@@ -105,7 +112,7 @@ function Cards() {
                 darkMode={darkMode}
               />
             </ul>
-            <ul className={darkMode ? 'cards__items-dark' : 'cards__items'}>
+            <ul className={darkMode ? 'items-dark' : 'items'}>
               <CardItem
                 src="/images/twitter.png"
                 text="Want to look at something I bearly use? Look no further!"

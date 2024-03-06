@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.use(express.json());
 
+/*
 // Read authentication details from the text file
 const file = path.join(__dirname, '../public/auth.txt');
 const auth = fs.readFileSync(file, 'utf-8').split('\n');
@@ -49,5 +50,7 @@ router.post('/send-email', (req, res) => {
     }
   });
 });
+*/
+
 
 module.exports = router;

@@ -6,7 +6,7 @@ const path = require('path');
 const router = express.Router();
 
 router.use(express.json());
-
+/*
 const file = path.join(__dirname, '../public/musicAuth.txt');
 const auth = fs.readFileSync(file, 'utf8').split('\n');
 const user = auth[0].trim();
@@ -56,5 +56,6 @@ router.get('/music', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch last song' });
   }
 });
+*/
 
 module.exports = router;
