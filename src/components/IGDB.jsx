@@ -60,6 +60,7 @@ const IGDB = () => {
             id: game.id,
             imageSrc: cover, 
             label: game.name,
+            summary: game.summary,
         };
     });
 

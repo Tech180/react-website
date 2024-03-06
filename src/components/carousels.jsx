@@ -94,14 +94,12 @@ const CarouselItem = ({ item, darkMode }) => (
           .carousel-item {
             max-width: 70%;
             max-height: auto;
-            #padding-top: 100%;
           }
         }
         @media (max-width: 1920px) {
           .carousel-item {
             max-width: 70%;
             max-height: auto;
-            #padding-top: 100%;
           }
         }
 
@@ -109,7 +107,6 @@ const CarouselItem = ({ item, darkMode }) => (
           .carousel-item {
             max-width: 60%;
             max-height: auto;
-            #padding-top: 80%;
           }
         }
 
@@ -124,7 +121,6 @@ const CarouselItem = ({ item, darkMode }) => (
           .carousel-item {
             max-width: 80%;
             max-height: 80%;
-            #padding-top: 80%;
           }
         }
     `}</style>

@@ -4,7 +4,6 @@ import AboutHeader from '../about-header';
 //import Cards2 from '../about-cards';
 import Footer from '../footer';
 import AboutCarousel from '../about-carousel';
-import PokemonCarousel from '../pokemonCarousel';
 import PokemonGrid from '../pokemonGrid';
 import IGDB from '../IGDB';
 import Fruit from '../fruit';
