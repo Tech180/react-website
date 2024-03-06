@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/navbar2';
-import Home from './components/pages/home';
-import Resume from './components/pages/resume';
-import Contact from './components/pages/contact';
-import AboutMe from './components/pages/about-me';
+import Navbar from './components/frontend/navbar2';
+import Home from './components/frontend/UI/pages/home';
+import Resume from './components/frontend/UI/pages/resume';
+import Contact from './components/frontend/UI/pages/contact';
+import AboutMe from './components/frontend/UI/pages/about-me';
 
 export default function App() {
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import '../../App.css';
-import ResumePage from '../resumepage';
-import Footer from '../footer';
-import ResumeHeader from '../resume-header';
+import ResumePage from '../../resumepage';
+import Footer from '../../footer';
+import ResumeHeader from '../headers/resume-header';
 
 function Resume() {
     return (

@@ -169,7 +169,7 @@
   .react-made-dark::after {
     content: '';
     display: inline-block;
-    background-image: url('../../public/images/React-icon.svg');
+    background-image: url('../../../public/images/React-icon.svg');
     width: 15px; 
     height: 15px; 
     margin-left: 5px;

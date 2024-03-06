@@ -3,8 +3,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
-import { Darklight } from './darklight';
-import Popup from './popup';
+import { Darklight } from '../darklight';
+import Popup from '../UI/popup';
 
 const GameItem = ({ item, darkMode, onClick }) => (
   <div className="game-item" onClick={onClick}>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
-import { Darklight } from './darklight';
-import Popup from './popup';
+import { Darklight } from '../darklight';
+import Popup from '../UI/popup';
 import PokeAPI from './pokeAPI';
 import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pokemon from './pokemon';
-import { Darklight } from './darklight';
+import { Darklight } from '../darklight';
 import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
 
