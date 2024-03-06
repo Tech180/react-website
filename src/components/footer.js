@@ -31,16 +31,17 @@ function Footer() {
         Want to get in contact?
       </p>
       <form>
-        <Link to="/contact">
-          <Button buttonStyle='btn--outline'>Click Here!</Button>
+        <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+          <Button buttonStyle='outline'>Click Here!</Button>
         </Link>
       </form>
     </section>
   );
 
+  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+
   return (
     <div className={darkMode ? 'footer-container-dark' : 'footer-container'}>
-      <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
       {renderContactSection}
       <section className={darkMode ? 'social-media-dark' : 'social-media-dark'}>
         <div className={darkMode ? 'social-media-wrap-dark' : 'social-media-wrap'}>
