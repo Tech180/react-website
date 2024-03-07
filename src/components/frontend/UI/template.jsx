@@ -3,6 +3,7 @@ import { Darklight } from './toggle/darklight';
 import { useCookies } from 'react-cookie';
 import { fetchPdf } from '../pdf';
 import Download from './buttons/download';
+import ResumeTest from './resume-test';
 
 function ResumePage() {
   const [cookies, setCookie] = useCookies(['darkMode']);
@@ -37,6 +38,7 @@ function ResumePage() {
 
   return (
     <>
+      <ResumeTest />
       <div>
         <Download pdfSrc={pdfSrc} darkMode={darkMode} />
       </div>
