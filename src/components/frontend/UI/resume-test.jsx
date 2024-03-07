@@ -1545,196 +1545,220 @@ function ResumeTest() {
         <div>
             <div id="pf1" className="pf w0 h0" data-page-no="1">
                 <div className="pc pc1 w0 h0">
-                <img className="bi x0 y0 w1 h1" alt="" src="/resume/pictures/template.png"/>
-                <div className="c x0 y1 w2 h0">
-                <div className="t m0 x1 h2 y2 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y3 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y4 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y5 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y6 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y7 ff1 fs0 fc0 sc0 ls7 wsc"> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> </div>
-                <div className="t m0 x2 h2 y8 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x2 h2 y9 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x3 h2 ya ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x2 h2 yb ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 yc ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x1 h2 yd ff1 fs0 fc1 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 ye ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 yf ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x1 h2 y10 ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x1 h2 y11 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y12 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y13 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y14 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y15 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y16 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y17 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y18 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y19 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1a ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1b ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1c ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1d ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1e ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y1f ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y20 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y21 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h2 y22 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
-                <div className="t m0 x1 h3 y23 ff2 fs0 fc0 sc0 ls7 wsc"> </div>
-            </div>
-            <div className="c x4 y24 w3 h4">
-                <div className="t m0 x5 h5 y25 ff3 fs0 fc2 sc0 ls7 wsc">O<span className="_ _1"> </span>B<span className="_ _1"> </span>J<span className="_ _1"> </span>E<span className="_ _1"> </span>C<span className="_ _1"> </span>T<span className="_ _1"> </span>I<span className="_ _1"> </span>V<span className="_ _1"> </span>E<span className="_ _1"> </span> </div>
-            </div>
-            <div className="c x4 y26 w4 h6">
-                <div className="t m0 x5 h7 y27 ff4 fs1 fc2 sc0 ls7 wsc">Seeking <span className="_ _2"></span>a dynamic role that </div>
-                <div className="t m0 x5 h7 y28 ff4 fs1 fc2 sc0 ls7 wsc">capitalizes on my r<span className="_ _2"></span>esourcefulne<span className="_ _2"></span>ss to </div>
-                <div className="t m0 x5 h7 y29 ff4 fs1 fc2 sc0 ls7 wsc">tackle challeng<span className="_ _2"></span>es, allowing<span className="_ _2"></span> me to </div>
-                <div className="t m0 x5 h7 y2a ff4 fs1 fc2 sc0 ls7 wsc">continuously learn an<span className="_ _2"></span>d acquire<span className="_ _2"></span> </div>
-                <div className="t m0 x5 h7 y2b ff4 fs1 fc2 sc0 ls7 wsc">valuable ex<span className="_ _2"></span>perience <span className="_ _2"></span>in a professional </div>
-                <div className="t m0 x5 h7 y2c ff4 fs1 fc2 sc0 ls7 wsc">setting.  </div>
-            </div>
-            <div className="c x6 y2d w5 h8">
-                <div className="t m0 x5 h7 y2e ff4 fs1 fc2 sc0 ls7 wsc">rileylawson00@g<span className="_ _2"></span>mail.com </div>
-                <div className="t m0 x5 h7 y2f ff4 fs1 fc2 sc0 ls7 ws0">515-<span className="ls0 ws1">657</span><span className="wsc">-3605 </span></div>
-                <div className="t m0 x5 h7 y30 ff4 fs1 fc2 sc0 ls7 ws0">linkedin/in/rile<span className="_ _2"></span>y-lawson-</div>
-                <div className="t m0 x5 h7 y31 ff4 fs1 fc2 sc0 ls7 wsc">a7a65b203<span className="_ _2"></span> </div>
-                <div className="t m0 x5 h7 y32 ff4 fs1 fc2 sc0 ls7 ws0">github.com/tech<span className="_ _2"></span>180</div></div>
-                <div className="c x6 y33 w6 h9"><div className="t m0 x7 h2 y34 ff1 fs0 fc0 sc0 ls7 wsc">  </div>
-                <div className="t m0 x5 h2 y35 ff1 fs0 fc2 sc0 ls7 wsc">riley.lawsonserver.org </div>
-            </div>
-            <div className="c x8 y36 w7 ha">
-                <div className="t m0 x5 hb y37 ff3 fs0 fc2 sc0 ls7 ws2">C<span className="_"> </span>O<span className="_"> </span>N<span className="_"> </span>T<span className="_"> </span>A<span className="_"> </span>C<span className="_ _3"> </span>T<span className="_ _1"> </span><span className="ff2 fs2 wsc"> </span></div>
-            </div>
-            <div className="c x9 y38 w8 hc">
-                <div className="t m0 x5 hd y39 ff5 fs0 fc0 sc1 ls7 wsc">E<span className="_"> </span>D<span className="_"> </span>U<span className="_ _4"> </span>C<span className="_"> </span>A<span className="_"> </span>T<span className="_ _4"> </span>I<span className="_"> </span>O<span className="_ _4"> </span>N<span className="_"> </span> </div>
-            </div>
-            <div className="c xa y3a w9 he">
-                <div className="t m0 x5 h7 y3b ff4 fs1 fc3 sc0 ls7 wsc">I<span className="_ _5"> </span>O<span className="_ _5"> </span>W<span className="_ _5"> </span>A<span className="_ _5"> </span> <span className="_ _5"> </span>S<span className="_ _5"> </span>T<span className="_ _5"> </span>A<span className="_ _5"> </span>T<span className="_ _5"> </span>E<span className="_ _5"> </span> <span className="_ _5"> </span>U<span className="_ _5"> </span>N<span className="_ _5"> </span>I<span className="_ _5"> </span>V<span className="_ _5"> </span>E<span className="_ _5"> </span>R<span className="_ _5"> </span>S<span className="_ _5"> </span>I<span className="_ _5"> </span>T<span className="_ _5"> </span>Y<span className="_ _6"> </span> <span className="_ _5"> </span><span className="ls8">| </span><span className="fc4">A<span className="_ _2"></span>ugust 2019 <span className="ff6 ls1">–</span> Decembe<span className="_ _2"></span>r 2023</span>  </div>
-                <div className="t m0 x5 h7 y3c ff4 fs1 fc4 sc0 ls7 wsc">B.S. Software Engine<span className="_ _2"></span>ering; <span className="_ _2"></span>Minor in Cybersec<span className="_ _2"></span>urity<span className="ls2">     </span>GPA: 2.73<span className="_ _2"></span><span className="fc3"> </span></div>
-                <div className="t m0 x5 h7 y3d ff4 fs1 fc3 sc0 ls7 wsc">D<span className="_ _5"> </span>M<span className="_ _5"> </span>A<span className="_ _5"> </span>C<span className="_ _5"> </span>C<span className="_ _5"> </span> <span className="_ _5"> </span>|<span className="_ _5"> </span> <span className="_ _5"> </span><span className="fc4">July 2020 <span className="ff6 ls1">–</span> A<span className="_ _2"></span>ugust 2021 </span></div>
-                <div className="t m0 x5 h7 y3e ff4 fs1 fc3 sc0 ls7 wsc">M<span className="_ _5"> </span>A<span className="_ _5"> </span>D<span className="_ _5"> </span>R<span className="_ _5"> </span>I<span className="_ _5"> </span>D<span className="_ _5"> </span> <span className="_ _5"> </span>H<span className="_ _5"> </span>I<span className="_ _5"> </span>G<span className="_ _5"> </span>H<span className="_ _5"> </span> <span className="_ _5"> </span>S<span className="_ _5"> </span>C<span className="_ _5"> </span>H<span className="_ _5"> </span>O<span className="_ _5"> </span>O<span className="_ _5"> </span>L<span className="_ _5"> </span> <span className="_ _6"> </span><span className="ls8">| </span><span className="fc4">Augus<span className="_ _2"></span>t <span className="ls9">2014 <span className="ff6 ls1">–</span></span> M<span className="_ _2"></span>ay 2019<span className="_ _2"></span></span> </div>
-                <div className="t m0 x5 h7 y3f ff4 fs1 f
-                c3 sc0 ls7 wsc">D<span className="_ _5"> </span>M<span className="_ _5"> </span>A<span className="_ _5"> </span>C<span className="_ _5"> </span>C<span className="_ _5"> </span> <span className="_ _5"> </span><span className="ls8">| <span className="_ _2"></span></span><span className="fc4">August 2017 <span className="ff6 ls1">–</span> May <span className="_ _2"></span>2019  </span></div>
-                <div className="t m0 x5 h7 y40 ff4 fs1 fc4 sc0 ls7 wsc">Graduated high s<span className="_ _2"></span>chool with 18 colleg<span className="_ _2"></span>e credits<span className="_ _2"></span> </div><div className="t m0 x5 h7 y41 ff4 fs1 fc4 sc0 ls7 wsc"> </div>
-                <div className="t m0 x5 h7 y42 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x5 h7 y43 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x5 h7 y44 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x5 h7 y45 ff4 fs1 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x5 hf y46 ff7 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-                <div className="t m0 x5 hf y47 ff7 fs0 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
-            </div>
-            <div className="c x9 y48 wa h10">
-                <div className="t m0 x5 hd y49 ff5 fs0 fc0 sc1 ls7 wsc">E<span className="_"> </span>X<span className="_ _4"> </span>P<span className="_"> </span>E<span className="_"> </span>R<span className="_"> </span>I<span className="_ _4"> </span>E<span className="_"> </span>N<span className="_ _4"> </span>C<span className="_"> </span>E<span className="_"> </span> </div>
-            </div>
-            <div className="c xb y4a wb h11">
-                <div className="t m0 xc h12 y4b ff8 fs3 fc0 sc0 ls7 wsc">R<span className="_ _4"></span>I<span className="_ _7"></span>L<span className="_ _4"></span>E<span className="_ _7"></span>Y<span className="_ _4"></span> <span className="_ _4"></span>J<span className="_ _7"></span>.<span className="_ _4"></span> <span className="_ _4"></span>L<span className="_ _7"></span>A<span className="_ _4"></span>W<span className="_ _7"></span>S<span className="_ _4"></span>O<span className="_ _7"></span>N<span className="_ _7"></span><span className="ff7 fs4"> </span></div></div>
-                <div className="c x4 y4c wc h13">
-                    <div className="t m0 x5 h5 y4d ff3 fs0 fc2 sc0 ls7 wsc">T<span className="_ _1"> </span>E<span className="_ _1"> </span>C<span className="_ _1"> </span>H<span className="_ _1"> </span>N<span className="_ _1"> </span>O<span className="_ _1"> </span>L<span className="_ _1"> </span>O<span className="_ _1"> </span>G<span className="_ _1"> </span>Y<span className="_ _1"> </span>/<span className="_ _1"> </span> </div>
-                    <div className="t m0 x5 h5 y4e ff3 fs0 fc2 sc0 ls7 wsc">L<span className="_ _1"> </span>A<span className="_ _1"> </span>N<span className="_ _1"> </span>G<span className="_ _1"> </span>U<span className="_ _1"> </span>A<span className="_ _1"> </span>G<span className="_ _1"> </span>E<span className="_ _1"> </span>S<span className="_ _1"> </span> </div>
-                </div>
-                <div className="c x4 y4f wd h14">
-                    <div className="t m0 x5 h15 y50 ff4 fs5 fc2 sc0 ls7 wsc">Linux </div>
-                    <div className="t m0 x5 h15 y51 ff4 fs5 fc2 sc0 ls7 wsc">Java </div>
-                    <div className="t m0 x5 h15 y52 ff4 fs5 fc2 sc0 ls7 wsc">Kotlin </div>
-                    <div className="t m0 x5 h15 y53 ff4 fs5 fc2 sc0 ls7 wsc">JavaScript </div>
-                    <div className="t m0 x5 h15 y54 ff4 fs5 fc2 sc0 ls7 wsc">React </div>
-                    <div className="t m0 x5 h15 y55 ff4 fs5 fc2 sc0 ls7 wsc">Node.js </div>
-                    <div className="t m0 x5 h15 y56 ff4 fs5 fc2 sc0 lsa ws3">C#<span className="ls7 wsc"> </span></div>
-                    <div className="t m0 x5 h15 y57 ff4 fs5 fc2 sc0 ls7 wsc">HTML/CSS </div>
-                    <div className="t m0 x5 h15 y58 ff4 fs5 fc2 sc0 ls7 wsc">Python </div>
-                    <div className="t m0 x5 h15 y59 ff4 fs5 fc2 sc0 ls7 wsc">Shell </div>
-                    <div className="t m0 x5 h15 y5a ff4 fs5 fc2 sc0 ls7 wsc">C </div>
-                    <div className="t m0 x5 h15 y5b ff4 fs5 fc2 sc0 ls7 wsc">SQL/mySQL </div>
-                    <div className="t m0 x5 h15 y5c ff4 fs5 fc2 sc0 ls7 wsc"> </div>
-                </div>
-                <div className="c xd y5d we h16">
-                    <div className="t m0 xe h17 y5e ff8 fs6 fc2 sc0 ls7 wsc">R|L </div>
-                </div>
-                <div className="c xf y5f wf h18">
-                    <div className="t m0 x5 h7 y60 ff5 fs1 fc3 sc2 ls7 wsc">S<span className="_ _5"> </span>o<span className="_ _5"> </span>f<span className="_ _5"> </span>t<span className="_ _5"> </span>w<span className="_ _5"> </span>a<span className="_ _5"> </span>r<span className="_ _5"> </span>e<span className="_ _5"> </span> <span className="_ _5"> </span>E<span className="_ _5"> </span>n<span className="_ _5"> </span>g<span className="_ _5"> </span>i<span className="_ _5"> </span>n<span className="_ _5"> </span>e<span className="_ _5"> </span>e<span className="_ _5"> </span>r<span className="_ _5"> </span>i<span className="_ _5"> </span>n<span className="_ _5"> </span>g<span className="_ _5"> </span> <span className="_ _5"> </span>I<span className="_ _5"> </span>n<span className="_ _5"> </span>t<span className="_ _5"> </span>e<span className="_ _5"> </span>r<span className="_ _5"> </span>n<span className="_"> </span><span className="ff4 sc0 ls2"> <span className="lsb">| <span className="fc4 ls7">iSO-FORM LLC<span className="fc0"> </span></span></span></span></div>
-                    <div className="t m0 x5 h7 y61 ff9 fs1 fc3 sc0 ls3 ws4">2022<span className="ls2 wsc"> - </span>2023<span className="ff4 fc0 ls7 wsc"> </span></div>
-                    <div className="t m0 x5 h7 y62 ff4 fs1 fc0 sc0 lsc wsc">A <span className="ls7">Company dedicated to c<span className="_ _2"></span>reating memor<span className="_ _2"></span>able, immersive<span className="_ _2"></span> <span className="_ _2"></span>medical </span></div>
-                    <div className="t m0 x5 h7 y63 ff4 fs1 fc0 sc0 ls7 wsc">experienc<span className="_ _2"></span>es through virtual reality, educ<span className="_ _2"></span>ational gaming<span className="_ _2"></span>, real<span className="_ _2"></span>-time 3D, and </div>
-                    <div className="t m0 x5 h7 y64 ff4 fs1 fc0 sc0 ls7 wsc">augmented reality<span className="_ _2"></span> </div>
-                    <div className="t m0 x5 h19 y65 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Created browser<span className="_ _2"></span>-based applic<span className="_ _2"></span>ations in both JavaSc<span className="_ _2"></span>ript and C#<span className="_ _2"></span> </span></span></div><div className="t m0 x5 h19 y66 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Working with g<span className="_ _2"></span>ame engines <span className="_ _2"></span>to create UX <span className="_ _2"></span>like expe<span className="_ _2"></span>riences utilizing<span className="_ _2"></span> Unity </span></span></div>
-                    <div className="t m0 x10 h7 y67 ff4 fs1 fc0 sc0 ls7 wsc">and PlayCanvas<span className="_ _2"></span> </div>
-                    <div className="t m0 x5 h19 y68 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Created an automated s<span className="_ _2"></span>creenshot c<span className="_ _2"></span>ontroller<span className="_ _2"></span> </span></span></div>
-                    <div className="t m0 x5 h19 y69 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Team and client-bas<span className="_ _2"></span>ed collabora<span className="_ _2"></span>tion </span></span></div>
-                    <div className="t m0 x5 h1a y6a ff5 fs7 fc3 sc2 ls7 wsc"> </div>
-                    <div className="t m0 x5 h7 y6b ff5 fs1 fc3 sc2 ls7 ws6">F<span className="_"> </span>o<span className="_"> </span>u<span className="_"> </span>n<span className="_"> </span>d<span className="_"> </span>e<span className="_"> </span>r<span className="_"> </span><span className="ff4 sc0 wsc"> <span className="ls3">| </span><span className="ff6 fc4">Lawson’s Mowing<span className="_ _2"></span> Service</span><span className="fc0"> </span></span></div>
-                    <div className="t m0 x5 h7 y6c ff9 fs1 fc3 sc0 ls3 ws4">2012<span className="ls2 wsc"> - </span>2023<span className="ff4 fc0 ls7 wsc"> </span></div>
-                    <div className="t m0 x5 h7 y6d ff4 fs1 fc0 sc0 ls7 wsc">A skillful entre<span className="_ _2"></span>preneur of a small busines<span className="_ _2"></span>s with demonstrated abi<span className="_ _2"></span>lity to </div>
-                    <div className="t m0 x5 h7 y6e ff4 fs1 fc0 sc0 ls7 wsc">success<span className="_ _2"></span>fully own, grow, and operate a busine<span className="_ _2"></span>ss venture<span className="_ _2"></span> </div>
-                    <div className="t m0 x5 h19 y6f ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">High quality mowing<span className="_ _2"></span> services </span></span></div>
-                    <div className="t m0 x5 h19 y70 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Operation of and main<span className="_ _2"></span>tenance <span className="_ _2"></span>of lawn equipment<span className="_ _2"></span> </span></span></div>
-                    <div className="t m0 x5 h19 y71 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Client account manageme<span className="_ _2"></span>nt<span className="_ _2"></span> </span></span></div>
-                    <div className="t m0 x5 h19 y72 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Delegation and direc<span className="_ _2"></span>tion to others<span className="_ _2"></span> </span></span></div>
-                </div>
-                <div className="c xb y73 w10 h1b">
-                    <div className="t m0 x5 h7 y74 ff4 fs1 fc3 sc0 ls9 ws7">20<span className="ls0 ws1">23<span className="ls7 wsc"> </span></span></div>
-                    <div className="t m0 x5 hf y75 ff7 fs0 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                    <img className="bi x0 y0 w1 h1" alt="" src="/resume/pictures/template.png"/>
+                    {/* Potentially Nothing*/ }
+                    <div className="c x0 y1 w2 h0">
+                        <div className="t m0 x1 h2 y2 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y3 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y4 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y5 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y6 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y7 ff1 fs0 fc0 sc0 ls7 wsc"> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> <span className="_ _0"> </span> </div>
+                        <div className="t m0 x2 h2 y8 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x2 h2 y9 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x3 h2 ya ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x2 h2 yb ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 yc ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x1 h2 yd ff1 fs0 fc1 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 ye ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 yf ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x1 h2 y10 ff1 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x1 h2 y11 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y12 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y13 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y14 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y15 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y16 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y17 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y18 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y19 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1a ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1b ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1c ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1d ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1e ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y1f ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y20 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y21 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h2 y22 ff1 fs0 fc0 sc0 ls7 wsc"> </div>
+                        <div className="t m0 x1 h3 y23 ff2 fs0 fc0 sc0 ls7 wsc"> </div>
+                    </div>
+                    <div className="c x4 y24 w3 h4">
+                        <div className="t m0 x5 h5 y25 ff3 fs0 fc2 sc0 ls7 wsc">O B J E C T I V E</div>
+                    </div>
+                    <div className="c x4 y26 w4 h6">
+                        <div className="t m0 x5 h7 y27 ff4 fs1 fc2 sc0 ls7 wsc">Seeking a dynamic role that </div>
+                        <div className="t m0 x5 h7 y28 ff4 fs1 fc2 sc0 ls7 wsc">capitalizes on my resourcefulness to </div>
+                        <div className="t m0 x5 h7 y29 ff4 fs1 fc2 sc0 ls7 wsc">tackle challenges, allowing me to </div>
+                        <div className="t m0 x5 h7 y2a ff4 fs1 fc2 sc0 ls7 wsc">continuously learn and acquire </div>
+                        <div className="t m0 x5 h7 y2b ff4 fs1 fc2 sc0 ls7 wsc">valuable experience in a professional </div>
+                        <div className="t m0 x5 h7 y2c ff4 fs1 fc2 sc0 ls7 wsc">setting.  </div>
+                    </div>
+                    <div className="c x6 y2d w5 h8">
+                        <div className="t m0 x5 h7 y2e ff4 fs1 fc2 sc0 ls7 wsc">rileylawson00@gmail.com </div>
+                        <div className="t m0 x5 h7 y2f ff4 fs1 fc2 sc0 ls7 ws0">515-657-3605</div>
+                        <div className="t m0 x5 h7 y30 ff4 fs1 fc2 sc0 ls7 ws0">linkedin/in/riley-lawson-</div>
+                        <div className="t m0 x5 h7 y31 ff4 fs1 fc2 sc0 ls7 wsc">a7a65b203</div>
+                        <div className="t m0 x5 h7 y32 ff4 fs1 fc2 sc0 ls7 ws0">github.com/tech180</div></div>
+                        <div className="c x6 y33 w6 h9">
+                            <div className="t m0 x7 h2 y34 ff1 fs0 fc0 sc0 ls7 wsc">  
+                        </div>
+                        <div className="t m0 x5 h2 y35 ff1 fs0 fc2 sc0 ls7 wsc">riley.lawsonserver.org</div>
+                    </div>
+                    <div className="c x8 y36 w7 ha">
+                        <div className="t m0 x5 hb y37 ff3 fs0 fc2 sc0 ls7 ws2">C O N T A C T <span className="ff2 fs2 wsc"> </span></div>
+                    </div>
+                    <div className="c x9 y38 w8 hc">
+                        <div className="t m0 x5 hd y39 ff5 fs0 fc0 sc1 ls7 wsc">E D U C A T I O N</div>
+                    </div>
+                    <div className="c xa y3a w9 he">
+                        <div className="t m0 x5 h7 y3b ff4 fs1 fc3 sc0 ls7 wsc">I O W A   S T A T E   U N I V E R S I T Y <span className="ls8"> | </span><span className="fc4">August 2019 – December 2023</span>  </div>
+                        <div className="t m0 x5 h7 y3c ff4 fs1 fc4 sc0 ls7 wsc">B.S. Software Engineering; Minor in Cybersecurity  GPA: 2.73</div>
+                        <div className="t m0 x5 h7 y3d ff4 fs1 fc3 sc0 ls7 wsc">D M A C C   |  <span className="fc4">July 2020 – August 2021 </span></div>
+                        <div className="t m0 x5 h7 y3e ff4 fs1 fc3 sc0 ls7 wsc">M A D R I D   H I G H   S C H O O L | <span className="fc4">August 2014 – May 2019</span></div>
+                        <div className="t m0 x5 h7 y3f ff4 fs1 fc3 sc0 ls7 wsc">D M A C C  | <span className="fc4">August 2017 – May 2019  </span></div>
+                        <div className="t m0 x5 h7 y40 ff4 fs1 fc4 sc0 ls7 wsc">Graduated high school with 18 college credits </div>
+                        
+                        {/* Potentially Nothing*/ }
+                        <div className="t m0 x5 h7 y41 ff4 fs1 fc4 sc0 ls7 wsc"></div>
+                        <div className="t m0 x5 h7 y42 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x5 h7 y43 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x5 h7 y44 ff4 fs1 fc4 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x5 h7 y45 ff4 fs1 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x5 hf y46 ff7 fs0 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                        <div className="t m0 x5 hf y47 ff7 fs0 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                    </div>
+                    <div className="c x9 y48 wa h10">
+                        <div className="t m0 x5 hd y49 ff5 fs0 fc0 sc1 ls7 wsc">E X P E R I E N C E</div>
+                    </div>
+                    {/* FIXME */}
+                    <div className="c xb y4a wb h11">
+                        <div className="t m0 xc h12 y4b ff8 fs3 fc0 sc0 ls7 wsc">RILEY J. LAWSON</div>
+                    </div>
+                    <div className="c x4 y4c wc h13">
+                        <div className="t m0 x5 h5 y4d ff3 fs0 fc2 sc0 ls7 wsc">T E C H N O L O G Y /</div>
+                        <div className="t m0 x5 h5 y4e ff3 fs0 fc2 sc0 ls7 wsc">L A N G U A G E S</div>
+                    </div>
+                    <div className="c x4 y4f wd h14">
+                        <div className="t m0 x5 h15 y50 ff4 fs5 fc2 sc0 ls7 wsc">Linux </div>
+                        <div className="t m0 x5 h15 y51 ff4 fs5 fc2 sc0 ls7 wsc">Java </div>
+                        <div className="t m0 x5 h15 y52 ff4 fs5 fc2 sc0 ls7 wsc">Kotlin </div>
+                        <div className="t m0 x5 h15 y53 ff4 fs5 fc2 sc0 ls7 wsc">JavaScript </div>
+                        <div className="t m0 x5 h15 y54 ff4 fs5 fc2 sc0 ls7 wsc">React </div>
+                        <div className="t m0 x5 h15 y55 ff4 fs5 fc2 sc0 ls7 wsc">Node.js </div>
+                        <div className="t m0 x5 h15 y56 ff4 fs5 fc2 sc0 lsa ws3">C#<span className="ls7 wsc"> </span></div>
+                        <div className="t m0 x5 h15 y57 ff4 fs5 fc2 sc0 ls7 wsc">HTML/CSS </div>
+                        <div className="t m0 x5 h15 y58 ff4 fs5 fc2 sc0 ls7 wsc">Python </div>
+                        <div className="t m0 x5 h15 y59 ff4 fs5 fc2 sc0 ls7 wsc">Shell </div>
+                        <div className="t m0 x5 h15 y5a ff4 fs5 fc2 sc0 ls7 wsc">C </div>
+                        <div className="t m0 x5 h15 y5b ff4 fs5 fc2 sc0 ls7 wsc">SQL/mySQL </div>
+                        <div className="t m0 x5 h15 y5c ff4 fs5 fc2 sc0 ls7 wsc"> </div>
+                    </div>
+                    <div className="c xd y5d we h16">
+                        <div className="t m0 xe h17 y5e ff8 fs6 fc2 sc0 ls7 wsc">R|L </div>
+                    </div>
+                    <div className="c xf y5f wf h18">
+                        <div className="t m0 x5 h7 y60 ff5 fs1 fc3 sc2 ls7 wsc">S o f t w a r e  E n g i n e e r i n g  I n t e r n<span className="ff4 sc0 ls2"> |  <span className="fc4 ls7">iSO-FORM LLC</span></span></div>
+                        <div className="t m0 x5 h7 y61 ff9 fs1 fc3 sc0 ls3 ws4">2022<span className="ls2 wsc"> - </span>2023</div>
+                        <div className="t m0 x5 h7 y62 ff4 fs1 fc0 sc0 lsc wsc">A Company dedicated to creating memorable, immersive medical </div>
+                        <div className="t m0 x5 h7 y63 ff4 fs1 fc0 sc0 ls7 wsc">experiences through virtual reality, educational gaming, real<span className="_ _2"></span>-time 3D, and </div>
+                        <div className="t m0 x5 h7 y64 ff4 fs1 fc0 sc0 ls7 wsc">augmented reality</div>
+                        <div className="t m0 x5 h19 y65 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Created browser-based applications in both JavaScript and C#</span></span></div>
+                        <div className="t m0 x5 h19 y66 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Working with game engines to create UX like experiences utilizing Unity </span></span></div>
+                        <div className="t m0 x10 h7 y67 ff4 fs1 fc0 sc0 ls7 wsc">and PlayCanvas</div>
+                        <div className="t m0 x5 h19 y68 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Created an automated screenshot controller</span></span></div>
+                        <div className="t m0 x5 h19 y69 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Team and client-based collaboration </span></span></div>
+                        
+                        {/* Potentially Nothing*/ }
+                        <div className="t m0 x5 h1a y6a ff5 fs7 fc3 sc2 ls7 wsc"></div>
+
+                        {/* "_ _1" "_ _2" "lso wsl" "wsc" _ "_ _4" "_ _5" "_ _6" "ls8" "ls2" "ff6 ls1" "ls9" "lsb" "ls7" "ls0 ws1" "ls7 wsc" "ls3" "ff4 fc0 ls7 wsc"
+                            "ff7 fs0 wsc" "ff6 ls1" "_ _8" "_ _9" "fc0 wsc" "ff4 sc0 ls2 wsc" "lsd ws9" "ls7 ws6" "ff4 sc0 ls2 wsc" "ff7 fs4"
+                        */}
+
+                        <div className="t m0 x5 h7 y6b ff5 fs1 fc3 sc2 ls7 ws6">F o u n d e r <span className="ff4 sc0 wsc"> | <span className="ff6 fc4">Lawson’s Mowing<span className="_ _2"></span> Service</span><span className="fc0"> </span></span></div>
+                        <div className="t m0 x5 h7 y6c ff9 fs1 fc3 sc0 ls3 ws4">2012<span className="ls2 wsc"> - </span>2023<span className="ff4 fc0 ls7 wsc"> </span></div>
+                        <div className="t m0 x5 h7 y6d ff4 fs1 fc0 sc0 ls7 wsc">A skillful entrepreneur of a small business with demonstrated ability to </div>
+                        <div className="t m0 x5 h7 y6e ff4 fs1 fc0 sc0 ls7 wsc">successfully own, grow, and operate a business venture</div>
+                        <div className="t m0 x5 h19 y6f ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">High quality mowing services</span></span></div>
+                        <div className="t m0 x5 h19 y70 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Operation of and maintenance of lawn equipment</span></span></div>
+                        <div className="t m0 x5 h19 y71 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Client account management</span></span></div>
+                        <div className="t m0 x5 h19 y72 ffa fs1 fc0 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Delegation and direction to others</span></span></div>
+                    </div>
+                    <div className="c xb y73 w10 h1b">
+                        <div className="t m0 x5 h7 y74 ff4 fs1 fc3 sc0 ls9 ws7">2023</div>
+                        <div className="t m0 x5 hf y75 ff7 fs0 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
                     </div>
                     <div className="c xb y76 w11 h1c">
-                        <div className="t m0 x5 h7 y77 ff4 fs1 fc3 sc0 ls9 ws7">20<span className="ls0 ws1">21<span className="ls7 wsc"> </span></span></div>
+                        <div className="t m0 x5 h7 y77 ff4 fs1 fc3 sc0 ls9 ws7">2021</div>
                         <div className="t m0 x5 hf y78 ff7 fs0 fc3 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
                     </div>
                     <div className="c xb y79 w12 h1d">
-                        <div className="t m0 x5 hf y7a ff4 fs1 fc3 sc0 ls7 ws0">2019<span className="ff7 fs0 wsc"> </span></div>
+                        <div className="t m0 x5 hf y7a ff4 fs1 fc3 sc0 ls7 ws0">2019</div>
                     </div>
                     <div className="c xb y7b w13 h1e">
-                        <div className="t m0 x5 hf y7c ff4 fs1 fc3 sc0 ls7 ws0">2019<span className="ff7 fs0 wsc"> </span></div>
+                        <div className="t m0 x5 hf y7c ff4 fs1 fc3 sc0 ls7 ws0">2019</div>
                     </div>
                     <div className="c x9 y7d w14 h1f">
-                        <div className="t m0 x5 hd y7e ff5 fs0 fc0 sc1 ls7 wsc">E<span className="_"> </span>X<span className="_"> </span>T<span className="_ _4"> </span>R<span className="_"> </span>A<span className="_ _4"> </span> <span className="_"> </span>C<span className="_"> </span>U<span className="_"> </span>R<span className="_ _4"> </span>R<span className="_"> </span>I<span className="_"> </span>C<span className="_ _4"> </span>U<span className="_"> </span>L<span className="_ _4"> </span>A<span className="_"> </span>R<span className="_"> </span>/<span className="_ _4"> </span>L<span className="_"> </span>E<span className="_"> </span>A<span className="_ _4"> </span>D<span className="_"> </span>E<span className="_"> </span>R<span className="_ _4"> </span>S<span className="_"> </span>H<span className="_"> </span>I<span className="_ _4"> </span>P<span className="_ _8"> </span> </div>
+                        <div className="t m0 x5 hd y7e ff5 fs0 fc0 sc1 ls7 wsc">E X T R A  C U R R I C U L A R / L E A D E R S H I P</div>
                     </div>
+
                     <div className="c xf y7f w15 h20">
-                        <div className="t m0 x5 h19 y80 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Computer Scienc<span className="_ _2"></span>e &amp; Software Enginee<span className="_ _2"></span>ring Club, Member<span className="_ _2"></span> <span className="_ _2"></span><span className="ls3">| </span>January 2021 <span className="ff6 ls1">–</span> </span></span></div>
-                        <div className="t m0 x10 h7 y81 ff4 fs1 fc3 sc0 ls7 wsc">December <span className="_ _2"></span>2023 </div>
-                        <div className="t m0 x5 h19 y82 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Web Deve<span className="_ _2"></span>lopment Club, Member<span className="_ _2"></span> <span className="ls3">| </span>Aug<span className="_ _2"></span>ust 2021 <span className="ff6 ls1">–</span> Dec<span className="_ _2"></span>ember 2023 </span></span></div>
-                        <div className="t m0 x5 h19 y83 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Ethics of Technology <span className="_ _2"></span>Club, Membe<span className="_ _2"></span>r <span className="ls3">| <span className="_ _2"></span></span>August 2021 <span className="ff6 ls1">–</span> May 2022<span className="_ _2"></span> </span></span></div>
-                        <div className="t m0 x5 h19 y84 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Linux Club, Member <span className="_ _2"></span><span className="ls3">| </span>August 2019 <span className="_ _2"></span><span className="ff6 ls1">–</span> May 2020 </span></span></div>
-                        <div className="t m0 x5 h19 y85 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Pokémon Club, Treasure<span className="_ _2"></span>r | Aug<span className="_ _2"></span>ust 2019 - D<span className="_ _2"></span>ecember 2023 </span></span></div>
-                        <div className="t m0 x5 h19 y86 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Iowa State Statesmen Cho<span className="_ _2"></span>ir <span className="_ _2"></span><span className="ls3">| </span>August 2019 <span className="ff6 ls1">–</span> May 2023<span className="_ _2"></span> </span></span></div>
+                        <div className="t m0 x5 h19 y80 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Computer Science &amp; Software Engineering Club, Member | January 2021 – </span></span></div>
+                        <div className="t m0 x10 h7 y81 ff4 fs1 fc3 sc0 ls7 wsc">December 2023 </div>
+                        <div className="t m0 x5 h19 y82 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Web Development Club, Member | August 2021 – December 2023 </span></span></div>
+                        <div className="t m0 x5 h19 y83 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Ethics of Technology Club, Member | August 2021 – May 2022 </span></span></div>
+                        <div className="t m0 x5 h19 y84 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Linux Club, Member | August 2019 – May 2020 </span></span></div>
+                        <div className="t m0 x5 h19 y85 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Pokémon Club, Treasurer | August 2019 - December 2023 </span></span></div>
+                        <div className="t m0 x5 h19 y86 ffa fs1 fc3 sc0 ls7 ws5">•<span className="ffb ls4 wsc"> <span className="ff4 ls7">Iowa State Statesmen Choir | August 2019 – May 2023</span></span></div>
+                        
+                        {/* Potentially Nothing*/ }
                         <div className="t m0 x10 h7 y87 ff4 fs1 fc3 sc0 ls7 wsc"> </div>
+
                     </div>
                     <div className="c x9 y88 wa h21">
-                        <div className="t m0 x5 hd y89 ff5 fs0 fc0 sc1 ls7 wsc">P<span className="_"> </span>R<span className="_"> </span>O<span className="_ _4"> </span>J<span className="_"> </span>E<span className="_"> </span>C<span className="_ _4"> </span>T<span className="_"> </span>S<span className="_"> </span> </div>
+                        <div className="t m0 x5 hd y89 ff5 fs0 fc0 sc1 ls7 wsc">P R O J E C T S</div>
                     </div>
                     <div className="c x11 y8a w16 h22">
-                        <div className="t m0 x5 h7 y8b ff5 fs1 fc3 sc2 ls7 wsc">A<span className="_ _5"> </span>u<span className="_ _5"> </span>t<span className="_ _5"> </span>o<span className="_ _5"> </span>n<span className="_ _5"> </span>o<span className="_ _5"> </span>m<span className="_ _5"> </span>o<span className="_ _5"> </span>u<span className="_ _5"> </span>s<span className="_ _5"> </span> <span className="_ _5"> </span>R<span className="_ _5"> </span>o<span className="_ _5"> </span>b<span className="_ _5"> </span>o<span className="_ _5"> </span>t<span className="_"> </span><span className="ff4 sc0"> <span className="_ _9"></span><span className="ls3">| <span className="fc4 ls7 ws0">Roomba<span className="fc0 wsc"> </span></span></span></span></div>
-                        <div className="t m0 x5 h7 y8c ff5 fs1 fc0 sc1 ls7 wsc">A<span className="_ _5"> </span>S<span className="_ _5"> </span>C<span className="_ _5"> </span>I<span className="_ _5"> </span>I<span className="_ _5"> </span> <span className="_ _5"> </span>C<span className="_ _5"> </span>a<span className="_ _5"> </span>n<span className="_ _5"> </span>v<span className="_ _5"> </span>a<span className="_ _5"> </span>s<span className="_ _6"> </span><span className="ff4 sc0"> <span className="ls3">| </span><span className="fc5">Art Canvas based on A<span className="_ _2"></span>SCII characters<span className="_ _2"></span> </span></span></div>
-                        <div className="t m0 x5 h7 y8d ff5 fs1 fc0 sc1 ls7 wsc">P<span className="_ _5"> </span>r<span className="_ _5"> </span>o<span className="_ _5"> </span>j<span className="_ _5"> </span>e<span className="_ _5"> </span>c<span className="_ _5"> </span>t<span className="_ _5"> </span> <span className="_ _5"> </span>R<span className="_ _5"> </span>e<span className="_ _5"> </span>l<span className="_ _5"> </span>i<span className="_ _5"> </span>n<span className="_ _5"> </span>e<span className="_"> </span><span className="ff4 sc0"> <span className="_ _9"></span><span className="ls3">| <span className="fc5 ls7">Smart phone App<span className="fc0"> </span></span></span></span></div>
-                        <div className="t m0 x5 h7 y8e ff5 fs1 fc0 sc1 ls7 wsc">B<span className="_ _5"> </span>a<span className="_ _5"> </span>n<span className="_ _5"> </span>k<span className="_ _5"> </span> <span className="_ _5"> </span>S<span className="_ _5"> </span>e<span className="_ _5"> </span>r<span className="_ _5"> </span>v<span className="_ _5"> </span>e<span className="_ _5"> </span>r<span className="_ _5"> </span><span className="ff4 sc0 ls2"> <span className="ls3">| <span className="fc5 ls7">Multi-<span className="_ _2"></span>threaded  </span></span></span></div>
-                        <div className="t m0 x5 h7 y8f ff5 fs1 fc0 sc1 ls7 wsc">V<span className="_ _5"> </span>e<span className="_ _5"> </span>h<span className="_ _5"> </span>i<span className="_ _5"> </span>c<span className="_ _5"> </span>l<span className="_ _5"> </span>e<span className="_ _5"> </span> <span className="_ _5"> </span>S<span className="_ _5"> </span>e<span className="_ _5"> </span>c<span className="_ _5"> </span>u<span className="_ _5"> </span>r<span className="_ _5"> </span>i<span className="_ _5"> </span>t<span className="_ _5"> </span>y<span className="_ _6"> </span><span className="ff4 sc0 ls5"> <span className="ls3">| <span className="fc5 ls7">Encrypting CAN Bus (Bac<span className="_ _2"></span>kwards Compatible with CAN<span className="_ _2"></span>FD) <span className="_ _2"></span> </span></span></span></div>
-                        <div className="t m0 x5 h7 y90 ff5 fs1 fc0 sc1 ls7 ws8">W<span className="_"> </span>e<span className="_"> </span>b<span className="_ _5"> </span>s<span className="_ _6"> </span>i<span className="_"> </span>t<span className="_"> </span>e<span className="_ _5"> </span><span className="ff4 sc0 ls2 wsc"> <span className="lsb">| <span className="_ _2"></span><span className="fc5 ls7">Developed<span className="_ _2"></span> with React  </span></span></span></div>
-                        <div className="t m0 x5 h7 y2b ff5 fs1 fc0 sc1 ls6">A<span className="lsd ws9">rc</span><span className="ls7 ws6">Z<span className="_"> </span>o<span className="_"> </span>n<span className="_"> </span>e<span className="_"> </span><span className="ff4 sc0 wsc"> <span className="ls3">| </span><span className="fc5">Arcade App<span className="_ _2"></span> configured with <span className="_ _2"></span>Google Firebase<span className="_ _2"></span> </span></span></span></div>
-                        <div className="t m0 x5 h7 y91 ff5 fs1 fc0 sc1 ls7 wsa">M<span className="_"> </span>u<span className="_"> </span>s<span className="_"> </span>i<span className="_"> </span>c<span className="_"> </span>i<span className="_"> </span>f<span className="_"> </span>y<span className="_"> </span><span className="ff4 sc0 ls2 wsc"> <span className="lsb">| <span className="fc5 ls7">Music App utilizing the <span className="_ _2"></span>Subsonic A<span className="_ _2"></span>PI  </span></span></span></div>
+                        <div className="t m0 x5 h7 y8b ff5 fs1 fc3 sc2 ls7 wsc">A u t o n o m o u s  R o b o t  |  <span className="fc4 ls7 ws0">Roomba</span></div>
+                        <div className="t m0 x5 h7 y8c ff5 fs1 fc0 sc1 ls7 wsc">A S C I I  C a n v a s  |  <span className="fc5">Art Canvas based on ASCII characters </span></div>
+                        <div className="t m0 x5 h7 y8d ff5 fs1 fc0 sc1 ls7 wsc">P r o j e c t  R e l i n e  |  <span className="fc5 ls7">Smart phone App<span className="fc0"> </span></span></div>
+                        <div className="t m0 x5 h7 y8e ff5 fs1 fc0 sc1 ls7 wsc">B a n k  S e r v e r  |  <span className="fc5 ls7">Multi-threaded  </span></div>
+                        <div className="t m0 x5 h7 y8f ff5 fs1 fc0 sc1 ls7 wsc">V e h i c l e  S e c u r i t y  | <span className="fc5 ls7">Encrypting CAN Bus (Backwards Compatible with CANFD)</span></div>
+                        <div className="t m0 x5 h7 y90 ff5 fs1 fc0 sc1 ls7 ws8">W e b s i t e   |  <span className="fc5 ls7">Developed with React </span></div>
+                        <div className="t m0 x5 h7 y2b ff5 fs1 fc0 sc1 ls7 ws8">A r c Z o n e  |  <span className="fc5">Arcade App configured with Google Firebase</span></div>
+                        <div className="t m0 x5 h7 y91 ff5 fs1 fc0 sc1 ls7 wsa">M u s i c i f y  |   <span className="fc5 ls7">Music App utilizing the Subsonic API</span></div>
+                        
+                        {/* Potentially Nothing*/ }
                         <div className="t m0 x5 h7 y92 ff4 fs1 fc5 sc0 ls7 wsc"> </div>
                         <div className="t m0 x5 h7 y93 ff4 fs1 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
                         <div className="t m0 x5 h7 y94 ff4 fs1 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
                         <div className="t m0 x5 h7 y95 ff4 fs1 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
                         <div className="t m0 x5 h7 y96 ff4 fs1 fc0 sc0 ls7 wsc"><span className="fc6 sc0"> </span></div>
+                    
                     </div>
                     <div className="c x4 y97 w4 h23">
-                        <div className="t m0 x5 h5 y98 ff3 fs0 fc2 sc0 ls7 wsc">S<span className="_ _1"> </span>K<span className="_ _1"> </span>I<span className="_ _1"> </span>L<span className="_ _1"> </span>L<span className="_ _1"> </span>S<span className="_ _1"> </span> </div>
+                        <div className="t m0 x5 h5 y98 ff3 fs0 fc2 sc0 ls7 wsc">S K I L L S</div>
                     </div>
                         <div className="c x4 y1 w17 h24">
-                            <div className="t m0 x5 h7 y99 ff4 fs1 fc2 sc0 ls7 wsc">Strong analytical, tro<span className="_ _2"></span>ubleshooting<span className="_ _2"></span>, </div>
-                            <div className="t m0 x5 h7 y9a ff4 fs1 fc2 sc0 ls7 wsc">and problem-solving<span className="_ _2"></span> abilities<span className="_ _2"></span> </div>
-                            <div className="t m0 x5 h7 y9b ff4 fs1 fc2 sc0 ls7 wsc">Curious mindset<span className="_ _2"></span> with a commitment </div>
-                            <div className="t m0 x5 h7 y9c ff4 fs1 fc2 sc0 lse wsb">to<span className="ls7 wsc"> continuous <span className="_ _2"></span>learning<span className="_ _2"></span> </span></div>
-                            <div className="t m0 x5 h7 y9d ff4 fs1 fc2 sc0 ls7 wsc">Balanced blend<span className="_ _2"></span> of humility <span className="_ _2"></span>and </div>
-                            <div className="t m0 x5 h7 y9e ff4 fs1 fc2 sc0 ls7 wsc">confidence <span className="_ _2"></span>in decision-<span className="_ _2"></span>making </div>
-                            <div className="t m0 x5 h7 y9f ff4 fs1 fc2 sc0 ls7 wsc">Demonstrated re<span className="_ _2"></span>sponsibility <span className="_ _2"></span>and </div>
-                            <div className="t m0 x5 h7 ya0 ff4 fs1 fc2 sc0 ls7 wsc">reliability in previous<span className="_ _2"></span> roles </div>
-                            <div classNameName="t m0 x5 h7 ya1 ff4 fs1 fc2 sc0 ls7 wsc">Energetic <span className="_ _2"></span>and hard-working<span className="_ _2"></span>, with </div>
-                            <div className="t m0 x5 h25 ya2 ff4 fs1 fc2 sc0 ls7 wsc">effective <span className="_ _2"></span>communication skill<span className="_ _2"></span>s<span className="fc0 ws0">,<span className="ffc fs0 wsc"> </span></span></div>
+                            <div className="t m0 x5 h7 y99 ff4 fs1 fc2 sc0 ls7 wsc">Strong analytical, troubleshooting, </div>
+                            <div className="t m0 x5 h7 y9a ff4 fs1 fc2 sc0 ls7 wsc">and problem-solving abilities</div>
+                            <div className="t m0 x5 h7 y9b ff4 fs1 fc2 sc0 ls7 wsc">Curious mindset with a commitment </div>
+                            <div className="t m0 x5 h7 y9c ff4 fs1 fc2 sc0 lse wsc">to continuous learning</div>
+                            <div className="t m0 x5 h7 y9d ff4 fs1 fc2 sc0 ls7 wsc">Balanced blend of humility and </div>
+                            <div className="t m0 x5 h7 y9e ff4 fs1 fc2 sc0 ls7 wsc">confidence in decision-making </div>
+                            <div className="t m0 x5 h7 y9f ff4 fs1 fc2 sc0 ls7 wsc">Demonstrated responsibility and </div>
+                            <div className="t m0 x5 h7 ya0 ff4 fs1 fc2 sc0 ls7 wsc">reliability in previous roles </div>
+                            <div className="t m0 x5 h7 ya1 ff4 fs1 fc2 sc0 ls7 wsc">Energetic and hard-working, with </div>
+                            <div className="t m0 x5 h25 ya2 ff4 fs1 fc2 sc0 ls7 wsc">effective communication skills ,</div>
                             <div className="t m0 x5 h25 ya3 ffc fs0 fc0 sc0 ls7 wsc">troubleshooting and problem </div>
                         </div>
                         <div className="c x12 ya4 w18 h26">
                             <div className="t m0 x5 h15 y2c ff4 fs5 fc2 sc0 ls7 wsc">NixOS </div>
                         </div>
                     </div>
+
+                    {/* Potentially Nothing*/ }
                     <div className="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
                 </div>
             </div>
