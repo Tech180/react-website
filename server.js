@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const emailRouter = require('./email');
-const musicRouter = require('./musicServer');
-const igdbRouter = require('./IGDB');
-const fruitRouter = require('./fruit');
+const emailRouter = require('./src/components/backend/email');
+const musicRouter = require('./src/components/backend/musicServer');
+const igdbRouter = require('./src/components/backend/IGDB');
+const fruitRouter = require('./src/components/backend/fruit');
 
 const app = express();
 //const PORT = process.env.PORT || 3001;

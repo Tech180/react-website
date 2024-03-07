@@ -1,10 +1,10 @@
 import React from 'react';
 import AboutHeader from '../headers/about-header';
-import Footer from '../../footer';
-import AboutCarousel from '../../about-carousel';
-import PokemonGrid from '../../pokemon/pokemonGrid';
-import IGDB from '../../games/IGDB';
-import Fruit from '../../fruit';
+import Footer from '../footers/footer';
+import AboutCarousel from '../../UI/carousels/about-carousel';
+import PokemonGrid from '../pokemon/pokemonGrid';
+import IGDB from '../../API/IGDB';
+import Fruit from '../../API/fruit';
 //import Music from '../music';
 
 function AboutMe() {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { Darklight } from '../darklight';
+import { Darklight } from './toggle/darklight';
 import { useCookies } from 'react-cookie';
 
 

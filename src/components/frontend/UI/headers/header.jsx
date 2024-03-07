@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Darklight } from '../../darklight';
+import { Darklight } from '../toggle/darklight';
 import { useCookies } from 'react-cookie';
 
 function Header( {description, image} ) {
