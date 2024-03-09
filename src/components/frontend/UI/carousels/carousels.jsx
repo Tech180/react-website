@@ -3,8 +3,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Darklight } from '../toggle/darklight';
 import { useCookies } from 'react-cookie';
-import AboutCarousel from './about-carousel';
-
 
 const CarouselItem = ({ item, darkMode }) => (
   <div className="carousel-item">

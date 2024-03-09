@@ -3,8 +3,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
-import { Darklight } from '../../toggle/darklight';
-import Popup from '../../popup';
+import { Darklight } from '../toggle/darklight';
+import Popup from '../popup';
 
 const GameItem = ({ item, darkMode, onClick }) => (
   <div className="game-item" onClick={onClick}>
@@ -59,6 +59,7 @@ const styles = (darkMode) => (
           max-width: 50%;
         }
       }
+      
       @media (max-width: 1900px) {
         .game-item {
             max-width: 40%;

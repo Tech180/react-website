@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Games from '../UI/carousels/games/games';
+import Games from '../UI/carousels/games';
 
 const IGDB = () => {
     const [games, setGames] = useState([]);

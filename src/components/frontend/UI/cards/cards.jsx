@@ -115,7 +115,7 @@ function Cards() {
             <ul className={darkMode ? 'items-dark' : 'items'}>
               <CardItem
                 src="/images/twitter.png"
-                text="Want to look at something I bearly use? Look no further!"
+                text="Want to look at something I barely use? Look no further!"
                 label="Twitter"
                 path="https://twitter.com/Tech1808"
                 darkMode={darkMode}

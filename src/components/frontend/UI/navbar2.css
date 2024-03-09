@@ -207,7 +207,7 @@ li {
     
     /* Connects navbar to mobile menu */
     .active {
-        left:0
+        left: 0
     }
 
     /* Hides scroll bar */
@@ -240,6 +240,8 @@ li {
         text-decoration: none;
         transition: color 0.3s;
         cursor: pointer;
+        transition: transform 0.3s;
+        transform: scale(1);
     }
 
     .mobile-menu .nav-link-dark {
@@ -250,11 +252,10 @@ li {
     /* Text Color on Hover */
     .mobile-menu .nav-link:hover,
     .nav-link-dark:hover {
-        .nav-link {
-            background-color: #B39DDB; 
-        }
-
         color: #242424;
+
+        transition: transform 0.3s;
+        transform: scale(1.05);
     }
 
     .mobile-menu .nav-link-dark:hover {
@@ -320,7 +321,7 @@ li {
 
     .fas.fa-times:hover {
         transform: scale(1.05);
-        transition: 0.3s ease-out;
+        transition: 0.3s ease-in-out;
     }
 }
 
