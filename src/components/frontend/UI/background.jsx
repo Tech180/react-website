@@ -230,7 +230,7 @@ function Background() {
             }
 
             @media (max-width: 700px) {
-
+                
                 .grey-bar-text {
                     font-size: 40px;
                 }

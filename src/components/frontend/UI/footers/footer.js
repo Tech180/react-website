@@ -45,7 +45,7 @@ function Footer() {
       {renderContactSection}
       <section className={darkMode ? 'social-media-dark' : 'social-media-dark'}>
         <div className={darkMode ? 'social-media-wrap-dark' : 'social-media-wrap'}>
-          <small className={darkMode ? 'website-rights-dark' : 'website-rights'}>Riley Lawson © 2023</small>
+          <small className={darkMode ? 'website-rights-dark' : 'website-rights'}>Riley Lawson © 2024</small>
           <small className={darkMode ? 'react-made-dark' : 'react-made'}>
             Made with React
           </small>
