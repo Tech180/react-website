@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useCookies } from 'react-cookie';
 
-export function Darklight({ toggleDarkMode, showToggle }) {
+export function Darklight({ darkMode: initialDarkMode = false, showToggle }) {
   const [cookies, setCookie] = useCookies(['darkMode']);
+  const [darkMode, setDarkMode] = useState(initialDarkMode);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    setCookie('darkMode', newMode.toString(), { path: '/' });
+  };
 
   const container = {
     transform: 'translate(0%, 75%)',
   };
+
   
   const spring = useSpring({
-    left: cookies.darkMode === 'true' ? '27px' : '4px',
+    config: { 
+      tension: 400, 
+      friction: 20 
+    },
+  });
+
+  const sliderSpring = useSpring({
+    left: cookies.darkMode === 'true' ? '27px' : '3px',
     backgroundColor: cookies.darkMode === 'true' ? '#4d4d4d' : '#FFCC89',
     config: { 
       tension: 400, 
@@ -27,6 +42,8 @@ export function Darklight({ toggleDarkMode, showToggle }) {
     height: '24px',
     display: 'inline-block',
     verticalAlign: 'middle',
+    userSelect: 'none',
+    WebkitTapHighlightColor: 'transparent',
   };
 
   const circle = {
@@ -37,26 +54,44 @@ export function Darklight({ toggleDarkMode, showToggle }) {
     top: '2px',
     borderRadius: '50%',
     backgroundColor: '#F4F4F4',
+    ...sliderSpring,
+  };
+
+  const moon = {
+    position: 'absolute',
+    fontSize: '12px',
+    color: 'grey',
+    left: '4px', 
+    top: '3px',
+    ...spring,
+  };
+
+  const sun = {
+    position: 'absolute',
+    color: '#F4F4F4',
+    fontSize: '12px',
+    left: '3.5px', 
+    top: '4px',
     ...spring,
   };
 
   return (
     <div className="darklight-container" style={container}>
       {showToggle && (
-        <div style={switchStyle} onClick={() => {
-          const newMode = cookies.darkMode === 'true' ? 'false' : 'true';
-          setCookie('darkMode', newMode, { path: '/' });
-          toggleDarkMode();
-        }}>
-          <animated.div className="slider">
-            <animated.div style={circle}>
-              {cookies.darkMode === 'true' ? (
-                <i className="fas fa-moon" style={{ position: 'absolute', left: '4px', top: '4px', color: 'gray', fontSize: '12px' }}></i>
-              ) : (
-                <i className="fas fa-sun" style={{ position: 'absolute', left: '3px', top: '4px', color: '#F4F4F4', fontSize: '12px' }}></i>
-              )}
-            </animated.div>
-          </animated.div>
+        <div
+          style={switchStyle}
+          onClick={() => {
+            toggleDarkMode();
+          }}
+        >
+        <animated.div style={{...circle}}>
+          {cookies.darkMode === 'true' ? (
+            <animated.i className="fas fa-moon" style={{ ...moon }}></animated.i>
+          ) : (
+            <animated.i className="fas fa-sun" style={{ ...sun }}></animated.i>
+          )}
+        </animated.div>
+
         </div>
       )}
     </div>

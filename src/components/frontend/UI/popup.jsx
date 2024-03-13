@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { Darklight } from './toggle/darklight';
 import { useCookies } from 'react-cookie';
 
 
@@ -13,6 +12,8 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
   });
 
   const [cookies, setCookie] = useCookies(['darkMode']);
+  
+
 
   useEffect(() => {
     // Disable scrolling when the popup is open
@@ -31,12 +32,22 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
     e.stopPropagation();
   };
 
-  const toggleDarkMode = () => {
-    const newMode = cookies.darkMode === 'true' ? 'false' : 'true';
-    setCookie('darkMode', newMode, { path: '/' });
+  const overlay = {
+    position: 'fixed',
+    backgroundColor: cookies.darkMode === 'true' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)',
+    zIndex: 1001,
   };
 
-  <Darklight toggleDarkMode={toggleDarkMode} showToggle={false} />
+  const content = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: cookies.darkMode === 'true' ? '#B39DDB' : '#9AC2E6',
+    borderRadius: '8px',
+    padding: '40px',
+    zIndex: 1002,
+  };
 
 
   return (
@@ -45,37 +56,16 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
         item ? (
           <>
             <animated.div
-              style={{
-                ...style,
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: cookies.darkMode === 'true' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)',
-                zIndex: 1001, 
-              }}
-              onClick={onClose} 
+              style={{ ...overlay, ...style }}
+              onClick={onClose}
             />
             <animated.div
-              style={{
-                ...style,
-                position: 'fixed',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: cookies.darkMode === 'true' ? '#B39DDB' : '#9AC2E6',
-                borderRadius: '8px',
-                padding: '40px',
-                zIndex: 1002,
-              }}
+              style={{ ...content, ...style }}
               onClick={handlePopupClick}
             >
               <div style={{ position: 'absolute', top: '8px', right: '8px', cursor: 'pointer' }} onClick={onClose}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path fill="currentColor" d="M18.364 5.636c-.78-.78-2.048-.78-2.828 0L12 9.172 8.464 5.636c-.78-.78-2.048-.78-2.828 0-.78.78-.78 2.048 0 2.828L9.172 12l-3.536 3.536c-.78.78-.78 2.048 0 2.828s2.048.78 2.828 0L12 14.828l3.536 3.536c.78.78 2.048.78 2.828 0 .78-.78.78-2.048 0-2.828L14.828 12l3.536-3.536c.78-.78.78-2.048 0-2.828z"/>
-                  {//<circle cx="12" cy="12" r="7" fill="currentColor" />
-                  }
                 </svg>
               </div>
               <div style={{ marginRight: '16px' }}>

@@ -9,7 +9,7 @@ const IGDB = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3001/api/games/g`,
+                    `/api/games/g`,
                     {
                         method: 'POST',
                         headers: {
@@ -31,7 +31,7 @@ const IGDB = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3001/api/games/c`,
+                    `/api/games/c`,
                     {
                         method: 'POST',
                         headers: {

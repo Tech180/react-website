@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScaleText from 'react-scale-text';
 import { useCookies } from 'react-cookie';
 import { Darklight } from './toggle/darklight';
 import { useSpring, animated } from 'react-spring';
@@ -19,7 +20,6 @@ function Background() {
     };
 
     const [hovered, setHovered] = useState([false, false, false, false, false]);
-    const [clicked, setClicked] = useState([false, false, false, false, false]);
 
     const icons = [
         useSpring({ 
@@ -105,7 +105,6 @@ function Background() {
 
             .grey-bar-text {
                 text-align: center;
-                font-size: 80px;
                 color: var(--dark);
                 font-family: 'Footlight MT Light', sans-serif;
                 font-weight: bold;
@@ -128,7 +127,6 @@ function Background() {
                 top: 28%;
                 left: 35%;
                 color: #F4F4F4;
-                font-size: 10px;
                 font-family: 'Open Sans', sans-serif;
             }
 
@@ -136,8 +134,7 @@ function Background() {
                 position: absolute;
                 align-items: center;
                 top: 22%;
-                left: 1%;
-                margin-left: 15%;
+                left: 20%;
                 display: flex;
                 flex-direction: column;
             }
@@ -161,11 +158,6 @@ function Background() {
                 .black-section {
                     width: 400px;
                 }
-
-
-                .grey-bar-text {
-                    font-size: 80px;
-                }
     
                 .circle {
                     width: 150px;
@@ -176,17 +168,12 @@ function Background() {
 
                 .contact-title {
                     top: 35%;
-                    font-size: var(--font-giant);
                 }
             }
 
             @media (max-width: 1399px) {
                 .black-section {
                     width: 400px;
-                }
-
-                .grey-bar-text {
-                    font-size: 70px;
                 }
                 
                 .circle {
@@ -198,15 +185,10 @@ function Background() {
 
                 .contact-title {
                     top: 35%;
-                    font-size: var(--font-big);
                 }
             }
 
             @media (max-width: 1024px) {
-
-                .grey-bar-text {
-                    font-size: 60px;
-                }
 
                 .circle {
                     width: 150px;
@@ -217,23 +199,10 @@ function Background() {
 
                 .contact-title {
                     top: 30%;
-                    font-size: var(--font-medium);
                 }
-            }
-
-            @media (max-width: 900px) {
-
-                .grey-bar-text {
-                    font-size: 45px;
-                }
-                
             }
 
             @media (max-width: 700px) {
-                
-                .grey-bar-text {
-                    font-size: 40px;
-                }
 
                 .circle {
                     width: 150px;
@@ -244,16 +213,10 @@ function Background() {
 
                 .contact-title {
                     top: 22%;
-                    font-size: var(--font-average);
-
                 }
             }
 
             @media (max-width: 600px) {
-
-                .grey-bar-text {
-                    font-size: 38px;
-                }
 
                 .circle {
                     width: 100px;
@@ -266,38 +229,32 @@ function Background() {
                 .contact-title {
                     top: 15%;
                     left: 8%;
-                    font-size: var(--font-average);
                 }
 
                 .icon-resume-container {
                     top: 22%;
-                    left: 1%;
+                    left: 15%;
                 }
             }
 
             @media (max-width: 500px) {
-
-                .grey-bar-text {
-                    font-size: 38px;
-                }
 
                 .circle {
                     width: 100px;
                     height: 100px;
                     font-size: 35px;
                     line-height: 90px;
-                    left: 3%;
+                    left: 4%;
                 }
                 
                 .contact-title {
                     top: 15%;
-                    left: 6%;
-                    font-size: var(--font-average);
+                    left: 2.5%;
                 }
 
                 .icon-resume-container {
                     top: 22%;
-                    left: -1%;
+                    left: 15%;
                 }
             }
         `}</style>
@@ -313,7 +270,11 @@ function Background() {
             <div className="black-section">
                 <div className="circle">R | L</div>
                 <div className="contact-resume">
-                    <h1 className="contact-title">C O N T A C T</h1>
+                    <ScaleText maxFontSize={10} >
+                        <h1 className="contact-title">
+                                C O N T A C T
+                        </h1>
+                    </ScaleText>
                     <div className="icon-resume-container">
                         {icons.map((style, index) => (
                             <animated.div 
@@ -341,10 +302,11 @@ function Background() {
             </div>
             <div className="white-section">
                 <div className="grey-bar">
-                    <div className="grey-bar-text">
-                        RILEY J. LAWSON
-                    </div>
-
+                    <ScaleText maxFontSize={80} >
+                        <div className="grey-bar-text">
+                            Riley J. Lawson
+                        </div>
+                    </ScaleText>
                 </div>
             </div>
         </div>

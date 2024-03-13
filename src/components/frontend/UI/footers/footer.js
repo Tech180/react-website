@@ -7,19 +7,13 @@ import { Darklight } from '../toggle/darklight';
 
 function Footer() {
   const location = useLocation();
-  const [cookies, setCookie] = useCookies(['darkMode']);
+  const [cookies] = useCookies(['darkMode']);
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const savedDarkMode = cookies.darkMode === 'true';
     setDarkMode(savedDarkMode);
   }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
 
   // Check if the current page is the Email page
   const isEmailPage = location.pathname === '/contact';
@@ -38,7 +32,7 @@ function Footer() {
     </section>
   );
 
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+  <Darklight darkMode={darkMode} showToggle={false} />
 
   return (
     <div className={darkMode ? 'footer-container-dark' : 'footer-container'}>
