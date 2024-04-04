@@ -19,15 +19,15 @@
 .contact-page-heading-dark {
   color: #9AC2E6;
   margin-bottom: 2rem;
+  user-select: none;
 }
 
 .contact-page-heading-dark {
-  color: #8b5eff;
+  color: #B39DDB;
 }
 
 /* Form Group */
-.form-group,
-.form-group-dark {
+.form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;

@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from "emailjs-com";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './email.css';
-import { Darklight } from '../UI/toggle/darklight';
 import { useCookies } from 'react-cookie';
+import TextBox from "../UI/textbox";
 
 export default function Email() {
   const [name, setName] = useState('');
@@ -12,19 +12,13 @@ export default function Email() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
-  const [cookies, setCookie] = useCookies(['darkMode']);
+  const [cookies, ] = useCookies(['darkMode']);
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const savedDarkMode = cookies.darkMode === 'true';
     setDarkMode(savedDarkMode);
   }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -34,6 +28,10 @@ export default function Email() {
         console.log(result.text);
         toast.success('Email sent successfully!');
         setError(null);
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
       }, 
       (error) => {
         console.log(error.text);
@@ -49,59 +47,54 @@ export default function Email() {
       <h1 className={darkMode ? 'contact-page-heading-dark' : 'contact-page-heading'}>Contact Page</h1>
       <form onSubmit={sendEmail}>
         <div>
-        <div className={darkMode ? 'form-group-dark' : 'form-group'}>
-          <label className={darkMode ? 'form-label-dark' : 'form-label'}>Name:</label>
-            <textarea
-              className={darkMode ? 'form-control-dark textarea-dark' : 'form-control textarea'}
-              type="text"
+        <div className="form-group">
+            <TextBox 
+              text="Name" 
+              value={name} 
               name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              rows="1"
-            ></textarea>
-        </div>
+              type="text"
+              onChange={(e) => setName(e.target.value)} 
+              rows={2}
+            />
+          </div>
 
-          <div className={darkMode ? 'form-group-dark' : 'form-group'}>
-          <label className={darkMode ? 'form-label-dark' : 'form-label'}>Email Address:</label>
-              <textarea
-                className={darkMode ? 'form-control-dark textarea-dark' : 'form-control textarea'}
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                rows="1"
-              ></textarea>
+          <div className="form-group">
+            <TextBox 
+              text="Email Address" 
+              value={email}
+              name="email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)} 
+              rows={2}
+            />
           </div>
-          <div className={darkMode ? 'form-group-dark' : 'form-group'}>
-            <label className={darkMode ? 'form-label-dark' : 'form-label'}>Subject:</label>
-              <textarea
-                className={darkMode ? 'form-control-dark textarea-dark' : 'form-control textarea'}
-                type="text"
-                name="subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                rows="1"
-              ></textarea>
+
+          <div className="form-group">
+            <TextBox 
+              text="Subject" 
+              value={subject} 
+              name="subject"
+              type="text"
+              onChange={(e) => setSubject(e.target.value)} 
+              rows={2}
+            />
           </div>
-          <div className={darkMode ? 'form-group-dark' : 'form-group'}>
-            <label className={darkMode ? 'form-label-dark' : 'form-label'}>Message:</label>
-              <textarea
-                className={darkMode ? 'form-control-dark textarea-dark' : 'form-control textarea'}
-                type="text"
-                name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                rows="8"
-              ></textarea>
+
+          <div className="form-group">
+            <TextBox 
+              text="Message" 
+              value={message}
+              name="message"
+              type="text" 
+              onChange={(e) => setMessage(e.target.value)} 
+              rows={6}
+            />
           </div>
-          <div>
-            <button className={darkMode ? 'contact-btn-dark btn-info-dark' : 'contact-btn btn-info'} type="submit">
-              Send Message
-            </button>
-          </div>
+
+          <button className={darkMode ? 'contact-btn-dark btn-info-dark' : 'contact-btn btn-info'} type="submit">
+            Send Message
+          </button>
+
         </div>
       </form>
       {error && <p>{error}</p>}
