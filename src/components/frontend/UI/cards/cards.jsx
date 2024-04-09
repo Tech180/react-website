@@ -12,11 +12,6 @@ function Cards() {
     setDarkMode(savedDarkMode);
   }, [cookies.darkMode]);
 
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
 
   const styles = () => (
     <style jsx>{`
@@ -35,7 +30,6 @@ function Cards() {
       .cards-dark:after {
         content: "";
         position: absolute;
-        bottom: 2;
         left: 50%;
         transform: translateX(-50%);
         width: 80%;
@@ -88,7 +82,7 @@ function Cards() {
     `}</style>
   );
 
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+  <Darklight darkMode={darkMode} showToggle={false} />
 
   return (
     <>

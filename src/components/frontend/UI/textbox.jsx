@@ -17,8 +17,7 @@ const TextBox = ({ text, value, name, onChange, rows, textType }) => {
     }, [cookies.darkMode]);
 
     const animation = useSpring({
-        //backgroundColor: isHovered ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.3)',
-        backgroundColor: isHovered ? (darkMode ? 'rgba(255,255,255,0.45)' : 'rgba(36,36,36,0.45)') : (darkMode ? 'rgba(255,255,255,0.3)' : 'rgba(36,36,36,0.3)'),
+        backgroundColor: isHovered ? (darkMode ? 'rgba(255,255,255,0.45)' : 'rgba(36,36,36,0.6)') : (darkMode ? 'rgba(255,255,255,0.3)' : 'rgba(36,36,36,0.4)'),
         boxShadow: isHovered ? '0px 4px 20px 0px rgba(0, 0, 0, 0.05)' : '0px 0px 0px 0px rgba(0, 0, 0, 0)',
         config: { 
             tension: 500, 
@@ -106,6 +105,12 @@ const TextBox = ({ text, value, name, onChange, rows, textType }) => {
                 transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
                 opacity: 75%;
                 user-select: none;
+            }
+
+            @media screen and (max-width: 500px) {
+                .field {
+                    width: 300px;
+                }
             }
         `}</style>
     );

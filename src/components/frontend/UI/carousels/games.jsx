@@ -137,18 +137,18 @@ const IGDBImage = ({darkMode}) => {
   return (
       <>
           <div className="pokeImage">
-          <animated.img
-              src="/images/IGDB.svg"
-              alt="IGDB"
-              style={{
-              ...springProps,
-              cursor: 'pointer',
-              filter: darkMode ? 'invert(1) brightness(95%)' : 'none',
-              }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              onClick={handleClick}
-          />
+            <animated.img
+                src="/images/IGDB.svg"
+                alt="IGDB"
+                style={{
+                ...springProps,
+                cursor: 'pointer',
+                filter: darkMode ? 'invert(1) brightness(95%)' : 'none',
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={handleClick}
+            />
           </div>
           <style jsx>{`
               .pokeImage {
@@ -171,8 +171,6 @@ const Games = ({ items }) => {
   const [selectedName, setSelectedName] = useState('');
   const [selectedSummary, setSelectedSummary] = useState('');
 
-  const disableArrow = () => null;
-
   useEffect(() => {
     const savedDarkMode = cookies.darkMode === 'true';
     setDarkMode(savedDarkMode);
@@ -191,7 +189,7 @@ const Games = ({ items }) => {
 
       <Carousel
         responsive={responsive}
-        autoPlay
+        autoPlay={!paused}
         autoPlaySpeed={.02}
         infinite
         swipeable
@@ -199,9 +197,7 @@ const Games = ({ items }) => {
         keyBoardControl
         customTransition="all 1s linear"
         transitionDuration={2000}
-
-        customLeftArrow={<disableArrow/>}
-        customRightArrow={<disableArrow/>}
+        arrows={false}
         pauseAutoPlayOnHover={!paused}
       >
         {items.map(item => (

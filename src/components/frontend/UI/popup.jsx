@@ -12,14 +12,13 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
   });
 
   const [cookies, setCookie] = useCookies(['darkMode']);
-  
-
 
   useEffect(() => {
     // Disable scrolling when the popup is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
+    } 
+    else {
       document.body.style.overflow = 'unset';
     }
 
@@ -47,7 +46,17 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
     borderRadius: '8px',
     padding: '40px',
     zIndex: 1002,
+    width: '80%',
+    maxWidth: '600px',
   };
+
+  const descriptions = {
+    paddingBottom: '20px',
+    textAlign: 'center',
+    maxHeight: '300px', 
+    overflowY: 'auto',
+  };
+
 
 
   return (
@@ -63,17 +72,30 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
               style={{ ...content, ...style }}
               onClick={handlePopupClick}
             >
-              <div style={{ position: 'absolute', top: '8px', right: '8px', cursor: 'pointer' }} onClick={onClose}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path fill="currentColor" d="M18.364 5.636c-.78-.78-2.048-.78-2.828 0L12 9.172 8.464 5.636c-.78-.78-2.048-.78-2.828 0-.78.78-.78 2.048 0 2.828L9.172 12l-3.536 3.536c-.78.78-.78 2.048 0 2.828s2.048.78 2.828 0L12 14.828l3.536 3.536c.78.78 2.048.78 2.828 0 .78-.78.78-2.048 0-2.828L14.828 12l3.536-3.536c.78-.78.78-2.048 0-2.828z"/>
+              <div 
+                style={{ 
+                  position: 'absolute', 
+                  top: '8px', 
+                  right: '8px', 
+                  cursor: 'pointer' 
+                }} 
+                onClick={onClose}
+              >
+                <svg width="24" height="24" fill="none">
+                  <path 
+                    fill="currentColor" 
+                    d="M18.364 5.636c-.78-.78-2.048-.78-2.828 0L12 9.172 8.464 5.636c-.78-.78-2.048-.78-2.828 0-.78.78-.78 2.048 0 2.828L9.172 12l-3.536 3.536c-.78.78-.78 2.048 0 2.828s2.048.78 2.828 0L12 14.828l3.536 3.536c.78.78 2.048.78 2.828 0 .78-.78.78-2.048 0-2.828L14.828 12l3.536-3.536c.78-.78.78-2.048 0-2.828z"
+                  />
                 </svg>
               </div>
+              {/* Image Icon */}
               <div style={{ marginRight: '16px' }}>
-                {image && <img src={image} alt="Item Image" style={{ width: '100px', height: '100px' }} />}
+                {image && <img src={image} style={{ width: '100px', height: '100px' }} />}
               </div>
+              {/* Name/Description */}
               <div>
                 <h2 style={{ paddingBottom: '20px', textAlign: 'center'}}>{name}</h2>
-                <p style={{ paddingBottom: '20px', textAlign: 'center'}}>{description}</p>
+                <p style={{ ...descriptions}}>{description}</p>
               </div>
             </animated.div>
           </>

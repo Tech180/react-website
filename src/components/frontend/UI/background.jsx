@@ -13,12 +13,6 @@ function Background() {
         setDarkMode(savedDarkMode);
     }, [cookies.darkMode]);
 
-    const toggleDarkMode = () => {
-        const newMode = !darkMode;
-        setDarkMode(newMode);
-        setCookie('darkMode', newMode.toString(), { path: '/' });
-    };
-
     const [hovered, setHovered] = useState([false, false, false, false, false]);
 
     const icons = [
@@ -260,7 +254,7 @@ function Background() {
         `}</style>
     );
 
-    <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+    <Darklight darkMode={darkMode} showToggle={false} />
 
 
     return (

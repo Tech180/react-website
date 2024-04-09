@@ -152,7 +152,6 @@ const gridStyles = ({ darkMode }) => (
         @media (max-width: 1000px) {
             .pokemon-grid {
                 grid-template-columns: repeat(2, 1fr);
-
             }
         }
 

@@ -16,10 +16,10 @@ function Footer() {
   }, [cookies.darkMode]);
 
   // Check if the current page is the Email page
-  const isEmailPage = location.pathname === '/contact';
+  const contact = location.pathname === '/contact';
 
   // Render the "Want to get in contact?" section only on non-Email pages
-  const renderContactSection = !isEmailPage && (
+  const contactPage = !contact && (
     <section className={darkMode ? 'footer-subscription-dark' : 'footer-subscription'}>
       <p className={darkMode ? 'footer-subscription-heading-dark' : 'footer-subscription-heading'}>
         Want to get in contact?
@@ -36,7 +36,7 @@ function Footer() {
 
   return (
     <div className={darkMode ? 'footer-container-dark' : 'footer-container'}>
-      {renderContactSection}
+      {contactPage}
       <section className={darkMode ? 'social-media-dark' : 'social-media-dark'}>
         <div className={darkMode ? 'social-media-wrap-dark' : 'social-media-wrap'}>
           <small className={darkMode ? 'website-rights-dark' : 'website-rights'}>Riley Lawson © 2024</small>

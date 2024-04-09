@@ -47,7 +47,7 @@ export default function Email() {
       <h1 className={darkMode ? 'contact-page-heading-dark' : 'contact-page-heading'}>Contact Page</h1>
       <form onSubmit={sendEmail}>
         <div>
-        <div className="form-group">
+          <div className="form-group">
             <TextBox 
               text="Name" 
               value={name} 
@@ -91,7 +91,7 @@ export default function Email() {
             />
           </div>
 
-          <button className={darkMode ? 'contact-btn-dark btn-info-dark' : 'contact-btn btn-info'} type="submit">
+          <button className={darkMode ? 'contact-btn-dark' : 'contact-btn'} type="submit">
             Send Message
           </button>
 

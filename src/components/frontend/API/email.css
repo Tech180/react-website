@@ -44,34 +44,6 @@
   color: #F4F4F4;
 }
 
-/* Input */
-.form-control,
-.form-control-dark {
-  padding: 8px 20px;
-  border-radius: 2px;
-  outline: none;
-  border: none;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border: 1px solid #242424;
-  width: 400px;
-}
-
-.textarea {
-  background-color: #242424; 
-  color: #F4F4F4;
-}
-
-.textarea-dark {
-  background-color: #F4F4F4; 
-  color: #242424;
-}
-
-
-.form-control::placeholder ,
-.form-control-dark::placeholder{
-  color: #F4F4F4;
-}
 
 /* Button */
 .contact-btn ,
@@ -95,7 +67,6 @@
 .contact-btn-dark {
   border: 1px solid #F4F4F4;
   color: #F4F4F4;
-
 }
 
 .contact-btn:hover,
@@ -112,12 +83,22 @@
 }
 
 
-@media screen and (max-width: 820px) {
-  .form-control {
-    width: 100%;
+@media screen and (max-width: 500px) {
+
+  .contact-container,
+  .contact-container-dark {
+    height: 95vh;
   }
 
-  .contact-btn {
-    width: 100%;
+  .form-group {
+    width: 70%;
+  }
+
+  .contact-btn,
+  .contact-btn-dark {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }
