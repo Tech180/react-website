@@ -7,8 +7,9 @@ react-website
 This project was meant to learn about the in's and out's of react. Lots of it was trying to understand how it works and to learn a new and unique language. This website contains information about me and expands on who I am as a person.
 
 ## Demo
-![20231219172752_1](https://github.com/Tech180/react-website/assets/19378220/1abb5bf9-f519-4351-b50d-d31ad1c91160)
+![20240516213203_1](https://github.com/Tech180/react-website/assets/19378220/08f0d9d0-d24c-4b98-bb97-6df4d122048b)
 
+![20240516213212_1](https://github.com/Tech180/react-website/assets/19378220/642e2c98-e81f-4117-8391-6c14e31eeb4b)
 
 ## Features
 
