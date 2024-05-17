@@ -17,6 +17,7 @@ This project was meant to learn about the in's and out's of react. Lots of it wa
 - Email sending
 - Mobile view
 - Resume and info about me
+- Utilization of multiple REST API's
 
 ## Installation
 
@@ -24,6 +25,11 @@ This project was meant to learn about the in's and out's of react. Lots of it wa
 
    ```bash
    git clone https://github.com/Tech180/react-website.git
+   ```
+2. Install the dependencies
+   ```bash
+   npm install
+   ```
 
 Or check it out here!
 - https://riley.lawsonserver.org
