@@ -30,6 +30,24 @@ This project was meant to learn about the in's and out's of react. Lots of it wa
    ```bash
    npm install
    ```
+3. Run the website!
+   ```bash
+   npm run dev
+   ```
+
+   
+Things missing?
+- Unfortunately you'll be missing the authorization of IGDB, however you can easily input a headers file like such with your authorization details (put the headers.json in the public folder ;) ). To aquire the Client-ID and Authorization follow the IGDB link on the website and it'll direct you to their API documentation with all of the necessary details.
+   ```json
+   {
+       "Accept": "application/json",
+       "Client-ID": "",
+       "Authorization": "",
+       "Content-Type": "application/json"
+   }
+   ```
+
 
 Or check it out here!
 - https://riley.lawsonserver.org
+
