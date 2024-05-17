@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { animated } from 'react-spring';
 import { useCookies } from 'react-cookie';
+import Spring from '../animations/Spring';
+import Slider from '../animations/Slider';
+import Hover from '../animations/Hover';
 
 export function Darklight({ darkMode: initialDarkMode = false, showToggle }) {
   const [cookies, setCookie] = useCookies(['darkMode']);
@@ -12,26 +15,15 @@ export function Darklight({ darkMode: initialDarkMode = false, showToggle }) {
     setCookie('darkMode', newMode.toString(), { path: '/' });
   };
 
+  // Animations
+  const spring = Spring();
+  const sliderSpring = Slider(cookies);
+
+  const { hovered, bind } = Hover(false);
+
   const container = {
     transform: 'translate(0%, 75%)',
   };
-
-  
-  const spring = useSpring({
-    config: { 
-      tension: 400, 
-      friction: 20 
-    },
-  });
-
-  const sliderSpring = useSpring({
-    left: cookies.darkMode === 'true' ? '27px' : '3px',
-    backgroundColor: cookies.darkMode === 'true' ? '#4d4d4d' : '#FFCC89',
-    config: { 
-      tension: 400, 
-      friction: 20 
-    },
-  });
 
   const switchStyle = {
     background: cookies.darkMode === 'true' ? 'black' : '#b3b3b3',
@@ -54,6 +46,7 @@ export function Darklight({ darkMode: initialDarkMode = false, showToggle }) {
     top: '2px',
     borderRadius: '50%',
     backgroundColor: '#F4F4F4',
+    //transform: darkMode ? (hovered ? 'translateX(-5px)' : 'translateX(0)') : (hovered ? 'translateX(5px)' : 'translateX(0)'),
     ...sliderSpring,
   };
 
@@ -83,6 +76,7 @@ export function Darklight({ darkMode: initialDarkMode = false, showToggle }) {
           onClick={() => {
             toggleDarkMode();
           }}
+          {...bind}
         >
         <animated.div style={{...circle}}>
           {cookies.darkMode === 'true' ? (

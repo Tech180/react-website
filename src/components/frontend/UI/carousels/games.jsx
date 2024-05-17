@@ -5,6 +5,7 @@ import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
 import { Darklight } from '../toggle/darklight';
 import Popup from '../popup';
+import DarkSwitch from '../toggle/darkswitch';
 
 const GameItem = ({ item, darkMode, onClick }) => (
   <div className="game-item" onClick={onClick}>
@@ -165,24 +166,11 @@ const IGDBImage = ({darkMode}) => {
 
 const Games = ({ items }) => {
   const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = DarkSwitch();
   const [showPopup, setShowPopup] = useState(false);
   const [paused, setPaused] = useState(false);
   const [selectedName, setSelectedName] = useState('');
   const [selectedSummary, setSelectedSummary] = useState('');
-
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
 
   return (
     <div className="carousel-container" style={{ background: darkMode ? '#242424' : '#F4F4F4' }}>

@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../headers/main-header';
-import Cards from '../../UI/cards/cards';
-import Footer from '../footers/footer';
-import Affirmation from '../../API/affirmation';
+import Header from '../frontend/UI/headers/main-header';
+import Cards from '../frontend/UI/cards/cards';
+import Footer from '../frontend/UI/footers/footer';
+import Affirmation from '../frontend/API/affirmation';
 //import FloatingButton from '../floatingButton';
 
 function home() {

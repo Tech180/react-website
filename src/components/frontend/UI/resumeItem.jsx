@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Darklight } from './toggle/darklight';
-import { useCookies } from 'react-cookie';
+import DarkSwitch from './toggle/darkswitch';
 
 function ResumeItem(props) {
   const [expanded, setExpanded] = useState(false);
@@ -9,23 +8,9 @@ function ResumeItem(props) {
     setExpanded(!expanded);
   };
 
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = DarkSwitch();
 
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
-
-  const styles = (darkMode) => (
+  const styles = () => (
     <style jsx>{`
       .cardsItems,
       .cardsItems-dark {
@@ -196,7 +181,7 @@ function ResumeItem(props) {
           </div>
         </a>
       </li>
-      {styles(darkMode)}
+      {styles()}
     </>
   );
 }

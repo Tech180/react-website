@@ -2,6 +2,8 @@ const express = require('express');
 const fetch = require('node-fetch');
 const router = express.Router();
 const apicache = require('apicache');
+const path = require('path');
+const fs = require('fs');
 
 const cache = apicache.middleware;
 
@@ -9,6 +11,12 @@ const ids = [3349, 132516, 1517, 3189, 472, 8284, 111, 103329, 11182, 11156, 124
 const RATE_LIMIT = 250;
 
 let lastRequestTime = 0;
+
+const getHeaders = () => {
+  const headersPath = path.join(__dirname, '../../../public/headers.json');
+  const headers = JSON.parse(fs.readFileSync(headersPath, 'utf-8'));
+  return headers;
+};
 
 // Function to fetch data from IGDB API and handle rate limit exceeded errors
 const fetchData = async (url, res) => {
@@ -21,14 +29,11 @@ const fetchData = async (url, res) => {
       await new Promise(resolve => setTimeout(resolve, delay));
     }
 
+    const headers = getHeaders();
+
     const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Client-ID': 'svnxasixf2ril018kckyt1bnaxuykk',
-        'Authorization': 'Bearer ujiwgp54ppz0u9mdzantb8h2a4qntf',
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: `fields *; where ${url.includes('games') ? 'id' : 'game'} = (${ids.join(', ')}); limit 20;`
     });
 

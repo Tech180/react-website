@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { useCookies } from 'react-cookie';
+import DarkSwitch from './toggle/darkswitch';
 
 
 const Popup = ({ isOpen, onClose, image, name, description }) => {
@@ -11,7 +11,7 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
     config: { duration: 200 },
   });
 
-  const [cookies, setCookie] = useCookies(['darkMode']);
+  const [darkMode] = DarkSwitch();
 
   useEffect(() => {
     // Disable scrolling when the popup is open
@@ -33,7 +33,7 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
 
   const overlay = {
     position: 'fixed',
-    backgroundColor: cookies.darkMode === 'true' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: darkMode ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)',
     zIndex: 1001,
   };
 
@@ -42,7 +42,7 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: cookies.darkMode === 'true' ? '#B39DDB' : '#9AC2E6',
+    backgroundColor: darkMode ? '#B39DDB' : '#9AC2E6',
     borderRadius: '8px',
     padding: '40px',
     zIndex: 1002,

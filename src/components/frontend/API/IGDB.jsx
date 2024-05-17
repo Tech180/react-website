@@ -50,19 +50,19 @@ const IGDB = () => {
         fetchData();
     }, []);
 
-    const carouselItems = games.map(game => {
+    const carouselItems = games.length > 0 ? games.map(game => {
         const coverData = covers.find(cover => cover.game === game.id);
         const cover = coverData && coverData.url.replace('t_thumb', 't_cover_big');
-
+    
         console.log(coverData);
-
+    
         return {
             id: game.id,
             imageSrc: cover, 
             label: game.name,
             summary: game.summary,
         };
-    });
+    }) : [];
 
     return (
         <div>

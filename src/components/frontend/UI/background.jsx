@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ScaleText from 'react-scale-text';
-import { useCookies } from 'react-cookie';
 import { Darklight } from './toggle/darklight';
 import { useSpring, animated } from 'react-spring';
+import DarkSwitch from './toggle/darkswitch';
 
 function Background() {
-    const [cookies, setCookie] = useCookies(['darkMode']);
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        const savedDarkMode = cookies.darkMode === 'true';
-        setDarkMode(savedDarkMode);
-    }, [cookies.darkMode]);
+    const [darkMode] = DarkSwitch();
 
     const [hovered, setHovered] = useState([false, false, false, false, false]);
 
@@ -23,25 +17,25 @@ function Background() {
             }
         ),
         useSpring({ 
-                transform: hovered[1] ? 'scale(5)' : 'scale(3.5)', 
+                transform: hovered[1] ? 'scale(4)' : 'scale(3.5)', 
                 color: 'white',
                 marginBottom: '60px'
             }
         ),
         useSpring({ 
-                transform: hovered[2] ? 'scale(5)' : 'scale(3.5)', 
+                transform: hovered[2] ? 'scale(4)' : 'scale(3.5)', 
                 color: 'white',
                 marginBottom: '60px'
             }
         ),
         useSpring({ 
-                transform: hovered[3] ? 'scale(5)' : 'scale(3.5)', 
+                transform: hovered[3] ? 'scale(4)' : 'scale(3.5)', 
                 color: 'white',
                 marginBottom: '60px'
             }
         ),
         useSpring({ 
-                transform: hovered[4] ? 'scale(5)' : 'scale(3.5)', 
+                transform: hovered[4] ? 'scale(4)' : 'scale(3.5)', 
                 color: 'white',
             }
         )

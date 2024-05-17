@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
+import DarkSwitch from '../toggle/darkswitch';
 
 const STYLES = ['primary', 'outline', 'outline-dark'];
 const SIZES = ['medium', 'large'];
@@ -10,15 +10,9 @@ export const Button = ({ children, buttonStyle = 'primary', buttonSize = 'medium
   const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
-  const [cookies] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = DarkSwitch();
 
   const [hovered, setHovered] = useState(false);
-
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
 
   const buttonStyleClass = darkMode ? `${checkButtonStyle}-dark` : checkButtonStyle;
 

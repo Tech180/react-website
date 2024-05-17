@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useCookies } from 'react-cookie';
 import { Darklight } from './toggle/darklight';
-
 import './navbar2.css';
+import DarkSwitch from './toggle/darkswitch';
 
 function Navbar() {
   const [nav, setNav] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [cookies, ] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(cookies.darkMode === 'true');
+  const [darkMode] = DarkSwitch();
 
   const toggleNav = () => setNav(!nav);
 
@@ -27,10 +25,6 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    setDarkMode(cookies.darkMode === 'true');
-  }, [cookies.darkMode]);
-
-  useEffect(() => {
     const body = document.body;
     
     if (nav) {
@@ -40,10 +34,6 @@ function Navbar() {
       body.style.overflow = 'auto';
     }
   }, [nav]);
-
-  useEffect(() => {
-    setDarkMode(cookies.darkMode === 'true');
-  }, [cookies.darkMode]);
 
   return (
     <div className={`navbar ${darkMode ? 'navbar-dark' : ''}`}>

@@ -4,16 +4,12 @@ import { Button } from '../buttons/button';
 import { Link, useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { Darklight } from '../toggle/darklight';
+import DarkSwitch from '../toggle/darkswitch';
 
 function Footer() {
   const location = useLocation();
-  const [cookies] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
+  const [darkMode] = DarkSwitch();
 
   // Check if the current page is the Email page
   const contact = location.pathname === '/contact';

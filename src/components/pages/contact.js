@@ -1,6 +1,6 @@
 import React from 'react';
-import Email from '../../API/email';
-import Footer from '../footers/footer';
+import Email from '../frontend/API/email';
+import Footer from '../frontend/UI/footers/footer';
 
 
 function Contact() {

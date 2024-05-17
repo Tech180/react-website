@@ -1,30 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Darklight } from './toggle/darklight';
-import { useCookies } from 'react-cookie';
 import { fetchPdf } from '../pdf';
 import Download from './buttons/download';
-import ResumeTest from './resume-test';
 import Background from './background';
+import DarkSwitch from './toggle/darkswitch';
 
 function ResumePage() {
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
-
+  const [darkMode, toggleDarkMode] = DarkSwitch();
   const [pdfSrc, setPdfSrc] = useState('');
 
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />;
-  
   useEffect(() => {
     async function fetchData() {
       const pdfUrl = await fetchPdf();
@@ -36,11 +20,11 @@ function ResumePage() {
     fetchData();
   }, []);
 
-
   return (
     <>
       <Background />
       <div>
+        <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
         <Download pdfSrc={pdfSrc} darkMode={darkMode} />
       </div>
     </>

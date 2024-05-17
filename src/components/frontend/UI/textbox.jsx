@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { animated } from 'react-spring';
 import { useCookies } from 'react-cookie';
+import Input from './animations/Input';
 
 const TextBox = ({ text, value, name, onChange, rows, textType }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -16,15 +17,8 @@ const TextBox = ({ text, value, name, onChange, rows, textType }) => {
         setDarkMode(savedDarkMode);
     }, [cookies.darkMode]);
 
-    const animation = useSpring({
-        backgroundColor: isHovered ? (darkMode ? 'rgba(255,255,255,0.45)' : 'rgba(36,36,36,0.6)') : (darkMode ? 'rgba(255,255,255,0.3)' : 'rgba(36,36,36,0.4)'),
-        boxShadow: isHovered ? '0px 4px 20px 0px rgba(0, 0, 0, 0.05)' : '0px 0px 0px 0px rgba(0, 0, 0, 0)',
-        config: { 
-            tension: 500, 
-            friction: 30, 
-            precision: 0.1 
-        }
-    });
+    /* Outline */
+    const animation = Input(isHovered, darkMode);
 
     const validEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -53,7 +47,7 @@ const TextBox = ({ text, value, name, onChange, rows, textType }) => {
         }
 
 
-        console.log(error);
+        //console.log(error);
     };
 
     const styles = (darkMode) => (

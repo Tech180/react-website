@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Darklight } from '../toggle/darklight';
 import { useCookies } from 'react-cookie';
+import DarkSwitch from '../toggle/darkswitch';
 
 const CarouselItem = ({ item, darkMode }) => (
   <div className="carousel-item">
@@ -156,21 +157,7 @@ const CarouselItem = ({ item, darkMode }) => (
   };
 
 const Carousels = ({ items }) => {
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+  const [darkMode] = DarkSwitch();
 
   return (
     <div className="carousel-container" style={{ background: darkMode ? '#242424' : '#F4F4F4' }}>

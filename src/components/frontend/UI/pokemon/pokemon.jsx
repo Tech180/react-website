@@ -1,24 +1,17 @@
 import React, { useState, useEffect} from 'react';
-import { Darklight } from '../toggle/darklight';
 import Popup from '../popup';
 import PokeAPI from '../../API/pokeAPI';
-import { useCookies } from 'react-cookie';
-import { useSpring, animated } from 'react-spring';
+import { animated } from 'react-spring';
+import DarkSwitch from '../toggle/darkswitch';
+import ItemBoxSpring from '../animations/ItemBoxSpring';
 
 const Pokemon = ({ name }) => {
   const { data, item } = PokeAPI(name);
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = DarkSwitch();
   const [isHovered, setIsHovered] = useState(false);
   const [itemBoxHover, setItemBoxHover] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [testItemName, setTestItemName] = useState('pokeball');
 
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-  
   const formatName = (name) => {
     return name
       .split('-')
@@ -26,22 +19,8 @@ const Pokemon = ({ name }) => {
       .join(' ');
   };
 
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  const updateTestItemName = (itemName) => {
-    setTestItemName(itemName);
-  };
-
   // Item Box Animation
-  const itemBoxSpring = useSpring({
-    transform: itemBoxHover ? 'scale(1.2)' : 'scale(1)',
-    opacity: itemBoxHover ? 1 : 0.5,
-  });
-
+  const itemBoxSpring = ItemBoxSpring(itemBoxHover);
 
   const pokeChoice = (name, data, item) => {
     let movesToShow = data.moves.slice(0, 4);
@@ -136,7 +115,7 @@ const Pokemon = ({ name }) => {
       return null;
     }
 
-    console.log(data);
+    //console.log(data);
 
     const { movesToShow, selectedAbility, heldItem} = pokeChoice(name, data, item);
 
@@ -212,8 +191,9 @@ const Pokemon = ({ name }) => {
       <h1 style={{ position: 'relative' }}>
         {formatName(name)}
       </h1>
+
       {pokemonInfo()}
-      <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+
       <style jsx>{`
         .pokemon-container,
         .pokemon-container-dark {

@@ -3,6 +3,7 @@ import Pokemon from './pokemon';
 import { Darklight } from '../toggle/darklight';
 import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
+import DarkSwitch from '../toggle/darkswitch';
 
 const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedIndex }) => {
   const isExpanded = index === expandedIndex;
@@ -171,22 +172,8 @@ const gridStyles = ({ darkMode }) => (
 );
 
 const PokemonGrid = () => {
-    const [cookies, setCookie] = useCookies(['darkMode']);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode] = DarkSwitch();
     const [expandedIndex, setExpandedIndex] = useState(-1);
-  
-    useEffect(() => {
-        const savedDarkMode = cookies.darkMode === 'true';
-        setDarkMode(savedDarkMode);
-    }, [cookies.darkMode]);
-  
-    const toggleDarkMode = () => {
-        const newMode = !darkMode;
-        setDarkMode(newMode);
-        setCookie('darkMode', newMode.toString(), { path: '/' });
-    };
-
-    <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
 
     const pokemonNames = ['Cloyster', 'Flygon', 'Marowak', 'Zapdos', 'Serperior', 'Chandelure'];
   
