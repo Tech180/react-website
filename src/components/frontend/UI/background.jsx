@@ -1,52 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ScaleText from 'react-scale-text';
 import { Darklight } from './toggle/darklight';
 import { useSpring, animated } from 'react-spring';
 import DarkSwitch from './toggle/darkswitch';
 
-function Background() {
+const Background = () => {
     const [darkMode] = DarkSwitch();
 
     const [hovered, setHovered] = useState([false, false, false, false, false]);
 
-    const icons = [
-        useSpring({ 
-                transform: hovered[0] ? 'scale(4)' : 'scale(3.5)', 
-                color: 'white',
-                marginBottom: '60px'
-            }
-        ),
-        useSpring({ 
-                transform: hovered[1] ? 'scale(4)' : 'scale(3.5)', 
-                color: 'white',
-                marginBottom: '60px'
-            }
-        ),
-        useSpring({ 
-                transform: hovered[2] ? 'scale(4)' : 'scale(3.5)', 
-                color: 'white',
-                marginBottom: '60px'
-            }
-        ),
-        useSpring({ 
-                transform: hovered[3] ? 'scale(4)' : 'scale(3.5)', 
-                color: 'white',
-                marginBottom: '60px'
-            }
-        ),
-        useSpring({ 
-                transform: hovered[4] ? 'scale(4)' : 'scale(3.5)', 
-                color: 'white',
-            }
-        )
-    ];
+    const useIconSpring = (hovered) => {
+        return useSpring({ 
+            transform: hovered ? 'scale(4)' : 'scale(3.5)', 
+            color: 'white'
+        });
+    };
 
+    const icons = [
+        useIconSpring(hovered[0]),
+        useIconSpring(hovered[1]),
+        useIconSpring(hovered[2]),
+        useIconSpring(hovered[3]),
+        useIconSpring(hovered[4])
+    ];
+    
     const iconData = [
-        { iconClass: "fab fa-linkedin", url: "https://www.linkedin.com" },
-        { iconClass: "fab fa-linkedin", url: "https://www.twitter.com" },
-        { iconClass: "fab fa-linkedin", url: "https://www.github.com" },
-        { iconClass: "fab fa-linkedin", url: "https://www.instagram.com" },
-        { iconClass: "fab fa-linkedin", url: "https://www.instagram.com" }
+        { iconClass: "fab fa-linkedin", url: "https://www.linkedin.com/in/riley-lawson-a7a65b203/" },
+        { iconClass: "fab fa-x-twitter", url: "https://x.com/Tech1808" },
+        { iconClass: "fab fa-github", url: "https://github.com/Tech180" },
+        { iconClass: "fab fa-instagram", url: "https://www.instagram.com" },
+        { iconClass: "fab fa-facebook", url: "https://www.facebook.com" }
     ];
 
     const styles = (darkMode) => (
@@ -62,24 +45,24 @@ function Background() {
             }
 
             .container {
-                position: relative;
-                width: auto;
-                height: 101vh;
+                display: flex;
+                height: 100vh;
+                width: 100vw;
             }
 
             .black-section {
-                position: absolute;
-                width: 30%;
+                flex: 0 0 30%;
+                max-width: 400px;
                 height: 100%;
                 background-color: black;
+                position: relative;
             }
 
             .white-section {
-                position: absolute;
-                left: 30%;
-                width: 70%;
+                flex: 1;
                 height: 100%;
                 background-color: var(--dark);
+                position: relative;
             }
 
             .grey-bar {
@@ -125,10 +108,54 @@ function Background() {
                 left: 20%;
                 display: flex;
                 flex-direction: column;
+                gap: 80px;
             }
 
-            icon-resume {
+            .icon-resume {
                 position: absolute;
+            }
+
+            .education {
+                position: relative;
+                top: 22%;
+                height: 400px;
+            }
+
+            .education-title {
+                position: relative;
+                color: var(--dark-inverse);
+                left: 4%;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: bold;
+                font-size: var(--font-big);
+            }
+
+            .education-line {
+                height: 1px;
+                background-color: var(--dark-inverse);
+                margin-top: -12px;
+                float: right;
+            }
+
+            .education-years {
+                position: relative;
+                color: var(--dark-inverse);
+                left: 45px;
+                top: 30px;
+            }
+
+            .education-points {
+                position: absolute;
+                left: 85px;
+                top: 70px;
+            }
+
+            .education-point-line {
+                width: 1px;
+                height: 51px;
+                background-color: var(--dark-inverse);
+                margin-left: 20px;
+                opacity: 75%; 
             }
 
             @font-face {
@@ -141,115 +168,153 @@ function Background() {
                 src: url('/resume/fonts/FootlightMTLight.ttf');
             }
 
-            @media (min-width: 1400px) {
-
-                .black-section {
-                    width: 400px;
-                }
-    
+            @media (min-width: 1025px) {
                 .circle {
                     width: 150px;
                     height: 150px;
                     font-size: 50px;
                     line-height: 135px;
-                }
-
-                .contact-title {
-                    top: 35%;
-                }
-            }
-
-            @media (max-width: 1399px) {
-                .black-section {
-                    width: 400px;
-                }
-                
-                .circle {
-                    width: 150px;
-                    height: 150px;
-                    font-size: 50px;
-                    line-height: 135px;
-                }
-
-                .contact-title {
-                    top: 35%;
-                }
-            }
-
-            @media (max-width: 1024px) {
-
-                .circle {
-                    width: 150px;
-                    height: 150px;
-                    font-size: 50px;
-                    line-height: 135px;
-                }
-
-                .contact-title {
-                    top: 30%;
-                }
-            }
-
-            @media (max-width: 700px) {
-
-                .circle {
-                    width: 150px;
-                    height: 150px;
-                    font-size: 50px;
-                    line-height: 135px;
+                    left: 2%;
                 }
 
                 .contact-title {
                     top: 22%;
+                    left: 7%;
+                }
+                
+                .icon-resume-container {
+                    top: 28%;
+                    left: 15%;
+                }
+
+                .education-line {
+                    width: 73%;
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .circle {
+                    width: 150px;
+                    height: 150px;
+                    font-size: 50px;
+                    line-height: 135px;
+                    left: 28%;
+                }
+
+                .contact-title {
+                    top: 23%;
+                    left: 34%;
+                }
+                
+                .icon-resume-container {
+                    top: 28%;
+                    left: 44%;
+                }
+
+                .education-line {
+                    width: 70%;
+                }
+            }
+
+            @media (max-width: 900px) {
+                .circle {
+                    width: 150px;
+                    height: 150px;
+                    font-size: 50px;
+                    line-height: 135px;
+                    left: 24%;
+                }
+
+                .contact-title {
+                    top: 21%;
+                    left: 34%;
+                }
+                
+                .icon-resume-container {
+                    top: 26%;
+                    left: 44%;
+                }
+
+                .education-line {
+                    width: 62%;
+                }
+            }
+
+            @media (max-width: 700px) {
+                .circle {
+                    width: 125px;
+                    height: 125px;
+                    font-size: 40px;
+                    line-height: 115px;
+                    left: 18%;
+                }
+
+                .contact-title {
+                    top: 18.5%;
+                    left: 22%;
+                }
+
+                .icon-resume-container {
+                    top: 24%;
+                    left: 38%;
+                }
+
+                .education-line {
+                    width: 55%;
                 }
             }
 
             @media (max-width: 600px) {
-
                 .circle {
                     width: 100px;
                     height: 100px;
                     font-size: 35px;
                     line-height: 90px;
-                    left: 5%;
+                    left: 17%;
                 }
 
                 .contact-title {
-                    top: 15%;
+                    top: 16.5%;
+                    left: 14%;
+                }
+
+                .icon-resume-container {
+                    top: 22%;
+                    left: 32%;
+                }
+
+                .education-line {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .circle {
+                    width: 100px;
+                    height: 100px;
+                    font-size: 35px;
+                    line-height: 90px;
+                    left: 12%;
+                }
+                
+                .contact-title {
+                    top: 16.5%;
                     left: 8%;
                 }
 
                 .icon-resume-container {
                     top: 22%;
-                    left: 15%;
-                }
-            }
-
-            @media (max-width: 500px) {
-
-                .circle {
-                    width: 100px;
-                    height: 100px;
-                    font-size: 35px;
-                    line-height: 90px;
-                    left: 4%;
-                }
-                
-                .contact-title {
-                    top: 15%;
-                    left: 2.5%;
+                    left: 30%;
                 }
 
-                .icon-resume-container {
-                    top: 22%;
-                    left: 15%;
+                .education-line {
+                    width: 41%;
                 }
             }
         `}</style>
     );
 
     <Darklight darkMode={darkMode} showToggle={false} />
-
 
     return (
     <>
@@ -295,6 +360,24 @@ function Background() {
                             Riley J. Lawson
                         </div>
                     </ScaleText>
+                </div>
+                <div className="education">
+                    <div className="education-title">
+                        E D U C A T I O N
+                    </div>
+                    <div className="education-line"></div>
+                    <div className="education-years">
+                        2023<br/><br/><br/>
+                        2021<br/><br/>
+                        2019<br/><br/>
+                        2019<br/><br/>
+                    </div>
+                    <div className="education-points">
+                        <div className="education-point-line"></div>
+                        <div className="education-point-line"></div>
+                        <div className="education-point-line"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
