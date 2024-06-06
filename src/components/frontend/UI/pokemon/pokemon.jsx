@@ -50,7 +50,6 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Ice Shard' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'skill-link');
-        //heldItem = data.held_items.find(item => item.item.name === 'focus-sash');
         break;
 
       case 'flygon':
@@ -61,7 +60,6 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Dragon Claw' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'levitate');
-        //heldItem = data.held_items.find(item => item.item.name === 'choice-scarf');
         break;
 
       case 'zapdos':
@@ -72,7 +70,6 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Heat Wave' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'pressure');
-        //heldItem = data.held_items.find(item => item.item.name === 'life-orb');
         break;
 
       case 'serperior':
@@ -83,7 +80,6 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Giga Drain' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'contrary');
-        //heldItem = data.held_items.find(item => item.item.name === 'miracle-seed');
         break;
 
       case 'chandelure':
@@ -94,12 +90,20 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Dark Pulse' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'infiltrator');
-        //heldItem = data.held_items.find(item => item.item.name === 'miracle-seed');
+        break;
+
+      case 'malamar':
+        movesToShow = [
+          { move: { name: 'Superpower' } },
+          { move: { name: 'Psycho Cut' } },
+          { move: { name: 'Knock Off' } },
+          { move: { name: 'Tera Blast' } }
+        ];
+        selectedAbility = data.abilities.find(ability => ability.ability.name === 'infiltrator');
         break;
 
       default:
         selectedAbility = data.abilities[0];
-        //heldItem = data.held_items.find(item => item.item.name === 'oran-berry');
         break;
     }
 
@@ -159,7 +163,7 @@ const Pokemon = ({ name, heldItem }) => {
                 onClose={() => setShowPopup(false)}
                 image={item.sprites.default}
                 name={item.name}
-                description={item.effect_entries[0].effect.replace(/^Held:\s*/, '')}
+                description={item.effect_entries[0].effect.replace(/^Held(?:\sin\sbattle)?\s*:\s*/, '')}
               />
 
               <style jsx>{`

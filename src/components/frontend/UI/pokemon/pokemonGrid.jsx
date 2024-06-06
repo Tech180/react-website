@@ -64,13 +64,16 @@ const PokemonGrid = () => {
 
     //const pokemonNames = ['Cloyster', 'Flygon', 'Marowak', 'Zapdos', 'Serperior', 'Chandelure'];
 
+
+    // Add any pokemon with said item to the table
     const pokemonData = [
         { name: 'Cloyster', item: 'focus-sash' },
         { name: 'Flygon', item: 'choice-scarf' },
         { name: 'Marowak', item: 'thick-club' },
         { name: 'Zapdos', item: 'leftovers' },
         { name: 'Serperior', item: 'choice-specs' },
-        { name: 'Chandelure', item: 'choice-specs' }
+        { name: 'Chandelure', item: 'choice-specs' },
+        { name: 'Malamar', item: 'choice-band' }
     ];
 
     return (
