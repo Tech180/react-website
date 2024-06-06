@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import Popup from '../popup';
 import PokeAPI from '../../API/pokeAPI';
 import { animated } from 'react-spring';
@@ -25,6 +25,7 @@ const Pokemon = ({ name }) => {
   const pokeChoice = (name, data, item) => {
     let movesToShow = data.moves.slice(0, 4);
     let selectedAbility = data.abilities[0];
+    //let heldItem = item.results[0];
     let heldItem = '';
 
     switch (name.toLowerCase()) {
@@ -37,7 +38,9 @@ const Pokemon = ({ name }) => {
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'rock-head');
 
-        //heldItem = item.;
+        //heldItem = item.effect_entries[0].find(items => items.items.name === 'focus-sash');
+        
+        //heldItem = item.name;
         break;
 
       case 'cloyster':
@@ -81,6 +84,17 @@ const Pokemon = ({ name }) => {
           { move: { name: 'Giga Drain' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'contrary');
+        //heldItem = data.held_items.find(item => item.item.name === 'miracle-seed');
+        break;
+
+      case 'chandelure':
+        movesToShow = [
+          { move: { name: 'Shadow Ball' } },
+          { move: { name: 'Flamethrower' } },
+          { move: { name: 'Energy Ball' } },
+          { move: { name: 'Dark Pulse' } }
+        ];
+        selectedAbility = data.abilities.find(ability => ability.ability.name === 'infiltrator');
         //heldItem = data.held_items.find(item => item.item.name === 'miracle-seed');
         break;
 
@@ -153,7 +167,7 @@ const Pokemon = ({ name }) => {
               <Popup
                 isOpen={showPopup}
                 onClose={() => setShowPopup(false)}
-                name={'test'}
+                name={heldItem}
                 description={'test'}
               />
 

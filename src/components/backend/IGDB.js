@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const cache = apicache.middleware;
 
-const ids = [3349, 132516, 1517, 3189, 472, 8284, 111, 103329, 11182, 11156, 124, 8347, 2485, 121];
+const ids = [3349, 132516, 1517, 3189, 472, 8284, 111, 103329, 11182, 11156, 124, 8347, 2485, 121, 212089, 295252];
 const RATE_LIMIT = 250;
 
 let lastRequestTime = 0;
@@ -47,7 +47,8 @@ const fetchData = async (url, res) => {
     res.json(data);
 
     lastRequestTime = Date.now();
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(`Error fetching ${url.includes('games') ? 'games' : 'covers'} data: `, error);
     res.status(500).json({ error: 'Internal Server Error' });
   }

@@ -46,7 +46,7 @@ const Background = () => {
 
             .container {
                 display: flex;
-                height: 100vh;
+                height: 102vh;
                 width: 100vw;
             }
 
@@ -67,10 +67,10 @@ const Background = () => {
 
             .grey-bar {
                 position: absolute;
-                top: 5%;
+                top: 46px;
                 left: 0;
                 width: 100%;
-                height: 15%;
+                height: 140px;
                 background-color: var(--dark-inverse);       
             }
 
@@ -95,17 +95,15 @@ const Background = () => {
 
             .contact-title {
                 position: absolute;
-                top: 28%;
-                left: 35%;
                 color: #F4F4F4;
                 font-family: 'Open Sans', sans-serif;
+                top: 170px;
             }
 
             .icon-resume-container {
                 position: absolute;
                 align-items: center;
-                top: 22%;
-                left: 20%;
+                top: 200px;
                 display: flex;
                 flex-direction: column;
                 gap: 80px;
@@ -117,7 +115,7 @@ const Background = () => {
 
             .education {
                 position: relative;
-                top: 22%;
+                top: 200px;
                 height: 400px;
             }
 
@@ -144,20 +142,6 @@ const Background = () => {
                 top: 30px;
             }
 
-            .education-points {
-                position: absolute;
-                left: 85px;
-                top: 70px;
-            }
-
-            .education-point-line {
-                width: 1px;
-                height: 51px;
-                background-color: var(--dark-inverse);
-                margin-left: 20px;
-                opacity: 75%; 
-            }
-
             @font-face {
                 font-family: 'Open Sans';
                 src: url('/resume/fonts/OpenSans.ttf');
@@ -178,17 +162,15 @@ const Background = () => {
                 }
 
                 .contact-title {
-                    top: 22%;
                     left: 7%;
                 }
                 
                 .icon-resume-container {
-                    top: 28%;
                     left: 15%;
                 }
 
                 .education-line {
-                    width: 73%;
+                    width: 71%;
                 }
             }
 
@@ -202,17 +184,15 @@ const Background = () => {
                 }
 
                 .contact-title {
-                    top: 23%;
                     left: 34%;
                 }
                 
                 .icon-resume-container {
-                    top: 28%;
                     left: 44%;
                 }
 
                 .education-line {
-                    width: 70%;
+                    width: 420px;
                 }
             }
 
@@ -226,17 +206,15 @@ const Background = () => {
                 }
 
                 .contact-title {
-                    top: 21%;
                     left: 34%;
                 }
                 
                 .icon-resume-container {
-                    top: 26%;
                     left: 44%;
                 }
 
                 .education-line {
-                    width: 62%;
+                    width: 300px;
                 }
             }
 
@@ -250,17 +228,15 @@ const Background = () => {
                 }
 
                 .contact-title {
-                    top: 18.5%;
                     left: 22%;
                 }
 
                 .icon-resume-container {
-                    top: 24%;
                     left: 38%;
                 }
 
                 .education-line {
-                    width: 55%;
+                    width: 220px;
                 }
             }
 
@@ -274,17 +250,16 @@ const Background = () => {
                 }
 
                 .contact-title {
-                    top: 16.5%;
                     left: 14%;
+                    top: 125px;
                 }
 
                 .icon-resume-container {
-                    top: 22%;
                     left: 32%;
                 }
 
                 .education-line {
-                    width: 50%;
+                    width: 180px;
                 }
             }
 
@@ -298,19 +273,19 @@ const Background = () => {
                 }
                 
                 .contact-title {
-                    top: 16.5%;
                     left: 8%;
+                    top: 125px;
                 }
 
                 .icon-resume-container {
-                    top: 22%;
                     left: 30%;
                 }
 
                 .education-line {
-                    width: 41%;
+                    width: 120px;
                 }
             }
+
         `}</style>
     );
 
@@ -367,17 +342,8 @@ const Background = () => {
                     </div>
                     <div className="education-line"></div>
                     <div className="education-years">
-                        2023<br/><br/><br/>
-                        2021<br/><br/>
-                        2019<br/><br/>
-                        2019<br/><br/>
+                        2023
                     </div>
-                    <div className="education-points">
-                        <div className="education-point-line"></div>
-                        <div className="education-point-line"></div>
-                        <div className="education-point-line"></div>
-                    </div>
-
                 </div>
             </div>
         </div>

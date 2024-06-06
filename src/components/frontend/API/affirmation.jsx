@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useCookies } from 'react-cookie';
+import DarkSwitch from '../UI/toggle/darkswitch';
 import axios from 'axios';
 
 const Affirmation = () => {
     const [affirmation, setAffirmation] = useState('');
-    const [cookies, setCookie] = useCookies(['darkMode']);
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        const savedDarkMode = cookies.darkMode === 'true';
-        setDarkMode(savedDarkMode);
-    }, [cookies.darkMode]);
+    const [darkMode] = DarkSwitch();
 
     useEffect(() => {
         const fetchAffirmation = async () => {
