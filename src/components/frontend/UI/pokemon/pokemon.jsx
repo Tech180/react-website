@@ -157,6 +157,7 @@ const Pokemon = ({ name, heldItem }) => {
               <Popup
                 isOpen={showPopup}
                 onClose={() => setShowPopup(false)}
+                image={item.sprites.default}
                 name={item.name}
                 description={item.effect_entries[0].effect.replace(/^Held:\s*/, '')}
               />

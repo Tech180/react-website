@@ -88,14 +88,18 @@ const Popup = ({ isOpen, onClose, image, name, description }) => {
                   />
                 </svg>
               </div>
-              {/* Image Icon */}
-              <div style={{ marginRight: '16px' }}>
-                {image && <img src={image} style={{ width: '100px', height: '100px' }} />}
+              {/* Name Container */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                {/* Image Icon */}
+                <div style={{ marginRight: '16px' }}>
+                  {image && <img src={image} style={{ width: '45px', height: '45px' }} />}
+                </div>
+                {/* Name */}
+                <h2>{name}</h2>
               </div>
-              {/* Name/Description */}
+              {/* Description */}
               <div>
-                <h2 style={{ paddingBottom: '20px', textAlign: 'center'}}>{name}</h2>
-                <p style={{ ...descriptions}}>{description}</p>
+                <p style={{ ...descriptions }}>{description}</p>
               </div>
             </animated.div>
           </>
