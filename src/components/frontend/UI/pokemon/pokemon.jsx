@@ -158,7 +158,7 @@ const Pokemon = ({ name, heldItem }) => {
                 isOpen={showPopup}
                 onClose={() => setShowPopup(false)}
                 name={item.name}
-                description={item.effect_entries[0].effect}
+                description={item.effect_entries[0].effect.replace(/^Held:\s*/, '')}
               />
 
               <style jsx>{`
