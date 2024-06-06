@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const PokeAPI = (name) => {
+const PokeAPI = (name, heldItem) => {
   const [data, setData] = useState(null);
   const [item, setItem] = useState(null);
 
@@ -22,16 +22,16 @@ const PokeAPI = (name) => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`/api/pokeapi/item/${item.toLowerCase()}`);
+        const response = await axios.get(`/api/pokeapi/item/${heldItem.toLowerCase()}`);
         setItem(response.data);
       } 
       catch (error) {
-        console.error(`Error fetching ${item} data:`, error);
+        console.error(`Error fetching ${heldItem} data:`, error);
       }
     };
 
     fetchItem();
-  }, [item]);
+  }, [heldItem]);
 
   return { data, item };
 };

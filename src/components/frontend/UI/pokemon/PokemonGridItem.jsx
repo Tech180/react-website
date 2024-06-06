@@ -3,17 +3,16 @@ import Pokemon from './pokemon';
 import { animated } from 'react-spring';
 import GridItem from '../animations/GridItem';
 
-const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedIndex }) => {
+const PokemonGridItem = ({ name, heldItem, darkMode, index, expandedIndex, setExpandedIndex }) => {
     const isExpanded = index === expandedIndex;
-  
     const [hovered, setHovered] = useState(false);
-  
+
     const handleToggle = () => {
         setExpandedIndex(isExpanded ? -1 : index);
     };
-  
+
     const spring = GridItem(isExpanded, hovered, darkMode);
-  
+
     return (
       <>
         <animated.div
@@ -44,7 +43,7 @@ const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedInde
             >
                 {isExpanded && (
                     <div className="pokemon-info">
-                        <Pokemon name={name} heldItem={'Potion'}/>
+                        <Pokemon name={name} heldItem={heldItem} />
                     </div>
                 )}
             </div>
@@ -65,7 +64,6 @@ const PokemonGridItem = ({ name, darkMode, index, expandedIndex, setExpandedInde
         </animated.div>
       </>
     );
-  };
-
+};
 
 export default PokemonGridItem;

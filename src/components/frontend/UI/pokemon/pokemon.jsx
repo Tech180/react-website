@@ -5,13 +5,16 @@ import { animated } from 'react-spring';
 import DarkSwitch from '../toggle/darkswitch';
 import ItemBoxSpring from '../animations/ItemBoxSpring';
 
-const Pokemon = ({ name }) => {
-  const { data, item } = PokeAPI(name);
+const Pokemon = ({ name, heldItem }) => {
+
+  
+  const { data, item } = PokeAPI(name, heldItem);
   const [darkMode] = DarkSwitch();
   const [isHovered, setIsHovered] = useState(false);
   const [itemBoxHover, setItemBoxHover] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
+  // Formats the name to lowercase for compatibility
   const formatName = (name) => {
     return name
       .split('-')
@@ -22,10 +25,10 @@ const Pokemon = ({ name }) => {
   // Item Box Animation
   const itemBoxSpring = ItemBoxSpring(itemBoxHover);
 
-  const pokeChoice = (name, data, item) => {
+  const pokeChoice = (name, data) => {
     let movesToShow = data.moves.slice(0, 4);
     let selectedAbility = data.abilities[0];
-    //let heldItem = item.results[0];
+    
     let heldItem = '';
 
     switch (name.toLowerCase()) {
@@ -37,10 +40,6 @@ const Pokemon = ({ name }) => {
           { move: { name: 'Bone Club' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'rock-head');
-
-        //heldItem = item.effect_entries[0].find(items => items.items.name === 'focus-sash');
-        
-        //heldItem = item.name;
         break;
 
       case 'cloyster':
@@ -104,36 +103,26 @@ const Pokemon = ({ name }) => {
         break;
     }
 
-    /*
-    getItem('thick-club').then(itemData => {
-      setItem(itemData); // Update heldItem with the fetched item data
-      heldItem = itemData;
-    }).catch(error => {
-      console.error('Error fetching item:', error);
-    });
-    */
-
-
-
-    //console.log("itemId: " + itemId);
-
-    return { movesToShow, selectedAbility, heldItem };
+    return { movesToShow, selectedAbility };
   };
 
 
   const pokemonInfo = () => {
 
-    //console.log(data);
 
     if (!data) {
       return null;
     }
 
-    //console.log(data);
+    if (!item) {
+      return null;
+    }
 
-    const { movesToShow, selectedAbility, heldItem} = pokeChoice(name, data, item);
 
-    //console.log(itemId);
+    const { movesToShow, selectedAbility} = pokeChoice(name, data, item);
+
+    //console.log(item);
+
 
     return (
       <div
@@ -151,7 +140,7 @@ const Pokemon = ({ name }) => {
               <li>{formatName(selectedAbility.ability.name)}</li>
             </ul>
 
-            <div className="items" style={{ marginTop: '25px' }}>
+            <div className="items" style={{ marginTop: '20px' }}>
               <animated.div
                 className="item-box"
                 style={itemBoxSpring}
@@ -162,13 +151,14 @@ const Pokemon = ({ name }) => {
                   setShowPopup(true);
                 }}
               >
+                <img src={item.sprites.default} alt={item.name} style={{ width: '45px', height: '45px' }} />
               </animated.div>
                   
               <Popup
                 isOpen={showPopup}
                 onClose={() => setShowPopup(false)}
-                name={heldItem}
-                description={'test'}
+                name={item.name}
+                description={item.effect_entries[0].effect}
               />
 
               <style jsx>{`
@@ -191,7 +181,9 @@ const Pokemon = ({ name }) => {
             <h2 className={darkMode ? 'section-title-dark' : 'section-title'}>Moves:</h2>
             <ul className="moves-list">
               {movesToShow.map((move, index) => (
-                <li key={index}>{formatName(move.move.name)}</li>
+                <li key={index}>{
+                  formatName(move.move.name)
+                }</li>
               ))}
             </ul>
           </div>

@@ -54,7 +54,7 @@ const IGDB = () => {
         const coverData = covers.find(cover => cover.game === game.id);
         const cover = coverData && coverData.url.replace('t_thumb', 't_cover_big');
     
-        console.log(coverData);
+        //console.log(coverData);
     
         return {
             id: game.id,

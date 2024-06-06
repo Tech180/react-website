@@ -62,47 +62,57 @@ const PokemonGrid = () => {
     const [darkMode] = DarkSwitch();
     const [expandedIndex, setExpandedIndex] = useState(-1);
 
-    const pokemonNames = ['Cloyster', 'Flygon', 'Marowak', 'Zapdos', 'Serperior', 'Chandelure'];
-  
+    //const pokemonNames = ['Cloyster', 'Flygon', 'Marowak', 'Zapdos', 'Serperior', 'Chandelure'];
+
+    const pokemonData = [
+        { name: 'Cloyster', item: 'focus-sash' },
+        { name: 'Flygon', item: 'choice-scarf' },
+        { name: 'Marowak', item: 'thick-club' },
+        { name: 'Zapdos', item: 'leftovers' },
+        { name: 'Serperior', item: 'choice-specs' },
+        { name: 'Chandelure', item: 'choice-specs' }
+    ];
+
     return (
-      <div>
-          {gridStyles({ darkMode })}
-          <div className="pokemon-grid-container">
-              <h1 className="heading" style = {{paddingTop: '50px'}}>My Favorite Pokemon</h1>
-              <div className="pokemon-grid" style = {{paddingBottom: '50px', paddingTop: '50px'}}>
-                  {pokemonNames.map((name, index) => (
-                      <PokemonGridItem
-                          key={index}
-                          name={name}
-                          darkMode={darkMode}
-                          index={index}
-                          expandedIndex={expandedIndex}
-                          setExpandedIndex={setExpandedIndex}
-                      />
-                  ))}
-              </div>
-          </div>
-  
-          <div className="image-container">
-              <img src="https://fontmeme.com/permalink/240209/e121f8bde9154a24dcb7d418ab4dccee.png" alt="pokemon-font" />
-          </div>
-  
-          <PokeAPIImage darkMode={darkMode}/>
-          
-          <style jsx>{`
-              .image-container {
-                  display: flex;
-                  justify-content: center;
-                  background: ${darkMode ? '#242424' : '#F4F4F4'};
-              }
-              
-              .image-container img {
-                  max-width: 200px;
-              }
+        <div>
+            {gridStyles({ darkMode })}
+            <div className="pokemon-grid-container">
+                <h1 className="heading" style = {{paddingTop: '50px'}}>My Favorite Pokemon</h1>
+                <div className="pokemon-grid" style = {{paddingBottom: '50px', paddingTop: '50px'}}>
+                    {pokemonData.map((pokemon, index) => (
+                        <PokemonGridItem
+                            key={index}
+                            name={pokemon.name}
+                            darkMode={darkMode}
+                            index={index}
+                            expandedIndex={expandedIndex}
+                            setExpandedIndex={setExpandedIndex}
+                            heldItem={pokemon.item}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <div className="image-container">
+                <img src="https://fontmeme.com/permalink/240209/e121f8bde9154a24dcb7d418ab4dccee.png" alt="pokemon-font" />
+            </div>
+
+            <PokeAPIImage darkMode={darkMode}/>
+            
+            <style jsx>{`
+                .image-container {
+                    display: flex;
+                    justify-content: center;
+                    background: ${darkMode ? '#242424' : '#F4F4F4'};
+                }
                 
-          `}</style>
-      </div>
+                .image-container img {
+                    max-width: 200px;
+                }
+                    
+            `}</style>
+        </div>
     );
-  };
+};
 
 export default PokemonGrid;
