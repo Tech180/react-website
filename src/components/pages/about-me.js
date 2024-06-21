@@ -13,8 +13,8 @@ function AboutMe() {
             <AboutHeader />
             <AboutCarousel />
             <PokemonGrid />
-            {<IGDB />
-            }
+            <IGDB />
+            
             {//<Fruit />
             }
             <Footer />

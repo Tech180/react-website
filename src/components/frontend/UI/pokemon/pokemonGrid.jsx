@@ -73,7 +73,7 @@ const PokemonGrid = () => {
         { name: 'Zapdos', item: 'leftovers' },
         { name: 'Serperior', item: 'choice-specs' },
         { name: 'Chandelure', item: 'choice-specs' },
-        { name: 'Malamar', item: 'choice-band' }
+        { name: 'Malamar', item: 'choice-band' },
     ];
 
     return (

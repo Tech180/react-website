@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ScaleText from 'react-scale-text';
-import { Darklight } from './toggle/darklight';
 import { useSpring, animated } from 'react-spring';
-import DarkSwitch from './toggle/darkswitch';
+import DarkSwitch from '../toggle/darkswitch';
+import Experience from './experience';
 
 const Background = () => {
     const [darkMode] = DarkSwitch();
@@ -26,7 +26,7 @@ const Background = () => {
     
     const iconData = [
         { iconClass: "fab fa-linkedin", url: "https://www.linkedin.com/in/riley-lawson-a7a65b203/" },
-        { iconClass: "fab fa-x-twitter", url: "https://x.com/Tech1808" },
+        { iconClass: "fab fa-envelope", url: "" },
         { iconClass: "fab fa-github", url: "https://github.com/Tech180" },
         { iconClass: "fab fa-instagram", url: "https://www.instagram.com" },
         { iconClass: "fab fa-facebook", url: "https://www.facebook.com" }
@@ -48,6 +48,7 @@ const Background = () => {
                 display: flex;
                 height: 102vh;
                 width: 100vw;
+                overflow: hidden;
             }
 
             .black-section {
@@ -113,35 +114,6 @@ const Background = () => {
                 position: absolute;
             }
 
-            .education {
-                position: relative;
-                top: 200px;
-                height: 400px;
-            }
-
-            .education-title {
-                position: relative;
-                color: var(--dark-inverse);
-                left: 4%;
-                font-family: 'Open Sans', sans-serif;
-                font-weight: bold;
-                font-size: var(--font-big);
-            }
-
-            .education-line {
-                height: 1px;
-                background-color: var(--dark-inverse);
-                margin-top: -12px;
-                float: right;
-            }
-
-            .education-years {
-                position: relative;
-                color: var(--dark-inverse);
-                left: 45px;
-                top: 30px;
-            }
-
             @font-face {
                 font-family: 'Open Sans';
                 src: url('/resume/fonts/OpenSans.ttf');
@@ -169,7 +141,7 @@ const Background = () => {
                     left: 15%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 71%;
                 }
             }
@@ -191,7 +163,7 @@ const Background = () => {
                     left: 44%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 420px;
                 }
             }
@@ -213,7 +185,7 @@ const Background = () => {
                     left: 44%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 300px;
                 }
             }
@@ -235,7 +207,7 @@ const Background = () => {
                     left: 38%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 220px;
                 }
             }
@@ -258,7 +230,7 @@ const Background = () => {
                     left: 32%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 180px;
                 }
             }
@@ -281,15 +253,13 @@ const Background = () => {
                     left: 30%;
                 }
 
-                .education-line {
+                .experience-line {
                     width: 120px;
                 }
             }
 
         `}</style>
     );
-
-    <Darklight darkMode={darkMode} showToggle={false} />
 
     return (
     <>
@@ -336,15 +306,7 @@ const Background = () => {
                         </div>
                     </ScaleText>
                 </div>
-                <div className="education">
-                    <div className="education-title">
-                        E D U C A T I O N
-                    </div>
-                    <div className="education-line"></div>
-                    <div className="education-years">
-                        2023
-                    </div>
-                </div>
+                <Experience/>
             </div>
         </div>
         </>

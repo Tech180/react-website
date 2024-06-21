@@ -7,7 +7,8 @@ const fs = require('fs');
 
 const cache = apicache.middleware;
 
-const ids = [3349, 132516, 1517, 3189, 472, 8284, 111, 103329, 11182, 11156, 124, 8347, 2485, 121, 212089, 295252];
+//Game Ids
+const ids = [3349, 266690, 132516, 1517, 3189, 472, 8284, 111, 103329, 11182, 11156, 124, 8347, 2485, 121, 212089, 295252];
 const RATE_LIMIT = 250;
 
 let lastRequestTime = 0;

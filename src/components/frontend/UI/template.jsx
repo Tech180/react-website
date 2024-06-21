@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Darklight } from './toggle/darklight';
 import { fetchPdf } from '../pdf';
 import Download from './buttons/download';
-import Background from './background';
+import Background from './resume/background';
 import DarkSwitch from './toggle/darkswitch';
 
 function ResumePage() {
-  const [darkMode, toggleDarkMode] = DarkSwitch();
+  const [darkMode] = DarkSwitch();
   const [pdfSrc, setPdfSrc] = useState('');
 
   useEffect(() => {
@@ -24,7 +24,6 @@ function ResumePage() {
     <>
       <Background />
       <div>
-        <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
         <Download pdfSrc={pdfSrc} darkMode={darkMode} />
       </div>
     </>

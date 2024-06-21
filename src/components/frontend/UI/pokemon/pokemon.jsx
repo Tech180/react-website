@@ -99,7 +99,8 @@ const Pokemon = ({ name, heldItem }) => {
           { move: { name: 'Knock Off' } },
           { move: { name: 'Tera Blast' } }
         ];
-        selectedAbility = data.abilities.find(ability => ability.ability.name === 'infiltrator');
+
+        selectedAbility = data.abilities.find(ability => ability.ability.name === 'contrary');
         break;
 
       default:

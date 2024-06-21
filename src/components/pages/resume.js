@@ -10,7 +10,10 @@ function Resume() {
         <>
             <ResumeHeader />
             <Template />
-            <Projects />
+            {
+               // <Projects />
+            }
+
             <Footer />
         </>
     );
