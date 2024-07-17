@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Darklight } from '../toggle/darklight';
-import { useCookies } from 'react-cookie';
-
+import DarkSwitch from '../toggle/darkswitch';
 
 function CardItem(props) {
 
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };  
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+  const [darkMode] = DarkSwitch();
 
   const styles = () => (
 
@@ -76,7 +61,7 @@ function CardItem(props) {
         color: #F4F4F4;
         background-color: #9AC2E6;
         box-sizing: border-box;
-        border-radius:25px;
+        border-radius: 25px;
       }
     
       .item-pic-wrap-dark::after {

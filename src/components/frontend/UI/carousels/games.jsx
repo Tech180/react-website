@@ -170,8 +170,9 @@ const Games = ({ items }) => {
   const [selectedSummary, setSelectedSummary] = useState('');
 
   return (
+    
     <div className="carousel-container" style={{ background: darkMode ? '#242424' : '#F4F4F4' }}>
-
+      <h1 className="heading" style = {{paddingTop: '50px'}}>My Favorite Games</h1>
       <Carousel
         responsive={responsive}
         autoPlay={!paused}

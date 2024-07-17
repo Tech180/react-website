@@ -34,10 +34,10 @@ const Pokemon = ({ name, heldItem }) => {
     switch (name.toLowerCase()) {
       case 'marowak':
         movesToShow = [
+          { move: { name: 'Swords Dance' } },
           { move: { name: 'Bonemerang' } },
-          { move: { name: 'Bonemerang' } },
-          { move: { name: 'Rage' } },
-          { move: { name: 'Bone Club' } }
+          { move: { name: 'Knock Off' } },
+          { move: { name: 'Double Edge' } }
         ];
         selectedAbility = data.abilities.find(ability => ability.ability.name === 'rock-head');
         break;

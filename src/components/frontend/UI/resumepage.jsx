@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ResumeItem from './resumeItem';
-import { Darklight } from './toggle/darklight';
-import { useCookies } from 'react-cookie';
+import DarkSwitch from './toggle/darkswitch';
 
 function ResumePage() {
   const [pdfSrc, setPdfSrc] = useState('');
   const [imageSrc, setImageSrc] = useState('');
 
-  const [cookies, setCookie] = useCookies(['darkMode']);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedDarkMode = cookies.darkMode === 'true';
-    setDarkMode(savedDarkMode);
-  }, [cookies.darkMode]);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    setCookie('darkMode', newMode.toString(), { path: '/' });
-  };
-
-  <Darklight darkMode={darkMode} toggleDarkMode={toggleDarkMode} showToggle={false} />
+  const [darkMode] = DarkSwitch();
   
 
   useEffect(() => {

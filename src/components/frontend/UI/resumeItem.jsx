@@ -105,10 +105,70 @@ function ResumeItem(props) {
         color: #242424;
       }
       
-      @media (min-width: 5000px) {
+      @media (max-width: 5000px) {
         .cardsItems,
         .cardsItems-dark {
           width: 50%;
+        }
+
+        .cardsItems_pic-wrap.expanded,
+        .cardsItems_pic-wrap-dark.expanded {
+          height: 45vw;
+        }
+      }
+
+      @media (max-width: 3000px) {
+        .cardsItems,
+        .cardsItems-dark {
+          width: 50%;
+        }
+
+        .cardsItems_pic-wrap.expanded,
+        .cardsItems_pic-wrap-dark.expanded {
+          height: 45vw;
+        }
+      }
+
+      @media (max-width: 2500px) {
+        .cardsItems,
+        .cardsItems-dark {
+          width: 50%;
+        }
+
+        .cardsItems_pic-wrap.expanded,
+        .cardsItems_pic-wrap-dark.expanded {
+          height: 45vw;
+        }
+      }
+
+      @media (max-width: 2000px) {
+        .cardsItems,
+        .cardsItems-dark {
+          width: 50%;
+        }
+
+        .cardsItems_pic-wrap.expanded,
+        .cardsItems_pic-wrap-dark.expanded {
+          height: 45vw;
+        }
+      }
+
+      @media (max-width: 1500px) {
+        .cardsItems,
+        .cardsItems-dark {
+          width: 50%;
+        }
+
+        .cardsItems_pic-wrap.expanded,
+        .cardsItems_pic-wrap-dark.expanded {
+          height: 45vw;
+        }
+      }
+
+      @media (max-width: 1250px) {
+        .cardsItems,
+        .cardsItems-dark {
+          width: 75%;
         }
 
         .cardsItems_pic-wrap.expanded,
@@ -117,39 +177,40 @@ function ResumeItem(props) {
         }
       }
 
-      @media (max-width: 3000px) {
+      @media (max-width: 1000px) {
         .cardsItems,
         .cardsItems-dark {
-          width: 70%;
+          width: 110%;
         }
 
         .cardsItems_pic-wrap.expanded,
         .cardsItems_pic-wrap-dark.expanded {
-          height: 70vw;
+          height: 80vw;
         }
       }
 
-      @media (max-width: 1200px) {
+      @media (max-width: 800px) {
         .cardsItems,
         .cardsItems-dark {
-          width: 100%;
+          width: 80%;
         }
 
         .cardsItems_pic-wrap.expanded,
         .cardsItems_pic-wrap-dark.expanded {
-          height: 100%;
+          height: 60vw;
         }
       }
 
-      @media (max-width: 1200px) {
+
+      @media (max-width: 600px) {
         .cardsItems,
         .cardsItems-dark {
-          width: 100%;
+          width: 90%;
         }
 
         .cardsItems_pic-wrap.expanded,
         .cardsItems_pic-wrap-dark.expanded {
-          height: 100%;
+          height: 90vw;
         }
       }
 
@@ -170,7 +231,7 @@ function ResumeItem(props) {
           <figure className={`${darkMode ? 'cardsItems_pic-wrap-dark' : 'cardsItems_pic-wrap'} ${expanded ? 'expanded' : ''}`} data-category={props.label}>
             <img
               className={`cardsItems_img ${darkMode ? 'cardsItems_img-dark' : ''} ${expanded ? 'expanded' : ''}`}
-              alt='Travel Image'
+              alt='Resume'
               src={props.src}
             />
           </figure>
