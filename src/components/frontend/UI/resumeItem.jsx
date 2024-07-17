@@ -156,12 +156,12 @@ function ResumeItem(props) {
       @media (max-width: 1500px) {
         .cardsItems,
         .cardsItems-dark {
-          width: 50%;
+          width: 70%;
         }
 
         .cardsItems_pic-wrap.expanded,
         .cardsItems_pic-wrap-dark.expanded {
-          height: 45vw;
+          height: 55vw;
         }
       }
 
