@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useCookies } from 'react-cookie';
 import { useSpring, animated } from 'react-spring';
-import { Darklight } from '../toggle/darklight';
 import Popup from '../popup';
 import DarkSwitch from '../toggle/darkswitch';
 
@@ -165,7 +163,6 @@ const IGDBImage = ({darkMode}) => {
 };
 
 const Games = ({ items }) => {
-  const [cookies, setCookie] = useCookies(['darkMode']);
   const [darkMode] = DarkSwitch();
   const [showPopup, setShowPopup] = useState(false);
   const [paused, setPaused] = useState(false);

@@ -21,7 +21,8 @@ const IGDB = () => {
                 const data = await response.json();
                 setGames(data);
             } catch (error) {
-                console.error('Error fetching games data: ', error);            }
+                console.error('Error fetching games data: ', error);           
+            }
         };
 
         fetchData();
@@ -39,9 +40,11 @@ const IGDB = () => {
                         }
                     }
                 );
+                
 
                 const data = await response.json();
                 setCovers(data);
+                console.log(data);
             } catch (error) {
                 console.error('Error fetching covers data: ', error);
             }
