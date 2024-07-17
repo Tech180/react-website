@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import DarkSwitch from '../toggle/darkswitch';
+import { animated, useSpring } from 'react-spring';
+import './accordion.css'
 
 const Experience = () => {
     const [open, setOpen] = useState(false);
@@ -10,100 +12,39 @@ const Experience = () => {
         setOpen(!open);
     };
 
-    const styles = (darkMode) => (
-        <style jsx>{`
-            .experience {
-                position: relative;
-                top: 200px;
-                height: 400px;
-            }
-
-            .experience-title {
-                position: relative;
-                color: var(--dark-inverse);
-                left: 25px;
-                font-family: 'Open Sans', sans-serif;
-                font-weight: bold;
-                font-size: var(--font-big);
-                user-select: none;
-                cursor: pointer;
-            }
-
-            .experience-title-container {
-                display: flex;
-                align-items: center;
-                position: relative;
-                left: 25px;
-                top: 10px;
-            }
-
-            .experience-title-1,
-            .experience-title-1-job,
-            .experience-title-2,
-            .experience-title-2-job  {
-                font-family: 'Open Sans', sans-serif;
-                font-size: var(--font-medium);
-                font-weight: bolder;
-                color: var(--dark-inverse);
-            }
-
-            .experience-title-1-job,
-            .experience-title-2-job  {
-                margin-left: 8px;
-                font-weight: 300;
-            }
-
-            .experience-1-points-1 ul,
-            .experience-2-points-1 {
-                margin-top: 15px;
-                margin-left: 35px;
-                list-style-position: inside;
-            }
-
-            .experience-1-points-1 ul li,
-            .experience-2-points-1 ul li {
-                font-weight: 300;
-                font-family: 'Open Sans', sans-serif;
-                font-size: var(--font-average);
-                color: var(--dark-inverse);
-                padding-left: 0;
-                margin-left: 0;
-            }
-
-            .experience-line {
-                height: 1px;
-                background-color: var(--dark-inverse);
-                margin-top: -12px;
-                float: right;
-            }
-
-            .experience-years {
-                position: relative;
-                color: var(--dark-inverse);
-                left: 25px;
-                top: 10px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: var(--font-average);
-                font-style: italic;
-                font-weight: 400;
-            }
-
-            .experience-image-1{
-                width: auto;
-                height: 20px;
-                margin-right: 10px;
-            }
-        `}</style>
-    );
+    const animationProps = useSpring({
+        height: open ? 'auto' : 0,
+        overflow: 'hidden'
+    });
 
     return (
         <>
-            {styles(darkMode)}
             <div className="experience">
                 <div className="experience-title" onClick={toggle}>
                     E X P E R I E N C E
                 </div>
                 <div className="experience-line"></div>
+
+                <animated.div style={animationProps}>
+                    <div className="experience-content">
+                        <h3>Company 1</h3>
+                        <p>Role: Software Engineer</p>
+                        <p>Duration: 2021 - Present</p>
+                        <p>Responsibilities: Lorem ipsum dolor sit amet...</p>
+                    </div>
+                    <div className="experience-content">
+                        <h3>Company 2</h3>
+                        <p>Role: Front-end Developer</p>
+                        <p>Duration: 2019 - 2021</p>
+                        <p>Responsibilities: Lorem ipsum dolor sit amet...</p>
+                    </div>
+                    <div className="experience-content">
+                        <h3>Company 2</h3>
+                        <p>Role: Front-end Developer</p>
+                        <p>Duration: 2019 - 2021</p>
+                        <p>Responsibilities: Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </animated.div>
                 {open && (
                     <>
                         <div className="experience-title-container">

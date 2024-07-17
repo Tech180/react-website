@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Darklight } from '../toggle/darklight';
 import { useCookies } from 'react-cookie';
 import DarkSwitch from '../toggle/darkswitch';

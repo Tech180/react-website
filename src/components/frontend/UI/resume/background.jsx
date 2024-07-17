@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ScaleText from 'react-scale-text';
 import { useSpring, animated } from 'react-spring';
 import DarkSwitch from '../toggle/darkswitch';
-import Experience from './experience';
+import Testing from './testing';
 
 const Background = () => {
     const [darkMode] = DarkSwitch();
@@ -49,6 +49,14 @@ const Background = () => {
                 height: 102vh;
                 width: 100vw;
                 overflow: hidden;
+            }
+
+            .resume-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 200px;
+
             }
 
             .black-section {
@@ -306,7 +314,14 @@ const Background = () => {
                         </div>
                     </ScaleText>
                 </div>
-                <Experience/>
+                <div className='resume-container'>
+                    {
+                    //<Experience/>
+                    //<Education/>
+                    }
+                    <Testing/>
+                    <Testing/>
+                </div>
             </div>
         </div>
         </>

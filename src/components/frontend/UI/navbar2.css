@@ -160,7 +160,6 @@ li {
 }
 
 @media screen and (max-width: 740px) {
-
     .mobile-menu,
     .mobile-menu-dark {
         display: flex;
