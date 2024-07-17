@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/navbar2';
+//import './App.css';
+import './components/frontend/styles.css'
+import Navbar from './components/frontend/UI/navbar2';
 import Home from './components/pages/home';
 import Resume from './components/pages/resume';
 import Contact from './components/pages/contact';

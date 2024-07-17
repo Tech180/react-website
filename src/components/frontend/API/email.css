@@ -1,0 +1,104 @@
+/* Background */
+.contact-container ,
+.contact-container-dark {
+  background-color: #F4F4F4;
+  padding: 4rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 125vh;
+}
+
+.contact-container-dark {
+  background-color: #242424;
+}
+
+/* Contact Page Heading */
+.contact-page-heading,
+.contact-page-heading-dark {
+  color: #9AC2E6;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.contact-page-heading-dark {
+  color: #B39DDB;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+/* Label */
+.form-label,
+.form-label-dark {
+  color: #242424;
+  margin-bottom: 8px;
+}
+
+.form-label-dark {
+  color: #F4F4F4;
+}
+
+
+/* Button */
+.contact-btn ,
+.contact-btn-dark{
+  padding: 8px 20px;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid #242424;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 16px;
+  background-color: transparent;
+  color: #242424;
+  transition: all 0.3s ease-out;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.contact-btn-dark {
+  border: 1px solid #F4F4F4;
+  color: #F4F4F4;
+}
+
+.contact-btn:hover,
+.contact-btn-dark:hover {
+  background: #242424;
+  color: #F4F4F4;
+  transition: all 0.3s ease-out;
+}
+
+
+.contact-btn-dark:hover {
+  background: #F4F4F4;
+  color: #242424;
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .contact-container,
+  .contact-container-dark {
+    height: 95vh;
+  }
+
+  .form-group {
+    width: 70%;
+  }
+
+  .contact-btn,
+  .contact-btn-dark {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
