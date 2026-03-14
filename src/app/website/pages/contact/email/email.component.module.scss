@@ -1,0 +1,72 @@
+@use "../../../../../styles/variables.scss" as *;
+
+.contactContainer {
+  background: #F4F4F4;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  transition: background-color $transition-speed;
+
+  :global(.dark-theme) & {
+    background: #242424;
+  }
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: #242424;
+  margin-bottom: 2rem;
+
+  :global(.dark-theme) & {
+    color: #F4F4F4;
+  }
+}
+
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.contactBtn {
+  background: transparent;
+  color: #242424;
+  border: 1px solid #242424;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+
+  :global(.dark-theme) & {
+    color: #F4F4F4;
+    border-color: #F4F4F4;
+  }
+
+  &:hover {
+    background: #242424;
+    color: #F4F4F4;
+    border-color: #9AC2E6;
+
+    :global(.dark-theme) & {
+      background: #F4F4F4;
+      color: #242424;
+      border-color: #B39DDB;
+    }
+  }
+}
+
+.errorText {
+  color: red;
+  margin-top: 1rem;
+}

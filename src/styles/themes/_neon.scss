@@ -1,0 +1,22 @@
+// --- NEON THEME ---
+
+[data-theme='neon'] {
+  --theme-primary: #00f3ff;
+  --theme-primary-hover: #33f5ff;
+  --theme-nav-link-bg: #00f3ff;
+  
+  &[data-appearance='light'] {
+    --theme-bg: #f0faff;
+    --theme-text: #004a4d;
+    --theme-nav-link-text: #004a4d;
+  }
+
+  &[data-appearance='dark'] {
+    --theme-bg: #0d0221;
+    --theme-surface: rgba(13, 2, 33, 0.8);
+    --theme-primary: #ff00ff;
+    --theme-primary-hover: #ff33ff;
+    --theme-nav-link-bg: #ff00ff;
+    --theme-nav-link-text: #ffffff;
+  }
+}

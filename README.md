@@ -1,51 +1,36 @@
-# Riley's Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-react-website
+## Getting Started
 
-## Description
+First, run the development server:
 
-This project was intended to explore the ins and outs of React. Much of the work involved understanding how React functions and learning a new and unique language. This website provides information about me and elaborates on who I am as a person.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Demo
-![20240516213203_1](https://github.com/Tech180/react-website/assets/19378220/08f0d9d0-d24c-4b98-bb97-6df4d122048b)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-![20240516213212_1](https://github.com/Tech180/react-website/assets/19378220/642e2c98-e81f-4117-8391-6c14e31eeb4b)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Features
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Dark mode
-- Email sending
-- Mobile view
-- Resume and info about me
-- Utilization of multiple REST API's
+## Learn More
 
-## Installation
+To learn more about Next.js, take a look at the following resources:
 
-1. Clone the repository:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-   ```bash
-   git clone https://github.com/Tech180/react-website.git
-   ```
-2. Install the dependencies
-   ```bash
-   npm install
-   ```
-3. Run the website!
-   ```bash
-   npm run dev
-   ```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-   
-Or check it out here!
-- https://riley.lawsonserver.org
-   
-## Components Missing?
-- Unfortunately you'll be missing the authorization of IGDB, however you can easily input a headers file like such with your authorization details (put the headers.json in the public folder ;) ). To aquire the Client-ID and Authorization follow the IGDB link on the website and it'll direct you to their API documentation with all of the necessary details.
-   ```json
-   {
-       "Accept": "application/json",
-       "Client-ID": "",
-       "Authorization": "",
-       "Content-Type": "application/json"
-   }
-   ```
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

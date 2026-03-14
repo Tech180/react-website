@@ -1,0 +1,67 @@
+@use "../../../../styles/variables.scss" as *;
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  background: var(--toggle-bg);
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 24px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+
+  &-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background-color: var(--toggle-knob);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 10px;
+      color: var(--toggle-icon);
+    }
+
+    &--dark {
+      transform: translateX(26px);
+    }
+  }
+}
+
+.theme_btn {
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-border);
+  color: var(--theme-primary);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0.75rem;
+  transition: transform $transition-speed, background-color $transition-speed;
+
+  &:hover {
+    transform: rotate(15deg) scale(1.1);
+    background: var(--theme-primary);
+    color: var(--theme-bg);
+  }
+
+  &--neon {
+    box-shadow: 0 0 8px var(--theme-primary);
+  }
+}

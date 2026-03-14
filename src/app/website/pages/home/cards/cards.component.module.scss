@@ -1,0 +1,157 @@
+@use "../../../../../styles/variables.scss" as *;
+
+.cards {
+  padding: 4rem;
+  background: #F4F4F4;
+  position: relative;
+  transition: background-color $transition-speed;
+
+  :global(.dark-theme) & {
+    background: #242424;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: #242424;
+    bottom: 0; // Adds the divider correctly at bottom of cards component based on original
+
+    :global(.dark-theme) & {
+      background-color: #F4F4F4;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 4rem;
+    color: #242424;
+
+    :global(.dark-theme) & {
+      color: #F4F4F4;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.items {
+  margin-bottom: 5%;
+  padding: 0;
+  list-style: none;
+
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.link {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow $transition-speed;
+
+  :global(.dark-theme) & {
+    box-shadow: 0 6px 20px rgba(244, 244, 244, 0.2); // Soft glow instead of pure solid white
+  }
+}
+
+.item-pic-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 67%;
+  overflow: hidden;
+  margin: 0;
+
+  &::after {
+    content: attr(data-category);
+    position: absolute;
+    bottom: 10px;
+    margin-left: 10px;
+    padding: 6px 10px;
+    max-width: calc((100%) - 60px);
+    font-size: 12px;
+    font-weight: 700;
+    color: #F4F4F4;
+    background-color: #9AC2E6;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    :global(.dark-theme) & {
+      color: #242424;
+      background-color: #8e5fd6;
+    }
+  }
+}
+
+.item-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover; // Originally "contain" but "cover" avoids whitespace issues on different aspect ratios unless desired. Keeping to original if prefered, but usually cover is desired. Changed to target legacy functionality exactly: we will keep it as standard image fit. Given old logic, it used object-fit: contain.
+}
+
+.item-info {
+  padding: 20px 30px 30px;
+  user-select: none;
+  pointer-events: none;
+  background: white;
+
+  :global(.dark-theme) & {
+    background: #1a1a1a;
+  }
+}
+
+.item-text {
+  color: #242424;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+
+  :global(.dark-theme) & {
+    color: #F4F4F4;
+  }
+}

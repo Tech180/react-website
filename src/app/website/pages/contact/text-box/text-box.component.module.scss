@@ -1,0 +1,78 @@
+@use "../../../../../styles/variables.scss" as *;
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid transparent; // for error/correct states
+  transition: border-color $transition-speed;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.correct {
+  border: 1px solid green;
+}
+
+.textarea {
+  width: calc(100% - 20px);
+  border: none;
+  border-bottom: 2px solid #242424;
+  outline: none;
+  padding-top: 18px;
+  padding-left: 10px;
+  font-size: 16px;
+  background: none;
+  color: #242424;
+  position: relative;
+  z-index: 1;
+  resize: none;
+  overflow-y: auto;
+
+  :global(.dark-theme) & {
+    color: #F4F4F4;
+    border-bottom: 2px solid #F4F4F4;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  color: #242424;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+
+  :global(.dark-theme) & {
+    color: #F4F4F4;
+  }
+}
+
+// Float logic
+.active {
+  transform: translateY(-25px);
+  font-size: 14px;
+  color: #9AC2E6;
+  opacity: 1;
+
+  :global(.dark-theme) & {
+    color: #B39DDB;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .field {
+    width: 100%;
+  }
+}

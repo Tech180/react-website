@@ -1,0 +1,71 @@
+@use "../../../../styles/variables.scss" as *;
+.button {
+  @include flex-center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-sm;
+  font-family: $font-family;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-speed;
+  outline: none;
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  &-text {
+    line-height: 1.2;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-bg;
+    border: 1px solid transparent;
+
+    &:hover, &:focus {
+      background-color: $color-primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 243, 255, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $color-text;
+    border: $border-thin;
+
+    &:hover, &:focus {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &--glass {
+    @include glass;
+    color: $color-text;
+
+    &:hover, &:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: $color-primary;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,13 @@
+// --- DEFAULT THEME ---
+
+[data-theme='default'] {
+  --theme-primary: #9AC2E6;
+  --theme-primary-hover: #7AB2E1;
+  --theme-nav-link-bg: #9AC2E6;
+  
+  &[data-appearance='dark'] {
+    --theme-primary: #B39DDB;
+    --theme-primary-hover: #9575CD;
+    --theme-nav-link-bg: #B39DDB;
+  }
+}
