@@ -33,7 +33,7 @@ export function NavbarView({
           </Link>
           {/* Desktop-only theme panel trigger sits next to the brand */}
           <div className={styles['brand-theme-trigger']}>
-            <ThemePanelComponent />
+            <ThemePanelComponent scrolled={scrolled} />
           </div>
         </div>
 
@@ -55,6 +55,7 @@ export function NavbarView({
       <SidebarComponent
         open={navMenuOpen}
         side="left"
+        variant="default"
         aria-hidden={!navMenuOpen}
         aria-label="Navigation menu"
       >
@@ -81,7 +82,7 @@ export function NavbarView({
 
         <footer className={`${styles['mobile-footer']} ${navMenuOpen ? styles['mobile-footer--open'] : ''}`}>
           {/* Mobile theme panel: self-contained section with label, trigger, and expandable content */}
-          <ThemePanelComponent />
+          <ThemePanelComponent scrolled={scrolled} />
 
           <div className={styles['footer-row']}>
             <span className={styles['footer-label']}>Connect</span>

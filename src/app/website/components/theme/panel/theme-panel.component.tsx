@@ -4,8 +4,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { ThemePanelView } from "./theme-panel.view";
 import { useTheme } from "../../../contexts/theme.context";
 import { Theme, Appearance } from "../../../types/theme/theme.type";
+import { UIService } from "../../../services/ui.service";
 
-export function ThemePanelComponent() {
+export function ThemePanelComponent({ scrolled }: { scrolled?: boolean }) {
   const { theme, setTheme, appearance, setAppearance } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -24,12 +25,29 @@ export function ThemePanelComponent() {
   useEffect(() => {
     if (!isOpen || isMobile) return;
     const handleClickOutside = (e: MouseEvent) => {
-      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const portaledSidebar = document.getElementById("theme-panel-sidebar");
+      
+      if (
+        panelRef.current && 
+        !panelRef.current.contains(target) &&
+        (!portaledSidebar || !portaledSidebar.contains(target))
+      ) {
         setIsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen, isMobile]);
+  
+  // Handle body scroll locking (only on desktop where sidebar is a portal drawer)
+  useEffect(() => {
+    if (!isMobile) {
+      UIService.setBodyScroll(isOpen);
+    }
+    return () => {
+      if (!isMobile) UIService.setBodyScroll(false);
+    };
   }, [isOpen, isMobile]);
 
   const handleThemeChange = (t: Theme) => setTheme(t);
@@ -42,6 +60,7 @@ export function ThemePanelComponent() {
       <ThemePanelView
         isOpen={isOpen}
         isMobile={isMobile}
+        scrolled={scrolled}
         theme={theme}
         appearance={appearance}
         onToggle={handleToggle}

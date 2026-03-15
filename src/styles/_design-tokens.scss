@@ -1,0 +1,21 @@
+/* =========================================
+   Design System Tokens (Non-Color)
+   ========================================= */
+
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$radius-md: 8px;
+$font-main: var(--font-inter), sans-serif;
+$transition-speed: 0.2s ease;
+
+@mixin glass {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

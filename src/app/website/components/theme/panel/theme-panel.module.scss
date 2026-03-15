@@ -225,18 +225,24 @@
 // Panel Internal Content
 // =========================================
 .panel-content {
-  padding: 2rem 1.5rem;
+  padding: 0 1.5rem 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0;
+  height: 100%;
 }
 
 .panel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
-  padding-top: 1rem; // breathing room from top on desktop
+  height: 5rem; // Match navbar height
+  margin-bottom: 2rem;
+  background: transparent;
+  border-bottom: 1px solid $border;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 0 1.5rem;
 }
 
 .panel-header-label {

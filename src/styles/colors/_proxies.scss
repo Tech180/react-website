@@ -1,0 +1,21 @@
+/* =========================================
+   CSS Variable Proxies
+   ========================================= */
+
+$bg: var(--bg);
+$surface: var(--surface);
+$border: var(--border);
+$primary: var(--primary);
+$primary-hover: var(--primary-hover);
+$text: var(--text);
+$text-muted: var(--text-muted);
+$accent: var(--accent);
+
+// Theme Toggle Specific Proxies
+$toggle-aura-color: var(--toggle-aura-color);
+$toggle-aura-intensity: var(--toggle-aura-intensity);
+$toggle-sky-day: var(--toggle-sky-day);
+$toggle-sky-night: var(--toggle-sky-night);
+$toggle-body-light: var(--toggle-body-light);
+$toggle-body-dark: var(--toggle-body-dark);
+$toggle-grid-color: var(--toggle-grid-color);

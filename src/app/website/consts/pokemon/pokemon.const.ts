@@ -1,0 +1,20 @@
+export const POKEMON_GEN_ABBREVIATIONS: Record<string, string> = {
+  'red-blue': 'R/B',
+  'yellow': 'Y',
+  'gold-silver': 'G/S',
+  'crystal': 'C',
+  'ruby-sapphire': 'R/S',
+  'emerald': 'E',
+  'firered-leafgreen': 'FR/LG',
+  'diamond-pearl': 'D/P',
+  'platinum': 'Pt',
+  'heartgold-soulsilver': 'HG/SS',
+  'black-white': 'B/W',
+  'black-2-white-2': 'B2/W2',
+  'x-y': 'X/Y',
+  'omega-ruby-alpha-sapphire': 'OR/AS',
+  'sun-moon': 'S/M',
+  'ultra-sun-ultra-moon': 'US/UM',
+  'sword-shield': 'Sw/Sh',
+  'scarlet-violet': 'S/V'
+};

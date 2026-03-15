@@ -9,7 +9,7 @@ export async function fetchIGDBGames() {
   const token = process.env.IGDB_ACCESS_TOKEN;
 
   if (!clientId || !token) {
-    console.error('Missing IGDB credentials');
+    // Silent skip during build if credentials aren't provided
     return [];
   }
 

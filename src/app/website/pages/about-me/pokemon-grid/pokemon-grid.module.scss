@@ -1,0 +1,60 @@
+@use "../../../../../styles/variables" as *;
+
+.roster-section {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    .expanded-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      
+      &:not(:empty) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      align-items: stretch;
+
+      @media (min-width: 640px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  .title {
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    color: $text-muted;
+    white-space: nowrap;
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: $border;
+  }
+
+  .icon {
+    color: $text-muted;
+  }
+}

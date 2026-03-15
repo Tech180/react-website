@@ -1,61 +1,9 @@
-// Direct Proxies
-$bg: var(--bg);
-$surface: var(--surface);
-$border: var(--border);
-$primary: var(--primary);
-$primary-hover: var(--primary-hover);
-$text: var(--text);
-$text-muted: var(--text-muted);
-$accent: var(--accent);
+/* =========================================
+   Central Variables Gateway
+   ========================================= */
 
-// Toggle Tokens
-$toggle-aura-color: var(--toggle-aura-color);
-$toggle-aura-intensity: var(--toggle-aura-intensity);
-$toggle-sky-day: var(--toggle-sky-day);
-$toggle-sky-night: var(--toggle-sky-night);
-$toggle-body-light: var(--toggle-body-light);
-$toggle-body-dark: var(--toggle-body-dark);
-$toggle-grid-color: var(--toggle-grid-color);
-$toggle-border-shadow: rgba(255, 255, 255, 0.1);
-$toggle-body-shadow: rgba(0, 0, 0, 0.1);
-
-// Utility & Effect Tokens
-$shadow-subtle: rgba(0, 0, 0, 0.1);
-$white-10: rgba(255, 255, 255, 0.1);
-$white-40: rgba(255, 255, 255, 0.4);
-$white-90: rgba(255, 255, 255, 0.9);
-$sun-glow: rgba(255, 215, 0, 0.6);
-$neon-cyan-glow: rgba(0, 243, 255, 0.15);
-$neon-magenta-glow: rgba(255, 0, 255, 0.15);
-$cyber-red-glow: rgba(255, 0, 60, 0.1);
-$cyber-yellow: #fcee0a;
-$cyber-red: #ff003c;
-$cyber-yellow-border: rgba(252, 238, 10, 0.3);
-$cyber-black-border: rgba(0, 0, 0, 0.2);
-$neon-cyan: #00f3ff;
-$neon-cyan: #00f3ff;
-$neon-magenta: #ff00ff;
-$neon-cyan-border: rgba(0, 243, 255, 0.3);
-$neon-magenta-border: rgba(255, 0, 255, 0.3);
-$neon-gradient: linear-gradient(90deg, #00f3ff, #ff00ff);
-$white: #ffffff;
-$black: #000000;
-
-// Design Tokens
-$spacing-sm: 0.5rem;
-$spacing-md: 1rem;
-$radius-md: 8px;
-$font-main: var(--font-inter), sans-serif;
-$transition-speed: 0.2s ease;
-
-@mixin glass {
-  background: $surface;
-  backdrop-filter: blur(10px);
-  border: 1px solid $border;
-}
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@forward "./colors/proxies";
+@forward "./colors/colors";
+@forward "./colors/pokemon/stats";
+@forward "./colors/effects";
+@forward "./design-tokens";

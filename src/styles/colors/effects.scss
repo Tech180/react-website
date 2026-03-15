@@ -1,0 +1,28 @@
+@use "colors" as *;
+
+/* =========================================
+   Glows, Shadows, and Translucency Tokens
+   ========================================= */
+
+$shadow-subtle: rgba($black, 0.1);
+$white-10: rgba($white, 0.1);
+$white-40: rgba($white, 0.4);
+$white-90: rgba($white, 0.9);
+
+$sun-glow: rgba($sun-yellow, 0.6);
+$neon-cyan-glow: rgba($neon-cyan, 0.15);
+$neon-magenta-glow: rgba($neon-magenta, 0.15);
+$cyber-red-glow: rgba($cyber-red, 0.1);
+
+$cyber-yellow-border: rgba($cyber-yellow, 0.3);
+$cyber-black-border: rgba($black, 0.2);
+
+$neon-cyan-border: rgba($neon-cyan, 0.3);
+$neon-magenta-border: rgba($neon-magenta, 0.3);
+
+$toggle-border-shadow: rgba($white, 0.1);
+$toggle-body-shadow: rgba($black, 0.1);
+
+$border-thin-color: rgba($white, 0.1);
+
+$neon-gradient: linear-gradient(90deg, $neon-cyan, $neon-magenta);

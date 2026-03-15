@@ -5,13 +5,13 @@ import { PokemonGridViewProps } from '../../../interfaces/pokemon/pokemon-grid.i
 
 export function PokemonGridView({ pokemonEntities }: PokemonGridViewProps) {
   return (
-    <div className={styles.gridContainer}>
+    <div className={styles['pokemon-grid']}>
       <h1 className={styles.heading}>My Favorite Pokemon</h1>
 
       {/* Client Component used to hydrate the interactions (click to expand) */}
       <PokemonGridClientComponent pokemonEntities={pokemonEntities} />
 
-      <div className={styles.imageContainer}>
+      <div className={styles['image-container']}>
         <img src="https://fontmeme.com/permalink/240209/e121f8bde9154a24dcb7d418ab4dccee.png" alt="pokemon-font" />
       </div>
     </div>

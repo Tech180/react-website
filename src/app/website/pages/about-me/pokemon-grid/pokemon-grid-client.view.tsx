@@ -1,70 +1,58 @@
 import React from 'react';
-import styles from './pokemon-grid.component.module.scss';
-import { PokemonGridClientViewProps } from '../../../interfaces/pokemon/pokemon-grid.interface';
+import { motion } from 'framer-motion';
+import { Palette } from 'lucide-react';
+import styles from './pokemon-grid.module.scss';
+import { PokemonEntity } from '../../../interfaces/pokemon/pokemon.interface';
+import { PokemonTile } from '../../../components/pokemon/pokemon-tile/pokemon-tile.component';
+import { InformationCard } from '../../../components/pokemon/information-card/information-card.component';
+import { useTheme } from '../../../contexts/theme.context';
+
+interface PokemonGridClientViewProps {
+  pokemonEntities: PokemonEntity[];
+  selectedId: string | null;
+  onItemClick: (name: string) => void;
+  onClose: () => void;
+}
+
+import { Transition } from 'framer-motion';
+
+const springTransition: Transition = {
+  type: "spring",
+  stiffness: 850,
+  damping: 55,
+  mass: 0.5,
+  restDelta: 0.001,
+  restSpeed: 0.001
+};
 
 export function PokemonGridClientView({
   pokemonEntities,
-  expandedIndex,
+  selectedId,
   onItemClick,
-  formatName,
-  getCustomPokemonDetails
+  onClose
 }: PokemonGridClientViewProps) {
+  const selectedPkmn = pokemonEntities.find(p => p.name === selectedId);
+
   return (
-    <div className={styles.grid}>
-      {pokemonEntities.map((pkmn, index) => {
-        const isExpanded = index === expandedIndex;
-        let expandedContent = null;
+    <section className={styles['roster-section']}>
+      <div className={styles.inner}>
+        <div className={styles['expanded-section']}>
+          {selectedPkmn && (
+            <InformationCard pkmn={selectedPkmn} onClose={onClose} />
+          )}
+        </div>
 
-        if (isExpanded && pkmn.pokeData && pkmn.itemData) {
-          const { movesToShow, selectedAbility } = getCustomPokemonDetails(pkmn.name, pkmn.pokeData);
-
-          expandedContent = (
-            <div className={styles.expandedInfo}>
-              <h1 className={styles.pokemonNameHeader}>{formatName(pkmn.name)}</h1>
-              <div className={styles.pokemonDetailsContainer}>
-                <div className={styles.pokemonImageBlock}>
-                  <img src={pkmn.pokeData.sprites.front_default} alt={pkmn.name} draggable={false} />
-                </div>
-                <div className={styles.pokemonSpecs}>
-                  <div className={styles.abilitiesCol}>
-                    <h2 className={styles.sectionTitle}>Ability:</h2>
-                    <ul className={styles.abilitiesList}>
-                      <li>{formatName(selectedAbility.ability.name)}</li>
-                    </ul>
-                    <div className={styles.itemBoxWrapper}>
-                      <div className={styles.itemBox} title={pkmn.itemData.effect_entries?.[0]?.effect.replace(/^Held(?:\sin\sbattle)?\s*:\s*/, '')}>
-                        <img src={pkmn.itemData.sprites.default} alt={pkmn.itemData.name} className={styles.itemSprite} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.movesCol}>
-                    <h2 className={styles.sectionTitle}>Moves:</h2>
-                    <ul className={styles.movesList}>
-                      {movesToShow.map((m: any, i: number) => (
-                        <li key={i}>{formatName(m.move.name)}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        }
-
-        return (
-          <div
-            key={index}
-            className={`${styles.gridItem} ${isExpanded ? styles.expanded : ''}`}
-            onClick={() => onItemClick(index)}
-          >
-            <div className={styles.gridItemContent}>
-              {isExpanded ? expandedContent : (
-                <img src={pkmn.spriteUrl} alt={pkmn.name} className={styles.mainSprite} />
-              )}
-            </div>
-          </div>
-        );
-      })}
-    </div>
+        <motion.div layout transition={springTransition} className={styles.grid}>
+          {pokemonEntities.map((pkmn) => (
+            <PokemonTile
+              key={pkmn.name}
+              pkmn={pkmn}
+              isActive={selectedId === pkmn.name}
+              onClick={() => onItemClick(pkmn.name)}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

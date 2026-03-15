@@ -1,6 +1,6 @@
 @use "../../../../styles/variables" as *;
 
-.header-container {
+.header {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -11,65 +11,64 @@
   user-select: none;
   transition: background-color $transition-speed;
   overflow: hidden;
-}
 
-.header-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 0;
-}
-
-.header-overlay {
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.header-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  h1 {
-    color: $primary;
-    font-size: 100px;
-    margin-top: 250px;
-
-    // Target the innerHTML span and hr
-    :global(span) {
-      position: relative;
-      display: inline-block;
-    }
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
   }
 
-  @media screen and (max-width: 960px) {
+  .overlay {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 62.5rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     h1 {
-      font-size: 70px;
-      margin-top: -150px;
-    }
-  }
+      color: $primary;
+      font-size: 6.25rem;
+      margin-top: 15.625rem;
 
-  @media screen and (max-width: 768px) {
-    h1 {
-      margin-top: -100px;
+      // Target the innerHTML span and hr
+      :global(span) {
+        position: relative;
+        display: inline-block;
+      }
     }
-  }
 
-  @media screen and (max-height: 600px) {
-    h1 {
-      font-size: 50px;
-      margin-top: -100px;
+    @media screen and (max-width: 960px) {
+      h1 {
+        font-size: 4.375rem;
+        margin-top: -9.375rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        margin-top: -6.25rem;
+      }
+    }
+
+    @media screen and (max-height: 600px) {
+      h1 {
+        font-size: 3.125rem;
+        margin-top: -6.25rem;
+      }
     }
   }
 }
-

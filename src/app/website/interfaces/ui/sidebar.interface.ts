@@ -1,5 +1,8 @@
 export interface SidebarProps {
   open: boolean;
+  scrolled?: boolean | undefined;
+  variant?: 'default' | 'theme';
+  id?: string;
   side?: 'left' | 'right';
   children: React.ReactNode;
   className?: string;

@@ -3,6 +3,7 @@ import { Theme, Appearance } from "../../types/theme/theme.type";
 export interface ThemePanelViewProps {
   isOpen: boolean;
   isMobile: boolean;
+  scrolled?: boolean | undefined;
   theme: Theme;
   appearance: Appearance;
   onToggle: () => void;

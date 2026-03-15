@@ -20,6 +20,26 @@ export async function fetchItem(name: string) {
   }
 }
 
+export async function fetchMove(name: string) {
+  try {
+    // Clean up move names that might have spaces instead of hyphens
+    const formattedName = name.toLowerCase().replace(/\s+/g, '-');
+    return await interceptor<any>(`https://pokeapi.co/api/v2/move/${formattedName}`);
+  } catch (error) {
+    console.error(`Error fetching move ${name}:`, error);
+    return null;
+  }
+}
+
+export async function fetchAbility(name: string) {
+  try {
+    return await interceptor<any>(`https://pokeapi.co/api/v2/ability/${name.toLowerCase()}`);
+  } catch (error) {
+    console.error(`Error fetching ability ${name}:`, error);
+    return null;
+  }
+}
+
 export async function fetchHeldItem(url: string) {
   try {
     return await interceptor<any>(url);
