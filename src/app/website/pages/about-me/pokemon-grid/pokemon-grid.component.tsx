@@ -1,4 +1,4 @@
-import { getFavoritePokemonData } from '@/app/website/services/poke-api.service';
+import { getFavoritePokemonData } from '../../../services/poke-api.service';
 import { PokemonGridView } from './pokemon-grid.view';
 
 export async function PokemonGridComponent() {

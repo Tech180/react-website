@@ -1,4 +1,4 @@
-@use "../../../../../styles/variables.scss" as *;
+@use "../../../../../styles/variables" as *;
 
 .container {
   width: 100%;
@@ -15,32 +15,27 @@
 }
 
 .error {
-  border: 1px solid red;
+  border: 1px solid $primary; // Mapped to tokens
 }
 
 .correct {
-  border: 1px solid green;
+  border: 1px solid $accent; // Mapped to tokens
 }
 
 .textarea {
   width: calc(100% - 20px);
   border: none;
-  border-bottom: 2px solid #242424;
+  border-bottom: 2px solid $text;
   outline: none;
   padding-top: 18px;
   padding-left: 10px;
   font-size: 16px;
   background: none;
-  color: #242424;
+  color: $text;
   position: relative;
   z-index: 1;
   resize: none;
   overflow-y: auto;
-
-  :global(.dark-theme) & {
-    color: #F4F4F4;
-    border-bottom: 2px solid #F4F4F4;
-  }
 }
 
 .label {
@@ -48,27 +43,19 @@
   top: 10px;
   left: 10px;
   font-size: 16px;
-  color: #242424;
+  color: $text;
   transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
   opacity: 0.75;
   user-select: none;
   pointer-events: none;
-
-  :global(.dark-theme) & {
-    color: #F4F4F4;
-  }
 }
 
 // Float logic
 .active {
   transform: translateY(-25px);
   font-size: 14px;
-  color: #9AC2E6;
+  color: $primary;
   opacity: 1;
-
-  :global(.dark-theme) & {
-    color: #B39DDB;
-  }
 }
 
 @media screen and (max-width: 500px) {

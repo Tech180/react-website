@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { ResumeViewerProps } from '@/app/website/interfaces/resume/resume-viewer.interface';
+import { ResumeViewerProps } from '../../../interfaces/resume/resume-viewer.interface';
 import { ResumeViewerView } from './resume-viewer.view';
 
 export function ResumeViewerComponent({ imageSrc, pdfSrc }: ResumeViewerProps) {
@@ -10,7 +10,7 @@ export function ResumeViewerComponent({ imageSrc, pdfSrc }: ResumeViewerProps) {
   const handleToggleExpand = () => setExpanded(!expanded);
 
   return (
-    <ResumeViewerView 
+    <ResumeViewerView
       imageSrc={imageSrc}
       pdfSrc={pdfSrc}
       expanded={expanded}

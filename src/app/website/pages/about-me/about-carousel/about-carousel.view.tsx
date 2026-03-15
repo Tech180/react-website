@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './about-carousel.component.module.scss';
-import { CarouselItem } from '@/app/website/interfaces/carousel/carousel.interface';
+import { CarouselItem } from '../../../interfaces/carousel/carousel.interface';
 
 export function AboutCarouselView({ items }: { items: CarouselItem[] }) {
   return (

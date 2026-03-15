@@ -1,4 +1,4 @@
-@use "../../../../../styles/variables.scss" as *;
+@use "../../../../../styles/variables" as *;
 
 .container {
   display: flex;
@@ -8,14 +8,10 @@
 
 .resumeCard {
   padding: 4rem;
-  background: #F4F4F4;
+  background: $bg;
   display: flex;
   justify-content: center;
   transition: background-color $transition-speed;
-
-  :global(.dark-theme) & {
-    background: #242424;
-  }
 
   @media (max-width: 750px) {
     padding: 3rem 1rem;
@@ -26,14 +22,10 @@
   width: 50%;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #242424;
+  background-color: $text;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-
-  :global(.dark-theme) & {
-    background-color: #F4F4F4;
-  }
 
   &:hover {
     transform: scale(1.02);
@@ -53,7 +45,7 @@
 .imageWrap {
   width: 100%;
   position: relative;
-  background: white;
+  background: $surface;
 }
 
 .resumeImg {
@@ -75,26 +67,18 @@
 }
 
 .text {
-  color: #F4F4F4;
+  color: $bg;
   font-size: 18px;
   margin: 0;
-
-  :global(.dark-theme) & {
-    color: #242424;
-  }
 }
 
 .downloadContainer {
   display: flex;
   justify-content: center;
-  background-color: #F4F4F4;
+  background-color: $bg;
   padding: 2rem 0 4rem 0;
   position: relative;
   transition: background-color $transition-speed;
-
-  :global(.dark-theme) & {
-    background-color: #242424;
-  }
 
   // Divider
   &::after {
@@ -105,14 +89,14 @@
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background-color: #242424;
-
-    :global(.dark-theme) & {
-      background-color: #F4F4F4;
-    }
+    background-color: $text;
   }
 
   a {
     text-decoration: none;
   }
+}
+
+.pdfIcon {
+  margin-right: 0.5rem;
 }

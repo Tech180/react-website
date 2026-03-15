@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import { PokemonEntity } from '@/app/website/interfaces/pokemon/pokemon.interface';
+import { PokemonEntity } from '../../../interfaces/pokemon/pokemon.interface';
 import { PokemonGridClientView } from './pokemon-grid-client.view';
-import { formatName } from '@/app/website/utils/string.util';
+import { formatName } from '../../../utils/string.util';
 
 export function PokemonGridClientComponent({ pokemonEntities }: { pokemonEntities: PokemonEntity[] }) {
   const [expandedIndex, setExpandedIndex] = useState<number>(-1);
@@ -54,7 +54,7 @@ export function PokemonGridClientComponent({ pokemonEntities }: { pokemonEntitie
   };
 
   return (
-    <PokemonGridClientView 
+    <PokemonGridClientView
       pokemonEntities={pokemonEntities}
       expandedIndex={expandedIndex}
       onItemClick={handleItemClick}

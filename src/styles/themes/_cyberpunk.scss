@@ -1,0 +1,33 @@
+[data-theme='cyberpunk'] {
+  --primary: #fcee0a;
+  --primary-hover: #fff31a;
+
+  // Toggle-specific tokens
+  --toggle-aura-color: #fcee0a;
+  --toggle-aura-intensity: 45px;
+  --toggle-sky-day: #fcee0a;
+  --toggle-sky-night: #050505;
+  --toggle-body-light: #000000;
+  --toggle-body-dark: #ff003c;
+  --toggle-grid-color: rgba(252, 238, 10, 0.1);
+
+  &[data-appearance='light'] {
+    --bg: #fcee0a;
+    --surface: rgba(252, 238, 10, 0.8);
+    --border: #000000;
+    --text: #000000;
+    --primary: #000000;
+    --primary-hover: #333333;
+    --toggle-aura-color: #fcee0a;
+  }
+
+  &[data-appearance='dark'] {
+    --bg: #000000;
+    --surface: rgba(0, 0, 0, 0.8);
+    --border: #fcee0a;
+    --text: #fcee0a;
+    --primary: #fcee0a;
+    --primary-hover: #fff31a;
+    --toggle-aura-color: #ff003c;
+  }
+}

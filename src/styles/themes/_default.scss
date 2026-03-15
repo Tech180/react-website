@@ -1,13 +1,19 @@
-// --- DEFAULT THEME ---
-
 [data-theme='default'] {
-  --theme-primary: #9AC2E6;
-  --theme-primary-hover: #7AB2E1;
-  --theme-nav-link-bg: #9AC2E6;
-  
+  --primary: #9AC2E6;
+  --primary-hover: #7AB2E1;
+
+  // Toggle-specific tokens
+  --toggle-aura-color: #9AC2E6;
+  --toggle-aura-intensity: 25px;
+  --toggle-sky-day: #87CEEB;
+  --toggle-sky-night: #0a0a1a;
+  --toggle-body-light: #FFD700;
+  --toggle-body-dark: #F4F4F4;
+  --toggle-grid-color: transparent;
+
   &[data-appearance='dark'] {
-    --theme-primary: #B39DDB;
-    --theme-primary-hover: #9575CD;
-    --theme-nav-link-bg: #B39DDB;
+    --primary: #B39DDB;
+    --primary-hover: #9575CD;
+    --toggle-aura-color: #B39DDB;
   }
 }

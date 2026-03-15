@@ -1,4 +1,4 @@
-import { getGamesCarouselItems } from '@/app/website/services/igdb.service';
+import { getGamesCarouselItems } from '../../../services/igdb.service';
 import { GamesCarouselView } from './games-carousel.view';
 
 export async function GamesCarouselComponent() {

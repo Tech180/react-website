@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './global-error.module.scss';
 
-interface GlobalErrorViewProps {
-  reset: () => void;
-}
+import { GlobalErrorViewProps } from '../../interfaces/error/global-error.interface';
 
 export function GlobalErrorView({ reset }: GlobalErrorViewProps) {
   return (

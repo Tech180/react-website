@@ -1,4 +1,4 @@
-import { PokemonEntity } from "@/app/website/interfaces/pokemon/pokemon.interface";
+import { PokemonEntity } from "../interfaces/pokemon/pokemon.interface";
 import { POKEMON_LIST } from "../consts/pokemon/pokemon-list.const";
 import { interceptor } from "../interceptors/http.interceptor";
 
@@ -36,10 +36,10 @@ export async function getFavoritePokemonData(): Promise<PokemonEntity[]> {
   const dataPromises = POKEMON_LIST.map(async (pkmn) => {
     const pokeData = await fetchPokemon(pkmn.name);
     const itemData = await fetchItem(pkmn.item);
-    
+
     // Enrich item data with sprite if available
     // (The view expects itemData.sprites.default)
-    
+
     return {
       name: pkmn.name,
       heldItem: pkmn.item,

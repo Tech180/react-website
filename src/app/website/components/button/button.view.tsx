@@ -1,15 +1,15 @@
 import styles from "./button.component.module.scss";
-import { ButtonProps } from "@/app/website/interfaces/ui/button.interface";
+import { ButtonProps } from "../../interfaces/ui/button.interface";
 
-export function ButtonView({ 
-  children, 
-  variant = "primary", 
+export function ButtonView({
+  children,
+  variant = "primary",
   icon,
   className = "",
-  ...props 
+  ...props
 }: ButtonProps) {
   return (
-    <button 
+    <button
       className={`${styles.button} ${styles[`button--${variant}`]} ${className}`}
       {...props}
     >

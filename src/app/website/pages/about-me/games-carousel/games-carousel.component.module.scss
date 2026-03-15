@@ -1,23 +1,15 @@
-@use "../../../../../styles/variables.scss" as *;
+@use "../../../../../styles/variables" as *;
 
 .carouselContainer {
-  background: #F4F4F4;
+  background: $bg;
   padding: 50px 0;
   transition: background-color $transition-speed;
-
-  :global(.dark-theme) & {
-    background: #242424;
-  }
 }
 
 .heading {
   text-align: center;
-  color: #242424;
+  color: $text;
   margin-bottom: 2rem;
-
-  :global(.dark-theme) & {
-    color: #F4F4F4;
-  }
 }
 
 .scrollTrack {
@@ -34,7 +26,7 @@
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(154, 194, 230, 0.5);
+    background: rgba($primary, 0.5); // Replaced static color with semantic token
     border-radius: 4px;
   }
 }
@@ -45,16 +37,11 @@
   position: relative;
   text-align: center;
   border-radius: 60px;
-  background: #fff;
+  background: $surface;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: default;
-
-  :global(.dark-theme) & {
-    background: #1a1a1a;
-    box-shadow: 0 6px 20px rgba(244, 244, 244, 0.25);
-  }
 
   &:hover {
     transform: scale(1.05);
@@ -107,12 +94,8 @@
   flex-direction: column;
   align-items: center;
   font-size: 20px;
-  color: #242424;
+  color: $text;
   margin-top: 3rem;
-
-  :global(.dark-theme) & {
-    color: #F4F4F4;
-  }
 }
 
 .igdbImageWrap {
@@ -125,7 +108,8 @@
   transition: max-width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
 
-  :global(.dark-theme) & {
+  // Manual dark mode attribute swap since CSS variables can't invert images directly
+  :global([data-appearance='dark']) & {
     filter: invert(1) brightness(95%);
   }
 

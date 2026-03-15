@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './text-box.component.module.scss';
-import { TextBoxViewProps } from '@/app/website/interfaces/contact/text-box.interface';
+import { TextBoxViewProps } from '../../../interfaces/contact/text-box.interface';
 
-export function TextBoxView({ 
-  text, 
-  value, 
-  name, 
-  onChange, 
-  rows, 
-  focused, 
-  isError, 
-  isValid, 
-  onFocus, 
-  onBlur 
+export function TextBoxView({
+  text,
+  value,
+  name,
+  onChange,
+  rows,
+  focused,
+  isError,
+  isValid,
+  onFocus,
+  onBlur
 }: TextBoxViewProps) {
   return (
     <div className={styles.container}>

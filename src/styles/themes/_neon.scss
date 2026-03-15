@@ -1,22 +1,28 @@
-// --- NEON THEME ---
-
 [data-theme='neon'] {
-  --theme-primary: #00f3ff;
-  --theme-primary-hover: #33f5ff;
-  --theme-nav-link-bg: #00f3ff;
-  
+  --primary: #00f3ff;
+  --primary-hover: #33f5ff;
+
+  // Toggle-specific tokens
+  --toggle-aura-color: #00f3ff;
+  --toggle-aura-intensity: 60px;
+  --toggle-sky-day: #0d0221;
+  --toggle-sky-night: #050110;
+  --toggle-body-light: #00f3ff;
+  --toggle-body-dark: #ff00ff;
+  --toggle-grid-color: rgba(0, 243, 255, 0.1);
+
   &[data-appearance='light'] {
-    --theme-bg: #f0faff;
-    --theme-text: #004a4d;
-    --theme-nav-link-text: #004a4d;
+    --bg: #f0faff;
+    --text: #004a4d;
+    --toggle-aura-color: #00f3ff;
   }
 
   &[data-appearance='dark'] {
-    --theme-bg: #0d0221;
-    --theme-surface: rgba(13, 2, 33, 0.8);
-    --theme-primary: #ff00ff;
-    --theme-primary-hover: #ff33ff;
-    --theme-nav-link-bg: #ff00ff;
-    --theme-nav-link-text: #ffffff;
+    --bg: #0d0221;
+    --surface: rgba(13, 2, 33, 0.8);
+    --primary: #ff00ff;
+    --primary-hover: #ff33ff;
+    --toggle-aura-color: #ff00ff;
+    --toggle-body-dark: #ff00ff;
   }
 }

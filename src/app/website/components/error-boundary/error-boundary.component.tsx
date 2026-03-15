@@ -3,10 +3,7 @@
 import React, { useEffect } from 'react';
 import { ErrorView } from './error-boundary.view';
 
-export interface ErrorBoundaryProps {
-  error: Error & { digest?: string; isPublic?: boolean; status?: number };
-  reset: () => void;
-}
+import { ErrorBoundaryProps } from '../../interfaces/error/error-boundary.interface';
 
 export function ErrorBoundaryComponent({ error, reset }: ErrorBoundaryProps) {
   useEffect(() => {

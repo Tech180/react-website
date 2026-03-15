@@ -2,18 +2,8 @@
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-export type Theme = "default" | "neon";
-export type Appearance = "light" | "dark";
-
-interface ThemeContextType {
-  theme: Theme;
-  appearance: Appearance;
-  setTheme: (theme: Theme) => void;
-  setAppearance: (appearance: Appearance) => void;
-  toggleAppearance: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+import { Theme, Appearance } from '../types/theme/theme.type';
+import { ThemeContext } from '../consts/theme/theme.const';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("default");

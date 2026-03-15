@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './cards.component.module.scss';
-
-import { CardItemProps } from '@/app/website/interfaces/home/cards.interface';
+import { CardItemProps } from '../../../interfaces/home/cards.interface';
 
 function CardItem({ src, text, label, path }: CardItemProps) {
   return (

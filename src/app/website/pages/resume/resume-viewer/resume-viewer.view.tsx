@@ -1,27 +1,27 @@
 import React from 'react';
+import { FileText } from 'lucide-react';
 import styles from './resume-viewer.component.module.scss';
-import { ButtonComponent } from '@/app/website/components/button/button.component';
+import { ButtonComponent } from '../../../components/button/button.component';
+import { ResumeViewerViewProps } from '../../../interfaces/resume/resume-viewer.interface';
 
-import { ResumeViewerViewProps } from '@/app/website/interfaces/resume/resume-viewer.interface';
-
-export function ResumeViewerView({ 
-  imageSrc, 
-  pdfSrc, 
-  expanded, 
-  onToggleExpand 
+export function ResumeViewerView({
+  imageSrc,
+  pdfSrc,
+  expanded,
+  onToggleExpand
 }: ResumeViewerViewProps) {
   return (
     <div className={styles.container}>
       <div className={styles.resumeCard}>
-        <div 
-           className={`${styles.resumeItem} ${expanded ? styles.expanded : ''}`}
-           onClick={onToggleExpand}
+        <div
+          className={`${styles.resumeItem} ${expanded ? styles.expanded : ''}`}
+          onClick={onToggleExpand}
         >
           <div className={styles.imageWrap}>
-            <img 
-              src={imageSrc} 
-              alt="Resume View" 
-              className={`${styles.resumeImg} ${expanded ? styles.expanded : ''}`} 
+            <img
+              src={imageSrc}
+              alt="Resume View"
+              className={`${styles.resumeImg} ${expanded ? styles.expanded : ''}`}
             />
           </div>
           <div className={styles.info}>
@@ -31,11 +31,11 @@ export function ResumeViewerView({
           </div>
         </div>
       </div>
-      
+
       <div className={styles.downloadContainer}>
         <a href={pdfSrc} download="Resume.pdf">
           <ButtonComponent variant="secondary">
-            <i className="far fa-file-pdf" style={{ marginRight: '8px' }}></i>
+            <FileText className={styles.pdfIcon} size={20} />
             Download PDF
           </ButtonComponent>
         </a>

@@ -1,0 +1,35 @@
+@use "../../../../../styles/variables" as *;
+
+.error-boundary {
+  padding: 2rem;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  background: $surface;
+  margin: 2rem;
+  text-align: center;
+
+  &-heading {
+    margin-bottom: 1rem;
+    color: $text;
+  }
+
+  &-message {
+    color: $text-muted;
+    margin: 1rem 0;
+  }
+
+  &-button {
+    padding: 0.5rem 1rem;
+    background: $accent;
+    color: $text;
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: background $transition-speed;
+
+    &:hover {
+      background: $primary;
+      color: $bg;
+    }
+  }
+}

@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './pokemon-grid.component.module.scss';
-import { PokemonEntity } from '@/app/website/interfaces/pokemon/pokemon.interface';
-import { PokemonGridClientViewProps } from '@/app/website/interfaces/pokemon/pokemon-grid.interface';
+import { PokemonGridClientViewProps } from '../../../interfaces/pokemon/pokemon-grid.interface';
 
-export function PokemonGridClientView({ 
-  pokemonEntities, 
-  expandedIndex, 
+export function PokemonGridClientView({
+  pokemonEntities,
+  expandedIndex,
   onItemClick,
   formatName,
   getCustomPokemonDetails

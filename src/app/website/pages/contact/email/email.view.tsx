@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TextBoxComponent } from '../text-box/text-box.component';
 import styles from './email.component.module.scss';
 
-import { EmailViewProps } from '@/app/website/interfaces/contact/email.interface';
+import { EmailViewProps } from '../../../interfaces/contact/email.interface';
 
 export function EmailView({
   name,
@@ -23,45 +23,45 @@ export function EmailView({
       <h1 className={styles.heading}>Contact Page</h1>
       <form onSubmit={onSubmit} className={styles.formWrap}>
         <div className={styles.formGroup}>
-          <TextBoxComponent 
-            text="Name" 
-            value={name} 
+          <TextBoxComponent
+            text="Name"
+            value={name}
             name="name"
             textType="text"
-            onChange={(e) => setName(e.target.value)} 
+            onChange={(e) => setName(e.target.value)}
             rows={2}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <TextBoxComponent 
-            text="Email Address" 
+          <TextBoxComponent
+            text="Email Address"
             value={email}
             name="email"
             textType="email"
-            onChange={(e) => setEmail(e.target.value)} 
+            onChange={(e) => setEmail(e.target.value)}
             rows={2}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <TextBoxComponent 
-            text="Subject" 
-            value={subject} 
+          <TextBoxComponent
+            text="Subject"
+            value={subject}
             name="subject"
             textType="text"
-            onChange={(e) => setSubject(e.target.value)} 
+            onChange={(e) => setSubject(e.target.value)}
             rows={2}
           />
         </div>
 
         <div className={styles.formGroup}>
-          <TextBoxComponent 
-            text="Message" 
+          <TextBoxComponent
+            text="Message"
             value={message}
             name="message"
-            textType="text" 
-            onChange={(e) => setMessage(e.target.value)} 
+            textType="text"
+            onChange={(e) => setMessage(e.target.value)}
             rows={6}
           />
         </div>
@@ -70,7 +70,7 @@ export function EmailView({
           Send Message
         </button>
       </form>
-      
+
       {error && <p className={styles.errorText}>{error}</p>}
       <ToastContainer />
     </div>

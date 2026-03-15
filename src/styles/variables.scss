@@ -1,47 +1,57 @@
-// SCSS Proxies (for backward compatibility and design-time safety)
-$color-bg: var(--color-bg);
-$color-surface: var(--color-surface);
-$color-border: var(--color-border);
-$color-primary: var(--color-primary);
-$color-primary-hover: var(--color-primary-hover);
-$color-text: var(--color-text);
-$color-text-muted: var(--color-text-muted);
+// Direct Proxies
+$bg: var(--bg);
+$surface: var(--surface);
+$border: var(--border);
+$primary: var(--primary);
+$primary-hover: var(--primary-hover);
+$text: var(--text);
+$text-muted: var(--text-muted);
+$accent: var(--accent);
 
-// Sizing & Spacing (1rem = 16px)
-$spacing-xs: 0.25rem;
+// Toggle Tokens
+$toggle-aura-color: var(--toggle-aura-color);
+$toggle-aura-intensity: var(--toggle-aura-intensity);
+$toggle-sky-day: var(--toggle-sky-day);
+$toggle-sky-night: var(--toggle-sky-night);
+$toggle-body-light: var(--toggle-body-light);
+$toggle-body-dark: var(--toggle-body-dark);
+$toggle-grid-color: var(--toggle-grid-color);
+$toggle-border-shadow: rgba(255, 255, 255, 0.1);
+$toggle-body-shadow: rgba(0, 0, 0, 0.1);
+
+// Utility & Effect Tokens
+$shadow-subtle: rgba(0, 0, 0, 0.1);
+$white-10: rgba(255, 255, 255, 0.1);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-90: rgba(255, 255, 255, 0.9);
+$sun-glow: rgba(255, 215, 0, 0.6);
+$neon-cyan-glow: rgba(0, 243, 255, 0.15);
+$neon-magenta-glow: rgba(255, 0, 255, 0.15);
+$cyber-red-glow: rgba(255, 0, 60, 0.1);
+$cyber-yellow: #fcee0a;
+$cyber-red: #ff003c;
+$cyber-yellow-border: rgba(252, 238, 10, 0.3);
+$cyber-black-border: rgba(0, 0, 0, 0.2);
+$neon-cyan: #00f3ff;
+$neon-cyan: #00f3ff;
+$neon-magenta: #ff00ff;
+$neon-cyan-border: rgba(0, 243, 255, 0.3);
+$neon-magenta-border: rgba(255, 0, 255, 0.3);
+$neon-gradient: linear-gradient(90deg, #00f3ff, #ff00ff);
+$white: #ffffff;
+$black: #000000;
+
+// Design Tokens
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
-$spacing-lg: 1.5rem;
-$spacing-xl: 2rem;
-$spacing-xxl: 3rem;
-
-// Borders & Radii
-$border-thin: 1px solid $color-border;
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
-$border-radius-pill: 9999px;
-
-// Typography
-$font-family: var(--font-inter), sans-serif;
-$font-size-sm: 0.875rem;
-$font-size-base: 1rem;
-$font-size-lg: 1.125rem;
-$font-size-xl: 1.25rem;
-$font-size-2xl: 1.5rem;
-$font-size-3xl: 2rem;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-
-// Transitions & Mixins
+$radius-md: 8px;
+$font-main: var(--font-inter), sans-serif;
 $transition-speed: 0.2s ease;
 
 @mixin glass {
-  background: $color-surface;
-  backdrop-filter: blur(var(--glass-blur));
-  border: $border-thin;
+  background: $surface;
+  backdrop-filter: blur(10px);
+  border: 1px solid $border;
 }
 
 @mixin flex-center {

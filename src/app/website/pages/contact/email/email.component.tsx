@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { EmailView } from './email.view';
-import { sendEmail } from '@/app/website/services/email.service';
+import { sendEmail } from '../../../services/email.service';
 
 export function EmailComponent() {
   const [name, setName] = useState('');
@@ -31,7 +31,7 @@ export function EmailComponent() {
   };
 
   return (
-    <EmailView 
+    <EmailView
       name={name}
       email={email}
       subject={subject}

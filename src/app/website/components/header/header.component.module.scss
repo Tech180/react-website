@@ -1,27 +1,49 @@
-@use "../../../../../styles/variables.scss" as *;
+@use "../../../../styles/variables" as *;
 
 .header-container {
   height: 100vh;
   width: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: no-repeat;
   user-select: none;
   transition: background-color $transition-speed;
+  overflow: hidden;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 
   h1 {
-    color: #9AC2E6;
+    color: $primary;
     font-size: 100px;
     margin-top: 250px;
-
-    :global(.dark-theme) & {
-      color: #B39DDB;
-    }
 
     // Target the innerHTML span and hr
     :global(span) {
@@ -30,12 +52,7 @@
     }
   }
 
-  @media screen and (min-width: 961px) {
-    object-fit: scale-down;
-  }
-
   @media screen and (max-width: 960px) {
-    background-size: cover;
     h1 {
       font-size: 70px;
       margin-top: -150px;
@@ -48,10 +65,6 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
-    background-size: cover;
-  }
-
   @media screen and (max-height: 600px) {
     h1 {
       font-size: 50px;
@@ -59,3 +72,4 @@
     }
   }
 }
+

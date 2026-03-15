@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './affirmation.component.module.scss';
-
-import { AffirmationViewProps } from '@/app/website/interfaces/home/affirmation.interface';
+import { AffirmationViewProps } from '../../../interfaces/home/affirmation.interface';
 
 export function AffirmationView({ affirmation }: AffirmationViewProps) {
   return (

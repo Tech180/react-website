@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { Facebook, Instagram, Github, Twitter, Linkedin } from 'lucide-react';
 import { ButtonComponent } from '../button/button.component';
+import { FooterViewProps } from '../../interfaces/ui/footer.interface';
 import styles from './footer.component.module.scss';
-
-import { FooterViewProps } from '@/app/website/interfaces/ui/footer.interface';
 
 export function FooterView({ isContactPage }: FooterViewProps) {
   return (
@@ -24,7 +24,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
       <section className={styles['social-media']}>
         <div className={styles['social-media-wrap']}>
           <small className={styles['website-rights']}>Riley Lawson © 2024</small>
-          
+
           <small className={styles['react-made']}>
             Made with React
           </small>
@@ -37,7 +37,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
               rel='noopener noreferrer'
               aria-label='Facebook'
             >
-              <i className='fab fa-facebook-f' />
+              <Facebook size={20} />
             </a>
             <a
               className={`${styles['social-icon-link']} ${styles.instagram}`}
@@ -46,7 +46,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
               rel='noopener noreferrer'
               aria-label='Instagram'
             >
-              <i className='fab fa-instagram' />
+              <Instagram size={20} />
             </a>
             <a
               className={`${styles['social-icon-link']} ${styles.github}`}
@@ -55,7 +55,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
               rel='noopener noreferrer'
               aria-label='GitHub'
             >
-              <i className='fab fa-github' />
+              <Github size={20} />
             </a>
             <a
               className={`${styles['social-icon-link']} ${styles.twitter}`}
@@ -64,7 +64,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
               rel='noopener noreferrer'
               aria-label='Twitter'
             >
-              <i className='fab fa-twitter' />
+              <Twitter size={20} />
             </a>
             <a
               className={`${styles['social-icon-link']} ${styles.linkedin}`}
@@ -73,7 +73,7 @@ export function FooterView({ isContactPage }: FooterViewProps) {
               rel='noopener noreferrer'
               aria-label='LinkedIn'
             >
-              <i className='fab fa-linkedin' />
+              <Linkedin size={20} />
             </a>
           </div>
         </div>

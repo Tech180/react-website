@@ -1,45 +1,38 @@
-@use "./variables.scss" as *;
+@use "./variables" as *;
 @use "./themes/appearance";
 @use "./themes/default";
 @use "./themes/neon";
+@use "./themes/cyberpunk";
 
-// Functional Component Tokens (Aliasing the Matrix)
-:root {
-  --color-bg: var(--theme-bg);
-  --color-surface: var(--theme-surface);
-  --color-border: var(--theme-border);
-  --color-primary: var(--theme-primary);
-  --color-primary-hover: var(--theme-primary-hover);
-  --color-text: var(--theme-text);
-  --color-text-muted: var(--theme-text-muted);
-  
-  --toggle-bg: var(--theme-toggle-bg);
-  --toggle-knob: var(--theme-toggle-knob);
-  --toggle-icon: var(--theme-toggle-icon);
-  
-  --nav-link-bg: var(--theme-nav-link-bg);
-  --nav-link-text: var(--theme-nav-link-text);
-  --nav-link-hover-text: var(--theme-nav-link-hover-text);
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
+// Functional Global Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box; //
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  background-color: $color-bg;
-  color: $color-text;
-  font-family: $font-family;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw; //
+  overflow-x: hidden; //
+  margin: 0; //
+  padding: 0; //
+
+  // Use the simplified variables directly
+  background-color: $bg;
+  color: $text;
+  font-family: $font-main;
+
+  -webkit-font-smoothing: antialiased; //
+  -moz-osx-font-smoothing: grayscale; //
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit; //
+  text-decoration: none; //
+  transition: color $transition-speed; //
+
+  &:hover {
+    color: $primary; // Simple hover state using the primary semantic color
+  }
 }
