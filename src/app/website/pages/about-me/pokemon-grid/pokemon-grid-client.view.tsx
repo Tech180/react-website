@@ -1,29 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette } from 'lucide-react';
 import styles from './pokemon-grid.module.scss';
-import { PokemonEntity } from '../../../interfaces/pokemon/pokemon.interface';
+import { PokemonGridClientViewProps } from '../../../interfaces/pokemon/pokemon-grid.interface';
 import { PokemonTile } from '../../../components/pokemon/pokemon-tile/pokemon-tile.component';
 import { InformationCard } from '../../../components/pokemon/information-card/information-card.component';
-import { useTheme } from '../../../contexts/theme.context';
-
-interface PokemonGridClientViewProps {
-  pokemonEntities: PokemonEntity[];
-  selectedId: string | null;
-  onItemClick: (name: string) => void;
-  onClose: () => void;
-}
-
-import { Transition } from 'framer-motion';
-
-const springTransition: Transition = {
-  type: "spring",
-  stiffness: 850,
-  damping: 55,
-  mass: 0.5,
-  restDelta: 0.001,
-  restSpeed: 0.001
-};
+import { gridSpringTransition } from '../../../consts/ui/motion.consts';
 
 export function PokemonGridClientView({
   pokemonEntities,
@@ -42,7 +23,7 @@ export function PokemonGridClientView({
           )}
         </div>
 
-        <motion.div layout transition={springTransition} className={styles.grid}>
+        <motion.div layout transition={gridSpringTransition} className={styles.grid}>
           {pokemonEntities.map((pkmn) => (
             <PokemonTile
               key={pkmn.name}

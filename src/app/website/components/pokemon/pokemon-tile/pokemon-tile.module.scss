@@ -4,11 +4,12 @@
 .pokemon-tile {
   position: relative;
   cursor: pointer;
-  border: 1px solid $border;
+  border: 1px solid transparent; // Reserve space for border
+  outline: 1px solid $border; // Use outline for standard border
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all $transition-speed;
+  transition: background-color $transition-speed, box-shadow $transition-speed;
   background: $surface;
   border-radius: $radius-md;
   height: 100%;
@@ -21,9 +22,9 @@
   }
 
   &.is-active {
-    border: 2px solid $primary;
+    border: 2px solid $primary; // Increase border size when active
+    outline: none; // Remove outline when border is 2px
     box-shadow: 0 0.625rem 0.9375rem -0.1875rem $shadow-subtle;
-    transform: scale(0.95);
     z-index: 10;
   }
 
@@ -31,10 +32,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0.5rem;
+    justify-content: center; // Center everything vertically
+    padding: 0.75rem 0.5rem;
     position: relative;
-    height: 100%;
+    height: 6rem; // Fixed height for content area to prevent jumping
+    min-height: 6rem;
 
     .id {
       position: absolute;
@@ -48,9 +50,12 @@
     .sprite {
       image-rendering: pixelated;
       -ms-interpolation-mode: nearest-neighbor;
-      margin-top: auto;
-      margin-bottom: auto;
-      transition: all $transition-speed;
+      transition: opacity $transition-speed;
+      display: block;
+      height: 3rem; // Use REM for consistency
+      width: 3rem;
+      object-fit: contain;
+      flex-shrink: 0;
 
       &.is-idle {
         opacity: 0.4;
@@ -62,12 +67,18 @@
     }
 
     .name {
-      margin-top: auto;
+      margin-top: 0.25rem;
       font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
       color: $text;
+      text-align: center;
+      line-height: 1.2;
+      height: 1.4rem; // Reserve space for name
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 

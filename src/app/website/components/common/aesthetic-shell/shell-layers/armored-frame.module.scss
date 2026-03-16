@@ -1,0 +1,57 @@
+@use "../../../../../../styles/variables" as *;
+
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--primary);
+  pointer-events: none;
+  z-index: 5;
+  transition: all $transition-speed;
+
+  &.top-left { 
+    top: -1px; left: -1px; 
+    border-right: none; border-bottom: none; 
+    clip-path: polygon(0 0, 100% 0, 100% 2px, 2px 2px, 2px 100%, 0 100%);
+  }
+  &.top-right { 
+    top: -1px; right: -1px; 
+    border-left: none; border-bottom: none; 
+  }
+  &.bottom-left { 
+    bottom: -1px; left: -1px; 
+    border-right: none; border-top: none; 
+  }
+  &.bottom-right { 
+    bottom: -1px; right: -1px; 
+    border-left: none; border-top: none; 
+    
+    // Custom chamfered look
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 0);
+  }
+
+  :global(.aesthetic-shell):hover & {
+    border-width: 2px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1rem;
+  height: 1px;
+  background-color: var(--primary);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 5;
+  transition: all $transition-speed;
+
+  :global(.aesthetic-shell):hover & {
+    width: 2rem;
+    opacity: 0.6;
+  }
+}

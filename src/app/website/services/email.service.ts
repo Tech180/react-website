@@ -1,25 +1,21 @@
-import emailjs from "emailjs-com";
-import { AppError } from "../errors/app.error";
+import { interceptor } from "../interceptors/http.interceptor";
+import { environment } from "../../../environments/environment";
 
 /**
- * Service to handle email sending via EmailJS.
+ * Service to handle email sending via the Bun backend.
  */
 export async function sendEmail(form: HTMLFormElement): Promise<void> {
+  const formData = new FormData(form);
+  const templateParams = Object.fromEntries(formData.entries());
+
   try {
-    const result = await emailjs.sendForm(
-      'gmail', 
-      'template_1d0vx78', 
-      form, 
-      'hsykmYeNpceISsM-g'
-    );
-    console.log('Email sent successfully:', result.text);
+    await interceptor(`${environment.apiUrl}/email/send`, {
+      method: 'POST',
+      body: JSON.stringify({ templateParams })
+    });
+    console.log('Email sent successfully');
   } catch (error: any) {
-    console.error('Failed to send email:', error?.text || error);
-    throw new AppError(
-      error?.text || 'Failed to send the email...',
-      'ERR_EMAIL_SUBMISSION',
-      500,
-      'medium'
-    );
+    console.error('Failed to send email:', error);
+    throw error;
   }
 }

@@ -1,34 +1,39 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Activity, Terminal, ChevronDown } from 'lucide-react';
+import { Activity, Zap, ChevronDown } from 'lucide-react';
 import styles from './information-card.module.scss';
 import { InformationCardViewProps } from '../../../interfaces/pokemon/information-card.interface';
 import { StatBar } from './sub-components/stat-bar/stat-bar.component';
-import { CyberDecor } from './sub-components/cyber-decor/cyber-decor.component';
+
 import { DescriptionDisplay } from './sub-components/description-display/description-display.component';
 import { formatName } from '../../../utils/string.util';
+import { AestheticShell } from '../../common/aesthetic-shell/aesthetic-shell.component';
+import { ScanlineLayer } from '../../common/aesthetic-shell/shell-layers/scanline-layer.view';
+import { TacticalGridLayer } from '../../common/aesthetic-shell/shell-layers/tactical-grid-layer.view';
+import { ArmoredFrame } from '../../common/aesthetic-shell/shell-layers/armored-frame.view';
 
-export function InformationCardView({ 
-  pkmn, 
-  theme, 
-  selectedDetail, 
-  data, 
-  onToggleDetail, 
+export function InformationCardView({
+  pkmn,
+  theme,
+  selectedDetail,
+  data,
+  onToggleDetail,
   onCloseDetail,
-  onClose 
+  onClose
 }: InformationCardViewProps) {
   return (
     <AnimatePresence mode="popLayout">
-      <motion.div
-        key={pkmn.name}
-        initial={{ opacity: 0, scale: 0.98, y: -10 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.98, y: -10 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+      <AestheticShell
         className={styles['information-card']}
+        layers={theme === 'cyberpunk' && (
+          <>
+            <ScanlineLayer />
+            <TacticalGridLayer />
+            <ArmoredFrame />
+          </>
+        )}
       >
-        {theme === 'cyberpunk' && <CyberDecor />}
-        
+
         <div className={styles.inner}>
           <div className={styles['main-content']}>
             {/* Identification Panel */}
@@ -49,10 +54,10 @@ export function InformationCardView({
                   ))}
                 </div>
               </div>
-              
+
               {pkmn.itemData && (
                 <div className={styles['selection-group']}>
-                  <button 
+                  <button
                     className={`${styles['item-trigger']} ${selectedDetail?.name === pkmn.itemData.name ? styles['is-active'] : ''}`}
                     onClick={() => onToggleDetail(pkmn.itemData!.name, 'item')}
                   >
@@ -65,7 +70,7 @@ export function InformationCardView({
                     </div>
                     <ChevronDown size={12} className={`${styles.chevron} ${selectedDetail?.name === pkmn.itemData.name ? styles['is-rotated'] : ''}`} />
                   </button>
-                  
+
                   <div className={styles['ability-section']}>
                     <p className={styles['ability-label']}>Abilities</p>
                     <div className={styles['ability-list']}>
@@ -93,7 +98,7 @@ export function InformationCardView({
                 <div className={styles['logic-version']}>v.0.98_LOGIC</div>
               )}
               <div className={styles['panel-header']}>
-                <Activity size={12} className={styles['header-icon']}/>
+                <Activity size={12} className={styles['header-icon']} />
                 <h4>Stats</h4>
               </div>
               <div className={styles['stats-grid']}>
@@ -109,18 +114,18 @@ export function InformationCardView({
             {/* Operations / Routines Panel */}
             <div className={`${styles.panel} ${styles.moves}`}>
               <div className={styles['panel-header']}>
-                <Terminal size={12} className={styles['header-icon']} />
+                <Zap size={12} className={styles['header-icon']} />
                 <h4>Moves</h4>
               </div>
               <div className={styles['moves-list']}>
                 {data.moves.map((move: string, i: number) => (
-                  <button 
-                    key={i} 
+                  <button
+                    key={i}
                     className={`${styles['move-trigger']} ${selectedDetail?.name === move ? styles['is-active'] : ''}`}
                     onClick={() => onToggleDetail(move, 'move')}
                   >
                     <span className={styles['move-name']}>{formatName(move)}</span>
-                    <span className={styles['move-code']}>0{i+1}</span>
+                    <span className={styles['move-code']}>0{i + 1}</span>
                   </button>
                 ))}
               </div>
@@ -129,13 +134,13 @@ export function InformationCardView({
 
           {/* Unified Detail Area */}
           <div className={styles['detail-wrapper']}>
-            <DescriptionDisplay 
+            <DescriptionDisplay
               detail={selectedDetail}
               onClose={onCloseDetail}
             />
           </div>
         </div>
-      </motion.div>
+      </AestheticShell>
     </AnimatePresence>
   );
 }

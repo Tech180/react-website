@@ -68,7 +68,26 @@ export async function interceptor<T>(
     }
 
     // Return serializable data for RSC/Zoneless compatibility
-    return await response.json() as T;
+    const json = await response.json();
+
+    // Standardized Backend Response Handling
+    if (json && typeof json === 'object' && 'Status' in json) {
+      if (json.Status === 'Success' && 'Data' in json) {
+        return json.Data;
+      }
+      
+      if (json.Status === 'Error' && 'Error' in json) {
+        const err = json.Error;
+        throw new AppError(
+          err.Message || 'An internal server error occurred',
+          err.Code || 'ERR_API_INTERNAL',
+          err.Status || response.status,
+          err.Status >= 500 ? 'high' : 'medium'
+        );
+      }
+    }
+
+    return json as T;
 
   } catch (error) {
     // Re-throw if already an AppError, otherwise wrap network/runtime failures

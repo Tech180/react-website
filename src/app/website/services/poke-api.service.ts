@@ -1,10 +1,11 @@
 import { PokemonEntity } from "../interfaces/pokemon/pokemon.interface";
 import { POKEMON_LIST } from "../consts/pokemon/pokemon-list.const";
 import { interceptor } from "../interceptors/http.interceptor";
+import { environment } from "../../../environments/environment";
 
 export async function fetchPokemon(name: string) {
   try {
-    return await interceptor<any>(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+    return await interceptor<any>(`${environment.apiUrl}/pokemon/${name.toLowerCase()}`);
   } catch (error) {
     console.error(`Error fetching pokemon ${name}:`, error);
     return null;
@@ -13,7 +14,7 @@ export async function fetchPokemon(name: string) {
 
 export async function fetchItem(name: string) {
   try {
-    return await interceptor<any>(`https://pokeapi.co/api/v2/item/${name.toLowerCase()}`);
+    return await interceptor<any>(`${environment.apiUrl}/item/${name.toLowerCase()}`);
   } catch (error) {
     console.error(`Error fetching item ${name}:`, error);
     return null;
@@ -22,9 +23,7 @@ export async function fetchItem(name: string) {
 
 export async function fetchMove(name: string) {
   try {
-    // Clean up move names that might have spaces instead of hyphens
-    const formattedName = name.toLowerCase().replace(/\s+/g, '-');
-    return await interceptor<any>(`https://pokeapi.co/api/v2/move/${formattedName}`);
+    return await interceptor<any>(`${environment.apiUrl}/move/${name.toLowerCase()}`);
   } catch (error) {
     console.error(`Error fetching move ${name}:`, error);
     return null;
@@ -33,7 +32,7 @@ export async function fetchMove(name: string) {
 
 export async function fetchAbility(name: string) {
   try {
-    return await interceptor<any>(`https://pokeapi.co/api/v2/ability/${name.toLowerCase()}`);
+    return await interceptor<any>(`${environment.apiUrl}/ability/${name.toLowerCase()}`);
   } catch (error) {
     console.error(`Error fetching ability ${name}:`, error);
     return null;

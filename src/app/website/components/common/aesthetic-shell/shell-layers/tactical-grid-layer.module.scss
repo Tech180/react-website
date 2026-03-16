@@ -1,0 +1,8 @@
+@use "../../../../../../styles/variables" as *;
+
+.tactical-grid-layer {
+  @include tactical-grid;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

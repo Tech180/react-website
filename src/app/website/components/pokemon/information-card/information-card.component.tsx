@@ -9,6 +9,11 @@ import { PokemonDetail } from '../../../interfaces/pokemon/pokemon.interface';
 export function InformationCard({ pkmn, onClose }: InformationCardProps) {
   const { theme } = useTheme();
   const [selectedDetail, setSelectedDetail] = useState<PokemonDetail | null>(null);
+
+  // Reset selected detail when switching pokemon without remounting the whole card
+  React.useEffect(() => {
+    setSelectedDetail(null);
+  }, [pkmn.name]);
   
   // Prepare data using our new utility
   const data = formatPokemonData(pkmn);
