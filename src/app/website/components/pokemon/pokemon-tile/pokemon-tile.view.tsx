@@ -1,15 +1,17 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './pokemon-tile.module.scss';
 import { PokemonTileViewProps } from '../../../interfaces/pokemon/pokemon-tile.interface';
 import { AestheticShell } from '../../common/aesthetic-shell/aesthetic-shell.component';
-import { ArmoredFrame } from '../../common/aesthetic-shell/shell-layers/armored-frame.view';
 
 export function PokemonTileView({ pkmn, isActive, onClick, theme, displayId }: PokemonTileViewProps) {
   return (
     <AestheticShell
       className={`${styles['pokemon-tile']} ${isActive ? styles['is-active'] : ''}`}
-      layers={theme === 'cyberpunk' && <ArmoredFrame />}
+      size="small"
+      density="sparse"
     >
       <motion.div
         onClick={onClick}
@@ -19,7 +21,7 @@ export function PokemonTileView({ pkmn, isActive, onClick, theme, displayId }: P
           transition: { type: "spring", stiffness: 300, damping: 30 }
         }}
       >
-        {theme === 'cyberpunk' && !isActive && (
+        {!isActive && (
           <div className={styles['cyber-indicator']} />
         )}
         <div className={styles.content}>

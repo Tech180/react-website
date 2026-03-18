@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tech180 Replica</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Theme Variables (Default Dark) */
+            --bg: #0a0a0a;
+            --surface: rgba(0, 0, 0, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #ededed;
+            --text-muted: #a0a0a0;
+            --primary: #B39DDB;
+            --primary-hover: #9575CD;
+            --transition-speed: 0.2s ease;
+            --radius-md: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        .home {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        .header {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            z-index: 0;
+        }
+
+        .header-overlay {
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 0 62.5rem rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-content h1 {
+            color: var(--primary);
+            font-size: 6.25rem;
+            margin-top: 15.625rem;
+            font-family: "PT Sans", sans-serif;
+            text-transform: uppercase;
+        }
+
+        .header-content h1 span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .header-content hr {
+            width: 100%;
+            border: none;
+            height: 1px;
+            background: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        @media screen and (max-width: 960px) {
+            .header-content h1 {
+                font-size: 4.375rem;
+                margin-top: -9.375rem;
+            }
+        }
+
+        /* Cards Section Styles */
+        .cards {
+            padding: 4rem;
+            background: var(--bg);
+            position: relative;
+        }
+
+        .cards::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background-color: var(--text);
+            bottom: 0;
+        }
+
+        .cards h1 {
+            text-align: center;
+            padding-bottom: 4rem;
+            color: var(--text);
+            font-size: 2.5rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            max-width: 1120px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .cards-wrapper {
+            position: relative;
+            margin: 50px 0 45px;
+        }
+
+        .cards-items {
+            margin-bottom: 5%;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .card-item {
+            display: flex;
+            flex: 1;
+            border-radius: 10px;
+            transition: 0.3s ease-out;
+        }
+
+        .card-item:hover {
+            transform: scale(1.02);
+        }
+
+        .card-link {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: box-shadow var(--transition-speed);
+        }
+
+        .card-pic-wrap {
+            position: relative;
+            width: 100%;
+            padding-top: 67%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .card-pic-wrap::after {
+            content: attr(data-category);
+            position: absolute;
+            bottom: 10px;
+            margin-left: 10px;
+            padding: 6px 10px;
+            max-width: calc((100%) - 60px);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--bg);
+            background-color: var(--primary);
+            box-sizing: border-box;
+            border-radius: 25px;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 20px 30px 30px;
+            background: var(--surface);
+        }
+
+        .card-text {
+            color: var(--text);
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .cards-items {
+                flex-direction: column;
+            }
+            .card-item {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Affirmation Styles */
+        .affirm {
+            background: var(--bg);
+            padding-bottom: 50px;
+            padding-top: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .affirm-title {
+            font-size: 30px;
+            text-align: center;
+            user-select: none;
+            color: var(--text);
+        }
+
+        .affirm-subtitle {
+            font-size: 20px;
+            text-align: center;
+            user-select: none;
+            color: var(--text);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .affirm-subtitle::after {
+            margin-top: 120px;
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background-color: var(--text);
+            bottom: -60px;
+        }
+
+        .affirm-logo {
+            opacity: 0;
+            font-size: 20px;
+            text-align: center;
+            user-select: none;
+            color: var(--text);
+            margin-top: 40px;
+            cursor: pointer;
+            transition: all 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+            text-decoration: none;
+        }
+
+        .affirm:hover .affirm-logo {
+            opacity: 1;
+            animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @keyframes tracking-in-expand {
+            0% { letter-spacing: -0.5em; opacity: 0; }
+            40% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <main class="home">
+        <!-- Header -->
+        <header class="header">
+            <img src="./public/images/fashion.jpg" alt="Header Background" class="header-bg">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <h1><span>software</span><hr /><span>engineer</span></h1>
+            </div>
+        </header>
+
+        <!-- Cards -->
+        <section class="cards">
+            <h1>Check out what I have been up to!</h1>
+            <div class="cards-container">
+                <div class="cards-wrapper">
+                    <ul class="cards-items">
+                        <li class="card-item">
+                            <a class="card-link" href="https://github.com/Tech180" target="_blank" rel="noopener noreferrer">
+                                <figure class="card-pic-wrap" data-category="GitHub">
+                                    <img class="card-image" alt="GitHub Image" src="./public/images/github.png" />
+                                </figure>
+                                <div class="card-info">
+                                    <h5 class="card-text">Explore my GitHub and check out some of the projects that I've been working on!</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card-item">
+                            <a class="card-link" href="https://www.linkedin.com/in/riley-lawson-a7a65b203/" target="_blank" rel="noopener noreferrer">
+                                <figure class="card-pic-wrap" data-category="LinkedIn">
+                                    <img class="card-image" alt="LinkedIn Image" src="./public/images/linkedin.png" />
+                                </figure>
+                                <div class="card-info">
+                                    <h5 class="card-text">Check out my profile!</h5>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="cards-items">
+                        <li class="card-item">
+                            <a class="card-link" href="https://twitter.com/Tech1808" target="_blank" rel="noopener noreferrer">
+                                <figure class="card-pic-wrap" data-category="Twitter">
+                                    <img class="card-image" alt="Twitter Image" src="./public/images/twitter.png" />
+                                </figure>
+                                <div class="card-info">
+                                    <h5 class="card-text">Want to look at something I barely use? Look no further!</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card-item">
+                            <a class="card-link" href="https://www.facebook.com/riley.lawson.161/" target="_blank" rel="noopener noreferrer">
+                                <figure class="card-pic-wrap" data-category="Facebook">
+                                    <img class="card-image" alt="Facebook Image" src="./public/images/facebook.png" />
+                                </figure>
+                                <div class="card-info">
+                                    <h5 class="card-text">Feel like stalking my personal life? Got you covered ;)</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card-item">
+                            <a class="card-link" href="https://www.instagram.com/the_real_wild/" target="_blank" rel="noopener noreferrer">
+                                <figure class="card-pic-wrap" data-category="Instagram">
+                                    <img class="card-image" alt="Instagram Image" src="./public/images/instagram.png" />
+                                </figure>
+                                <div class="card-info">
+                                    <h5 class="card-text">If you are really trying to dig deep... Then I guess you could look here too.</h5>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Affirmation -->
+        <section class="affirm">
+            <div class="affirm-title">Daily Affirmation:</div>
+            <div class="affirm-subtitle">You are capable of doing amazing things!</div>
+            <a class="affirm-logo" href="https://github.com/annthurium/affirmations" target="_blank" rel="noopener noreferrer">
+                affirmation api
+            </a>
+            <div class="affirm-logo-small">a</div>
+        </section>
+    </main>
+</body>
+</html>

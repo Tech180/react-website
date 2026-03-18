@@ -1,8 +1,10 @@
 import React from "react";
-import { Layout, X, Sun, Moon, Monitor, Sparkles, Zap } from "lucide-react";
+import { Layout, X, Sun, Moon, Monitor, Sparkles, Zap, Trees } from "lucide-react";
 import styles from "../theme-panel.module.scss";
 import { AppearanceButton } from "./appearance-button";
 import { ThemeOption } from "./theme-option";
+import { IncinerateButton } from "../../../button/incinerate-button/incinerate-button.view";
+import { useTheme } from "../../../../contexts/theme.context";
 
 import { ThemePanelContentProps } from "../../../../interfaces/theme/theme-panel.interface";
 
@@ -14,6 +16,8 @@ export function ThemePanelContent({
   onThemeChange,
   onAppearanceChange,
 }: ThemePanelContentProps) {
+  const { unlockedThemes } = useTheme();
+
   return (
     <div className={styles["panel-content"]}>
       <div className={styles["panel-header"]}>
@@ -74,6 +78,31 @@ export function ThemePanelContent({
             description="Distorted, high-contrast hazard theme."
             gradient="linear-gradient(135deg, #fcee0a, #ff003c)"
           />
+          <ThemeOption
+            active={theme === "mystic"}
+            onClick={() => onThemeChange("mystic")}
+            icon={<Trees size={18} />}
+            label="Mystic Woodlands"
+            description="Photorealistic vines and mystical atmosphere."
+            gradient="linear-gradient(135deg, #15803d, #4ade80)"
+          />
+          {unlockedThemes.includes("burnt-forest") && (
+            <ThemeOption
+              active={theme === "burnt-forest"}
+              onClick={() => onThemeChange("burnt-forest")}
+              icon={<Sparkles size={18} className={styles["icon--ember"]} />}
+              label="Burnt Forest"
+              description="The smoldering remains of the ancient woods."
+              gradient="linear-gradient(135deg, #f97316, #111111)"
+            />
+          )}
+        </div>
+      </section>
+      
+      {/* Dangerous Operations */}
+      <section className={styles.section}>
+        <div className={styles["theme-list"]}>
+          <IncinerateButton />
         </div>
       </section>
 

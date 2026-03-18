@@ -4,7 +4,7 @@ import styles from './pokemon-grid.module.scss';
 import { PokemonGridClientViewProps } from '../../../interfaces/pokemon/pokemon-grid.interface';
 import { PokemonTile } from '../../../components/pokemon/pokemon-tile/pokemon-tile.component';
 import { InformationCard } from '../../../components/pokemon/information-card/information-card.component';
-import { gridSpringTransition } from '../../../consts/ui/motion.consts';
+import { gridSpringTransition } from '../../../consts/ui/motion.const';
 
 export function PokemonGridClientView({
   pokemonEntities,

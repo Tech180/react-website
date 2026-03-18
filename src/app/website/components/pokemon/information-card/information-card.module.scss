@@ -3,13 +3,16 @@
 
 .information-card {
   border: 1px solid transparent;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 1rem;
   position: relative;
   background-color: $surface;
   border-color: $border;
   border-radius: $radius-md;
   box-shadow: 0 0.25rem 1.25rem $shadow-subtle;
+  min-height: 24rem;
+  display: flex;
+  flex-direction: column;
 
   .inner {
     width: 100%;
@@ -63,6 +66,7 @@
         img {
           width: 3.5rem;
           height: 3.5rem;
+          object-fit: contain;
         }
       }
 
@@ -153,6 +157,7 @@
             width: 1.2rem;
             height: 1.2rem;
             display: block;
+            object-fit: contain;
           }
 
           .trigger-text {

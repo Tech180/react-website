@@ -27,14 +27,14 @@ export function DescriptionDisplay({ detail, onClose }: DescriptionDisplayProps)
     if (type === 'move') res = await fetchMove(name);
     else if (type === 'item') res = await fetchItem(name);
     else res = await fetchAbility(name);
-    
+
     setIsLoading(false);
-    
+
     if (res) {
       setData(res);
       const flavorEntries = res.flavor_text_entries || [];
       const entries = flavorEntries.filter((e: any) => e.language?.name === 'en');
-      
+
       if (entries.length > 0) {
         const lastGen = entries[entries.length - 1].version_group?.name;
         if (lastGen) setActiveGen(lastGen);
@@ -46,7 +46,7 @@ export function DescriptionDisplay({ detail, onClose }: DescriptionDisplayProps)
 
   const getActiveDescription = () => {
     if (!data) return '';
-    
+
     if (activeGen !== 'item-effect') {
       const flavorEntries = data.flavor_text_entries || [];
       const entry = flavorEntries.find(

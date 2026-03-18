@@ -12,12 +12,21 @@ export async function interceptor<T>(
   const { params, baseUrl, ...fetchOptions } = options;
 
   // --- REQUEST INTERCEPTION ---
-  const host = baseUrl || process.env.NEXT_PUBLIC_API_URL || '';
+  // Handle absolute vs relative URLs and server-side fallback
+  const isServer = typeof window === 'undefined';
+  let host = baseUrl || process.env.NEXT_PUBLIC_API_URL || '';
 
-  // Handle absolute vs relative URLs
+  if (isServer && !host && endpoint.startsWith('/')) {
+    // During SSR, if no host is specified and the endpoint is relative,
+    // we fallback to the local backend directly to avoid network overhead or missing origins.
+    host = 'http://localhost:3001';
+  }
+
   const url = endpoint.startsWith('http')
     ? new URL(endpoint)
-    : new URL(endpoint, host);
+    : host 
+      ? new URL(endpoint, host)
+      : new URL(endpoint, isServer ? 'http://localhost' : window.location.origin);
 
   if (params) {
     Object.entries(params).forEach(([key, val]) => {

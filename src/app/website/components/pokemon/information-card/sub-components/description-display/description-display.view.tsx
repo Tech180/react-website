@@ -6,7 +6,7 @@ import { DescriptionDisplayViewProps } from '../../../../../interfaces/pokemon/d
 import { StatBar } from '../stat-bar/stat-bar.component';
 import { formatName } from '../../../../../utils/string.util';
 import { Expandable } from '../../../../animations/expandable/expandable.component';
-import { fadeVariants } from '../../../../../consts/ui/motion.consts';
+import { fadeVariants } from '../../../../../consts/ui/motion.const';
 
 export function DescriptionDisplayView({
   detail,

@@ -1,8 +1,10 @@
 import React from "react";
-import { Monitor, Sparkles, Zap, Palette } from "lucide-react";
+import { Monitor, Sparkles, Zap, Palette, Trees } from "lucide-react";
 import styles from "../theme-panel.module.scss";
 import { ThemeToggleComponent } from "../../../../components/theme/toggle/theme-toggle.component";
 import { ThemePanelMobileContentProps } from "../../../../interfaces/theme/theme-panel.interface";
+import { IncinerateButton } from "../../../button/incinerate-button/incinerate-button.view";
+import { useTheme } from "../../../../contexts/theme.context";
 
 export function ThemePanelMobileContent({
   isOpen,
@@ -10,6 +12,7 @@ export function ThemePanelMobileContent({
   onToggle,
   onThemeChange,
 }: ThemePanelMobileContentProps) {
+  const { unlockedThemes } = useTheme();
   return (
     <div className={styles['mobile-section']}>
       {/* Expandable content: theme selection only */}
@@ -46,7 +49,28 @@ export function ThemePanelMobileContent({
                 <Zap size={13} />
                 <span>Cyberpunk</span>
               </button>
+              <button
+                className={`${styles['mobile-opt-btn']} ${theme === 'mystic' ? styles['mobile-opt-btn--active'] : ''}`}
+                onClick={() => onThemeChange('mystic')}
+                aria-pressed={theme === 'mystic'}
+              >
+                <Trees size={13} />
+                <span>Mystic</span>
+              </button>
+              {unlockedThemes.includes('burnt-forest') && (
+                <button
+                  className={`${styles['mobile-opt-btn']} ${theme === 'burnt-forest' ? styles['mobile-opt-btn--active'] : ''}`}
+                  onClick={() => onThemeChange('burnt-forest')}
+                  aria-pressed={theme === 'burnt-forest'}
+                >
+                  <Sparkles size={13} className={styles["icon--ember"]} />
+                  <span>Burnt</span>
+                </button>
+              )}
             </div>
+          </div>
+          <div className={styles['mobile-row']} style={{ marginTop: '1rem' }}>
+            <IncinerateButton />
           </div>
         </div>
       </div>

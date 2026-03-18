@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { expandVariants } from '../../../consts/ui/motion.consts';
+import { expandVariants } from '../../../consts/ui/motion.const';
 import { ExpandableProps } from '../../../interfaces/ui/expandable.interface';
 
 /**

@@ -1,0 +1,61 @@
+.incinerate-button {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 0.6rem 1.4rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  &:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 1);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    transform: translateY(-2px);
+
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    background: rgba(239, 68, 68, 0.8);
+    color: white;
+  }
+
+  &.is-burning {
+    background: #ef4444;
+    color: white;
+    border-color: transparent;
+    cursor: default;
+    pointer-events: none;
+    animation: pulse-danger 1s infinite alternate;
+  }
+}
+
+@keyframes pulse-danger {
+  0% { box-shadow: 0 0 10px #ef4444; }
+  100% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
+}

@@ -1,12 +1,16 @@
 import React from "react";
 import { Check } from "lucide-react";
 import styles from "../theme-panel.module.scss";
+import { motion } from "framer-motion";
 
 import { ThemeOptionProps } from "@/app/website/interfaces/theme/theme-panel.interface";
 
 export function ThemeOption({ active, onClick, icon, label, description, gradient }: ThemeOptionProps) {
   return (
-    <button
+    <motion.button
+      initial={{ opacity: 0, x: -10, filter: "brightness(2) saturate(0)" }}
+      animate={{ opacity: 1, x: 0, filter: "brightness(1) saturate(1)" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       onClick={onClick}
       className={`${styles["theme-option"]} ${active ? styles["theme-option--active"] : ""}`}
       aria-pressed={active}
@@ -24,6 +28,6 @@ export function ThemeOption({ active, onClick, icon, label, description, gradien
         <span className={styles["theme-option-label"]}>{label}</span>
         <span className={styles["theme-option-desc"]}>{description}</span>
       </div>
-    </button>
+    </motion.button>
   );
 }

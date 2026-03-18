@@ -9,7 +9,7 @@ export async function fetchIGDBGames() {
   try {
     return await interceptor<any[]>(`${IGDB_BASE_URL}/games`, {
       method: 'POST',
-      next: { revalidate: 3600 } 
+      next: { revalidate: 3600 }
     });
   } catch (error) {
     console.error('Error fetching IGDB games:', error);

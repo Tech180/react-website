@@ -8,9 +8,6 @@ import { StatBar } from './sub-components/stat-bar/stat-bar.component';
 import { DescriptionDisplay } from './sub-components/description-display/description-display.component';
 import { formatName } from '../../../utils/string.util';
 import { AestheticShell } from '../../common/aesthetic-shell/aesthetic-shell.component';
-import { ScanlineLayer } from '../../common/aesthetic-shell/shell-layers/scanline-layer.view';
-import { TacticalGridLayer } from '../../common/aesthetic-shell/shell-layers/tactical-grid-layer.view';
-import { ArmoredFrame } from '../../common/aesthetic-shell/shell-layers/armored-frame.view';
 
 export function InformationCardView({
   pkmn,
@@ -23,16 +20,7 @@ export function InformationCardView({
 }: InformationCardViewProps) {
   return (
     <AnimatePresence mode="popLayout">
-      <AestheticShell
-        className={styles['information-card']}
-        layers={theme === 'cyberpunk' && (
-          <>
-            <ScanlineLayer />
-            <TacticalGridLayer />
-            <ArmoredFrame />
-          </>
-        )}
-      >
+      <AestheticShell className={styles['information-card']} size="small" density="normal" forceAnimate={true}>
 
         <div className={styles.inner}>
           <div className={styles['main-content']}>
