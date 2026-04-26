@@ -1,8 +1,0 @@
-@use "../../../../../../styles/variables" as *;
-
-.scanline-layer {
-  @include scanline-overlay;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}

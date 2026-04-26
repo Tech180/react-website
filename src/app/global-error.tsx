@@ -1,7 +1,7 @@
 "use client";
 
-import { INTER_FONT } from "./website/consts/ui/fonts.const";
-import { GlobalErrorComponent } from "./website/components/common/global-error/global-error.component";
+import { INTER_FONT } from '@/shared/ui/consts/fonts.const';
+import { GlobalErrorComponent } from '@/app/layout/global-error/global-error.component';
 
 export default function GlobalError({
   error,

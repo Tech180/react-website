@@ -1,0 +1,41 @@
+.tile {
+  cursor: pointer;
+  text-align: center;
+  height: 100%;
+  transition: border-color var(--transition-speed), border-width var(--transition-speed);
+
+  &.active {
+    border-color: var(--primary);
+    border-width: 2px;
+
+    .tile-name {
+      color: var(--primary);
+    }
+  }
+
+  &-inner {
+    padding: 0.75rem 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-sprite {
+    width: 3rem;
+    height: 3rem;
+    image-rendering: pixelated;
+    transition: all 0.3s;
+  }
+
+  &-name {
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+}

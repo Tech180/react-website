@@ -1,0 +1,38 @@
+@use "../../../../assets/styles/variables" as *;
+
+.roster {
+  &-section {
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-expanded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:empty) {
+      margin-bottom: 2rem;
+    }
+
+    & > :first-child {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+}

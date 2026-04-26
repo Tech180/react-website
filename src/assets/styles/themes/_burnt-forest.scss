@@ -1,0 +1,89 @@
+@use "../variables" as *;
+
+[data-theme="burnt-forest"] {
+  &[data-appearance="dark"] {
+    --bg: #{$pantone-black-beauty-deep-bg};
+    --text: #{$pantone-sand-dollar};
+    --muted: #{$pantone-flint-stone};
+    --surface: rgba($pantone-jet-black-matte, 0.4);
+    --surface-hover: rgba($pantone-caviar-matte, 0.6);
+    --border: rgba($pantone-orange-peel, 0.15);
+    
+    /* Dark Ash & Ember Palette */
+    --primary: #{$pantone-orange-peel};
+    --primary-hover: #{$pantone-iceland-poppy};
+    --accent: #{$pantone-mandarin-red};
+    --glow-ember: 0 0 15px rgba($pantone-mandarin-red, 0.4);
+
+    /* Botanical State override */
+    --char-core: #{$pantone-black-beauty-deep-bg};
+    --ember-glow: #{$pantone-orange-peel};
+    --ash-gray: #{$pantone-periscope};
+
+    /* Charred wood colors */
+    --vine-wood-shadow: #{$pantone-jet-black};  
+    --vine-wood: #{$pantone-jet-black-matte};       
+    --vine-wood-hl: #{$pantone-caviar-matte};    
+    --vine-tendril: #{$pantone-demitasse};
+    
+    --shadow-mystic: drop-shadow(0 12px 15px rgba($pantone-black-pure, 0.9));
+  }
+
+  &[data-appearance="light"] {
+    --bg: #{$pantone-star-white};
+    --text: #{$pantone-anthracite};
+    --muted: #{$pantone-aleutian};
+    --surface: rgba($pantone-white-pure, 0.5);
+    --surface-hover: rgba($pantone-white-pure, 0.7);
+    --border: rgba($pantone-aleutian, 0.3);
+    
+    /* Bleached Ash Palette */
+    --primary: #{$pantone-exuberance};
+    --primary-hover: #{$pantone-orange-peel};
+    --accent: #{$pantone-orange-com-accent};
+    --glow-ember: 0 0 10px rgba($pantone-exuberance, 0.2);
+
+    /* Botanical State override */
+    --char-core: #{$pantone-black-beauty-bg};
+    --ember-glow: #{$pantone-exuberance};
+    --ash-gray: #{$pantone-aleutian};
+
+    /* Sun-bleached wood colors */
+    --vine-wood-shadow: #{$pantone-anthracite};
+    --vine-wood: #{$pantone-ebony};       
+    --vine-wood-hl: #{$pantone-periscope};    
+    --vine-tendril: #{$pantone-flint-stone};
+    
+    --shadow-mystic: drop-shadow(0 8px 12px rgba($pantone-black-pure, 0.2));
+  }
+  
+  /* Shared values */
+  --leaf-base: transparent;
+  --leaf-edge: transparent;
+  --leaf-vein: transparent;
+  --flower-petal: transparent;
+  --flower-center: transparent;
+  --orb-color: transparent;
+
+
+  /* Cinematic transition surge from Heat Phase */
+  transition: all 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Heat Surge Stage */
+:root[data-incinerating="true"] {
+  --bg: #{$pantone-black-beauty-bg};
+  --surface: rgba($pantone-red-dahlia, 0.5);
+  --primary: #{$pantone-scarlet-ibis-accent};
+  --accent: #{$pantone-white-pure};
+  --text: #{$pantone-white-pure};
+  --border: rgba($pantone-blazing-yellow, 0.3);
+  
+  /* All existing botanical elements surge into fire colors */
+  --vine-wood: #{$pantone-red-dahlia};
+  --vine-tendril: #{$pantone-orange-peel};
+  --leaf-base: #{$pantone-haute-red};
+  --leaf-edge: #{$pantone-mandarin-red};
+  
+  transition: all 1.5s ease-out;
+}

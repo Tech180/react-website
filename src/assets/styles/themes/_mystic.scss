@@ -1,0 +1,66 @@
+@use "sass:color";
+@use "../variables" as *;
+
+[data-theme="mystic"] {
+  &[data-appearance="dark"] {
+    --bg: #{$pantone-black-pure};
+    --text: #{$pantone-egret};
+    --muted: #{$pantone-laurel-wreath};
+    --surface: rgba($pantone-jet-black-surface, 0.4);
+    --surface-hover: rgba($pantone-jet-black-hover, 0.6);
+    --border: rgba($pantone-lime-punch, 0.15);
+    
+    /* Night Garden Palette */
+    --vine-wood-shadow: #{$pantone-jet-black-matte};  
+    --vine-wood: #{$pantone-licorice};       
+    --vine-wood-hl: #{$pantone-black-coffee};    
+    --vine-tendril: #{$pantone-green-flash};    
+    --leaf-base: #{$pantone-botanical-garden};       
+    --leaf-edge: #{$pantone-green-flash-deep};       
+    --leaf-vein: #{$pantone-jungle-green};       
+    --flower-petal: #{$pantone-bright-white-petal};    
+    --flower-center: #{$pantone-mustard-gold-center};   
+    --orb-color: #{$pantone-lime-punch};
+    --shadow-mystic: drop-shadow(0 12px 15px rgba($pantone-black-pure, 0.8));
+
+    /* --- Botanical Combustion (Incineration) --- */
+    --char-core: #{$pantone-black-beauty-bg};
+    --ember-glow: #{$pantone-orange-peel};
+    --ash-gray: #{$pantone-periscope};
+
+    // UI Tokens
+    --primary: #{$pantone-lime-punch};
+    --primary-hover: #{$pantone-limelight};
+  }
+
+  &[data-appearance="light"] {
+    --bg: #{$pantone-bright-white-bg};
+    --text: #{$pantone-jet-black-fg};
+    --muted: #{$pantone-climbing-ivy};
+    --surface: #{$pantone-white-pure};
+    --surface-hover: #{$pantone-bright-white-surface};
+    --border: rgba($pantone-garden-topiary, 0.2);
+    
+    /* Daylight Garden Palette */
+    --vine-wood-shadow: #{$pantone-licorice};
+    --vine-wood: #{$pantone-demitasse};       
+    --vine-wood-hl: #{$pantone-chocolate-slab};    
+    --vine-tendril: #{$pantone-amazon};    
+    --leaf-base: #{$pantone-amazon-base};       
+    --leaf-edge: #{$pantone-green-flash};       
+    --leaf-vein: #{$pantone-botanical-garden-vein};       
+    --flower-petal: #{$pantone-pastel-pink};    
+    --flower-center: #{$pantone-mustard-gold};   
+    --orb-color: transparent; 
+    --shadow-mystic: drop-shadow(0 6px 12px rgba($pantone-black-pure, 0.15));
+
+    /* --- Botanical Combustion (Incineration) --- */
+    --char-core: #{$pantone-black-beauty-surface};
+    --ember-glow: #{$pantone-exuberance};
+    --ash-gray: #{$pantone-aleutian};
+
+    // UI Tokens
+    --primary: #{$pantone-amazon-base};
+    --primary-hover: #{$pantone-botanical-garden-vein};
+  }
+}

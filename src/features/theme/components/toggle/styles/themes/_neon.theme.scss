@@ -1,0 +1,52 @@
+@use "../../../../../../assets/styles/variables" as *;
+
+.track-background--neon {
+  :global([data-theme='neon']) & {
+    opacity: 1;
+    background-image:
+      linear-gradient($toggle-grid-color 1px, transparent 1px),
+      linear-gradient(90deg, $toggle-grid-color 1px, transparent 1px);
+    background-size: 15px 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, $neon-cyan-glow 0%, transparent 70%);
+      transition: all 0.7s;
+    }
+  }
+
+  :global([data-theme='neon']) .toggle-track[data-appearance='dark'] &::after {
+    background: radial-gradient(circle at center, $neon-magenta-glow 0%, transparent 70%);
+  }
+}
+
+.toggle-track {
+  :global([data-theme='neon']) & {
+    border-color: $neon-cyan-border;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 9999px;
+      background: $neon-gradient;
+      z-index: -1;
+      opacity: 0.2;
+      filter: blur(5px);
+    }
+  }
+
+  :global([data-theme='neon']) &[data-appearance='dark'] {
+    border-color: $neon-magenta-border;
+    box-shadow: 0 0 30px $neon-magenta-border;
+  }
+}
+
+.toggle-body {
+  :global([data-theme='neon']) & {
+    background: radial-gradient(circle at center, $pantone-white-pure 5%, var(--aura-color) 100%);
+    backdrop-filter: blur(4px);
+  }
+}

@@ -1,0 +1,468 @@
+@use "../../../../assets/styles/variables" as *;
+
+// =========================================
+// Panel Root
+// =========================================
+.panel-root {
+  position: relative;
+
+  // On mobile, width auto so it sits at the right edge of the footer-row
+  &--mobile {
+    position: relative;
+  }
+}
+
+// =========================================
+// Trigger Button
+// =========================================
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  background: $surface;
+  border: 1px solid $border;
+  color: $text;
+  cursor: pointer;
+  transition: all $transition-speed;
+
+  &:hover {
+    background: $primary;
+    color: $bg;
+    border-color: $primary;
+    transform: scale(1.08);
+  }
+
+  &--active {
+    background: $primary;
+    color: $bg;
+    border-color: $primary;
+    transform: rotate(90deg) scale(0.92);
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+
+
+// =========================================
+// Mobile Accordion Section
+// =========================================
+
+// Outer section: owns label + trigger + expandable content
+.mobile-section {
+  width: 100%;
+}
+
+// Trigger row: mirrors footer-row layout
+.mobile-trigger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+// Left cluster: Appearance label + ThemeToggle
+.mobile-trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 0; // Use label width for positioning
+}
+
+.mobile-section-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.6;
+  flex: 0 0 100px;
+}
+
+// The palette toggle button
+.mobile-trigger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text-muted;
+  cursor: pointer;
+  transition: all $transition-speed;
+
+  svg {
+    display: block;
+  }
+
+  &:hover {
+    background: $surface;
+    color: $text;
+  }
+
+  &--active {
+    background: $primary;
+    color: $bg;
+    border-color: transparent;
+  }
+}
+
+// Expandable content: sits above trigger in DOM, slides down into view
+.mobile-expand {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s ease;
+
+  &--open {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+// Inner padding card
+.mobile-panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+// Each settings row: label on left, buttons on right
+.mobile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-row-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: $text-muted;
+}
+
+.mobile-row-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+// Each option pill button (icon + label)
+.mobile-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text-muted;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 500;
+  transition: all $transition-speed;
+
+  svg {
+    display: block;
+  }
+
+  &:hover {
+    background: $surface;
+    color: $text;
+  }
+
+  &--active {
+    background: $primary;
+    color: $bg;
+    border-color: transparent;
+  }
+}
+
+// Right-side control group in the trigger row
+.mobile-trigger-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+// Dark/light mode icon toggle button beside the palette button
+.mobile-appearance-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text-muted;
+  cursor: pointer;
+  transition: all $transition-speed;
+
+  svg {
+    display: block;
+  }
+
+  &:hover {
+    background: $surface;
+    color: $text;
+  }
+
+  &--active {
+    background: $primary;
+    color: $bg;
+    border-color: transparent;
+  }
+}
+
+// =========================================
+// Panel Internal Content
+// =========================================
+.panel-content {
+  padding: 0 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem; // Match navbar height
+  margin-bottom: 2rem;
+  background: transparent;
+  border-bottom: 1px solid $border;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 0 1.5rem;
+}
+
+.panel-header-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text;
+
+  svg {
+    color: $primary;
+    display: block;
+  }
+}
+
+.panel-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: $radius-md;
+  background: transparent;
+  border: 1px solid $border;
+  color: $text;
+  cursor: pointer;
+  transition: all $transition-speed;
+
+  &:hover {
+    background: $primary;
+    color: $bg;
+    border-color: $primary;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.panel-header-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $text-muted;
+  margin: 0 0 1.75rem 0;
+}
+
+// =========================================
+// Sections
+// =========================================
+.section {
+  margin-bottom: 1.75rem;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-muted;
+  margin-bottom: 0.75rem;
+}
+
+// =========================================
+// Appearance Buttons (Light/Dark)
+// =========================================
+.appearance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.appearance-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: $radius-md;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text;
+  cursor: pointer;
+  transition: all $transition-speed;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &:hover {
+    background: $accent;
+  }
+
+  svg {
+    display: block;
+  }
+
+  &--active {
+    background: $primary;
+    color: $bg;
+    border-color: transparent;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// =========================================
+// Theme Options
+// =========================================
+.theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.theme-option {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.875rem;
+  border-radius: $radius-md;
+  border: 1px solid $border;
+  background: transparent;
+  color: $text;
+  cursor: pointer;
+  text-align: left;
+  transition: all $transition-speed;
+
+  &:hover {
+    background: $accent;
+  }
+
+  &--active {
+    border-color: $primary;
+    background: $accent;
+    box-shadow: 0 0 0 1px $primary;
+  }
+
+  &-swatch {
+    flex-shrink: 0;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &-swatch-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  &-swatch-icon {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &-check {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #22c55e;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 2;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text;
+  }
+
+  &-desc {
+    font-size: 0.625rem;
+    color: $text-muted;
+    line-height: 1.5;
+  }
+}
+
+// =========================================
+// Panel Footer Note
+// =========================================
+.panel-footer-note {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border;
+  font-size: 0.625rem;
+  text-align: center;
+  font-style: italic;
+  color: $text-muted;
+  opacity: 0.6;
+}

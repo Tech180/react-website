@@ -1,4 +1,4 @@
-import { ResumeComponent } from '../../website/pages/resume/resume.component';
+import { ResumeComponent } from '@/features/resume/components/resume.component';
 
 export default function Page() {
   return <ResumeComponent />;

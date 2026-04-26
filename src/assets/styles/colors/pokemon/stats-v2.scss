@@ -1,0 +1,10 @@
+@use "../pantone-tokens" as *;
+
+/* =========================================
+   Pokemon Code Boxes Semantic Colors
+   ========================================= */
+
+$stat-red: $pantone-hot-coral;     /* < 60 */
+$stat-orange: $pantone-vibrant-orange;  /* 60 - 89 */
+$stat-green: $pantone-poison-green;   /* 90 - 119 */
+$stat-cyan: $pantone-blue-atoll;    /* >= 120 */

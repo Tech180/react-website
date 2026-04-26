@@ -1,0 +1,25 @@
+@use "../../../../../assets/styles/variables" as *;
+
+.glitch-layer {
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  border: 2px solid transparent;
+
+  :global(.aesthetic-shell):hover & {
+    animation: glitch-slice 0.4s infinite linear alternate-reverse;
+    opacity: 0.6;
+  }
+
+  &.red {
+    border-color: $pantone-high-risk-red-accent;
+    transform: translate(2px, -1px);
+  }
+
+  &.cyan {
+    border-color: $pantone-cyan-blue-accent;
+    transform: translate(-2px, 1px);
+    animation-delay: 0.2s;
+  }
+}

@@ -1,0 +1,51 @@
+@use "../../../../assets/styles/variables" as *;
+
+.affirm {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: $bg;
+  border-top: 1px solid $border;
+  transition: background-color 0.5s ease;
+  z-index: 10;
+}
+
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-family: $font-main;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: $text;
+  transition: opacity 0.5s ease;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.875rem;
+  }
+}
+
+.logo {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.875rem;
+  color: $text-muted;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary;
+  }
+}

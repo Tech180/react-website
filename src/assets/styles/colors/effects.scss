@@ -1,0 +1,29 @@
+@use "colors" as *;
+@use "pantone-tokens" as *;
+
+/* =========================================
+   Glows, Shadows, and Translucency Tokens
+   ========================================= */
+
+$shadow-subtle: rgba($pantone-black-pure, 0.1);
+$white-10: rgba($pantone-white-pure, 0.1);
+$white-40: rgba($pantone-white-pure, 0.4);
+$white-90: rgba($pantone-white-pure, 0.9);
+
+$sun-glow: rgba($pantone-dandelion, 0.6);
+$neon-cyan-glow: rgba($pantone-cyan-blue-accent, 0.15);
+$neon-magenta-glow: rgba($pantone-fuchsia-pink-accent, 0.15);
+$cyber-red-glow: rgba($pantone-high-risk-red-accent, 0.1);
+
+$cyber-yellow-border: rgba($pantone-blazing-yellow, 0.3);
+$cyber-black-border: rgba($pantone-black-pure, 0.2);
+
+$neon-cyan-border: rgba($pantone-cyan-blue-accent, 0.3);
+$neon-magenta-border: rgba($pantone-fuchsia-pink-accent, 0.3);
+
+$toggle-border-shadow: rgba($pantone-white-pure, 0.1);
+$toggle-body-shadow: rgba($pantone-black-pure, 0.1);
+
+$border-thin-color: rgba($pantone-white-pure, 0.1);
+
+$neon-gradient: linear-gradient(90deg, $pantone-cyan-blue-accent, $pantone-fuchsia-pink-accent);

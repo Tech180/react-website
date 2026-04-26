@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppComponent } from "../app.component";
-import "@/styles/styles.scss";
+import '@/assets/styles/global.scss';
 
 export const metadata: Metadata = {
   title: "Riley Lawson - Portfolio",

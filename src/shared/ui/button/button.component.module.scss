@@ -1,0 +1,76 @@
+@use "../../../assets/styles/variables" as *;
+
+.button {
+  @include flex-center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  font-family: $font-main;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $transition-speed;
+  outline: none;
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  &-text {
+    line-height: 1.2;
+  }
+
+  &--primary {
+    background-color: $primary;
+    color: $bg;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      background-color: $primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); // Removed raw hex
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $text;
+    border: 1px solid $border; // $border-thin was removed
+
+    &:hover,
+    &:focus {
+      background-color: rgba($bg, 0.05);
+      border-color: rgba($border, 0.2);
+    }
+  }
+
+  &--glass {
+    @include glass;
+    color: $text;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($bg, 0.1);
+      border-color: $primary;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}

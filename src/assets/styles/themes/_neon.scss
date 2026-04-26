@@ -1,0 +1,13 @@
+[data-theme='neon'] {
+  --primary: $pantone-cyan-blue-accent;
+  --primary-hover: $pantone-cyan-blue-light;
+  --radius-md: 12px;
+  --radius-sm: 6px;
+
+  &[data-appearance='dark'] {
+    --bg: $pantone-black-iris-bg;
+    --surface: rgba($pantone-black-iris-bg, 0.8);
+    --primary: $pantone-fuchsia-pink-accent;
+    --primary-hover: $pantone-fuchsia-pink-light;
+  }
+}

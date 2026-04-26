@@ -1,0 +1,65 @@
+@use "../../../../assets/styles/variables" as *;
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid transparent; // for error/correct states
+  transition: border-color $transition-speed;
+}
+
+.error {
+  border: 1px solid $primary; // Mapped to tokens
+}
+
+.correct {
+  border: 1px solid $accent; // Mapped to tokens
+}
+
+.textarea {
+  width: calc(100% - 20px);
+  border: none;
+  border-bottom: 2px solid $text;
+  outline: none;
+  padding-top: 18px;
+  padding-left: 10px;
+  font-size: 16px;
+  background: none;
+  color: $text;
+  position: relative;
+  z-index: 1;
+  resize: none;
+  overflow-y: auto;
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  color: $text;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+}
+
+// Float logic
+.active {
+  transform: translateY(-25px);
+  font-size: 14px;
+  color: $primary;
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .field {
+    width: 100%;
+  }
+}

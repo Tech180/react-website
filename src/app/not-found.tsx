@@ -1,3 +1,3 @@
-import { NotFoundComponent } from "./website/components/common/not-found/not-found.component";
+import { NotFoundComponent } from '@/app/layout/not-found/not-found.component';
 
 export default NotFoundComponent;

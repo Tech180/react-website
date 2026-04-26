@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnt Forest Taskbar Copy</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Burnt Forest Theme Variables */
+        :root {
+            --bg: #121212;
+            --text: #e5d6c6;
+            --primary: #f97316;
+            --primary-hover: #fb923c;
+            --accent: #ef4444;
+            --font-main: "DM Sans", sans-serif;
+            --font-display: "Outfit", sans-serif;
+            --transition-speed: 0.4s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 4rem;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navbar Layout */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1000px;
+            padding: 0.75rem 2rem;
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 9999px;
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        /* Brand / Logo */
+        .brand-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            background: transparent;
+        }
+
+        .brand-logo h2 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin: 0;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+            background-color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Desktop Menu */
+        .menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        /* Pill Button Style */
+        .pill-btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            background-color: var(--accent);
+            color: var(--text);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .pill-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            background-color: var(--primary-hover);
+            color: var(--bg);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .pill-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Main Content Preview (Optional, for context) */
+        .preview-content {
+            margin-top: 4rem;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .preview-content h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .preview-content p {
+            line-height: 1.6;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-container">
+            <a href="#" class="brand-logo">
+                <h2>Riley Lawson</h2>
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="#" class="pill-btn">Home</a></li>
+            <li><a href="#" class="pill-btn">Resume</a></li>
+            <li><a href="#" class="pill-btn">About Me</a></li>
+        </ul>
+    </nav>
+
+    <main class="preview-content">
+        <h1>Burnt Forest</h1>
+        <p>This is a standalone HTML copy of the taskbar buttons using the "Burnt Forest" theme aesthetics. Hover over the buttons to see the ember glow effects.</p>
+    </main>
+</body>
+</html>

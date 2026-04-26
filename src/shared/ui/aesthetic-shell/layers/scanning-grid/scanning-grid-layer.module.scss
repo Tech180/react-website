@@ -1,0 +1,8 @@
+@use "../../../../../assets/styles/tokens/shell-effects" as *;
+
+.scanning-grid-layer {
+  @include scanning-grid;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}

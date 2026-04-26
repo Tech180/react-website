@@ -1,0 +1,39 @@
+@use "../../../assets/styles/variables" as *;
+
+.global-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: $bg;
+  color: $text;
+
+  &-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $text;
+  }
+
+  &-text {
+    margin-bottom: 2rem;
+    color: $text-muted;
+  }
+
+  &-button {
+    padding: 0.75rem 1.5rem;
+    background: $surface;
+    border: 1px solid $border;
+    color: $text;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: all $transition-speed;
+
+    &:hover {
+      background: $accent;
+      border-color: $primary;
+    }
+  }
+}

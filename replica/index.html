@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default" data-appearance="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Grid - Multi-Theme Replica</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&family=Outfit:wght@400;700;900&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* =========================================
+           Core Theme Engine
+           ========================================= */
+        :root {
+            /* Appearance Defaults (Dark) */
+            --bg: #0a0a0a;
+            --surface: rgba(0, 0, 0, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #ededed;
+            --text-muted: #a0a0a0;
+            --accent: #000000;
+            --shadow-subtle: rgba(0, 0, 0, 0.5);
+            --radius-md: 8px;
+            --transition-speed: 0.2s ease;
+
+            /* Stat Colors */
+            --stat-red: #ff4444;
+            --stat-orange: #ff9800;
+            --stat-green: #4caf50;
+            --stat-cyan: #00f3ff;
+
+            /* Type Colors */
+            --type-water: #6890F0;
+            --type-fire: #F08030;
+            --type-grass: #78C850;
+            --type-electric: #F8D030;
+            --type-ice: #98D8D8;
+            --type-fighting: #C03028;
+            --type-poison: #A040A0;
+            --type-ground: #E0C068;
+            --type-flying: #A890F0;
+            --type-psychic: #F85888;
+            --type-bug: #A8B820;
+            --type-rock: #B8A038;
+            --type-ghost: #705898;
+            --type-dragon: #7038F8;
+            --type-dark: #705848;
+            --type-steel: #B8B8D0;
+            --type-fairy: #EE99AC;
+        }
+
+        /* Default Theme */
+        [data-theme='default'] {
+            --primary: #9AC2E6;
+            --primary-hover: #7AB2E1;
+        }
+
+        [data-theme='default'][data-appearance='dark'] {
+            --primary: #B39DDB;
+            --primary-hover: #9575CD;
+        }
+
+        /* Neon Theme */
+        [data-theme='neon'] {
+            --primary: #00f3ff;
+            --primary-hover: #33f5ff;
+            --radius-md: 12px;
+        }
+
+        [data-theme='neon'][data-appearance='dark'] {
+            --bg: #0d0221;
+            --surface: rgba(13, 2, 33, 0.8);
+            --primary: #ff00ff;
+            --primary-hover: #ff33ff;
+        }
+
+        /* Cyberpunk Theme */
+        [data-theme='cyberpunk'] {
+            --primary: #fcee0a;
+            --primary-hover: #fff31a;
+            --radius-md: 0;
+        }
+
+        [data-theme='cyberpunk'][data-appearance='light'] {
+            --bg: #fcee0a;
+            --surface: rgba(252, 238, 10, 0.8);
+            --border: #000000;
+            --text: #000000;
+            --primary: #000000;
+        }
+
+        [data-theme='cyberpunk'][data-appearance='dark'] {
+            --bg: #000000;
+            --surface: rgba(0, 0, 0, 0.8);
+            --border: #fcee0a;
+            --text: #fcee0a;
+            --primary: #fcee0a;
+        }
+
+        /* Light Appearance Overrides */
+        [data-appearance='light']:not([data-theme='cyberpunk']) {
+            --bg: #F4F4F4;
+            --surface: rgba(255, 255, 255, 0.7);
+            --border: rgba(0, 0, 0, 0.1);
+            --text: #242424;
+            --text-muted: #666666;
+        }
+
+        /* =========================================
+           Global Styles
+           ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 55rem;
+            position: relative;
+        }
+
+        /* THEME CONTROLS */
+        .controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 100;
+            background: var(--surface);
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .controls h5 {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.3rem 0.6rem;
+            font-size: 0.65rem;
+            cursor: pointer;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .btn:hover,
+        .btn.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        /* AESTHETIC SHELL & LAYERS */
+        .aesthetic-shell {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-speed);
+            overflow: hidden;
+        }
+
+        .aesthetic-shell .layers {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Scanlines Layer */
+        .scanlines {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        [data-theme='cyberpunk'] .scanlines {
+            opacity: 0.6;
+            background-size: 100% 2px;
+        }
+
+        /* Grid Layer */
+        .tactical-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: 0;
+            opacity: 0.05;
+        }
+
+        [data-theme='neon'] .tactical-grid {
+            opacity: 0.15;
+            background-size: 40px 40px;
+        }
+
+        .aesthetic-shell .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* HEADER */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-header .title {
+            font-size: 0.65rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .section-header .line {
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        .tile {
+            cursor: pointer;
+            text-align: center;
+            height: 100%;
+        }
+
+        .tile-inner {
+            padding: 0.75rem 0.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tile-sprite {
+            width: 3rem;
+            height: 3rem;
+            image-rendering: pixelated;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+
+        .tile:hover .tile-sprite,
+        .tile.active .tile-sprite {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .tile .name {
+            margin-top: 0.5rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: var(--text);
+        }
+
+        .tile.active .name {
+            color: var(--primary);
+        }
+
+        .tile.active {
+            border-color: var(--primary);
+            border-width: 2px;
+        }
+
+        /* INFORMATION CARD */
+        .card-container {
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .card-shell {
+            border-width: 2px;
+        }
+
+        [data-theme='cyberpunk'] .card-shell {
+            clip-path: polygon(0 0, 98% 0, 100% 2%, 100% 100%, 2% 100%, 0 98%);
+            border-radius: 0;
+        }
+
+        [data-theme='neon'] .card-shell {
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+        }
+
+        [data-theme='neon'][data-appearance='dark'] .card-shell {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        .card-main {
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem;
+            gap: 1.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .card-main {
+                flex-direction: row;
+            }
+
+            .panel+.panel {
+                border-left: 1px solid var(--border);
+            }
+        }
+
+        .panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .panel:first-child {
+            padding-left: 0;
+        }
+
+        .panel:last-child {
+            padding-right: 0;
+        }
+
+        .brand-panel {
+            flex: 0 0 10rem;
+            align-items: center;
+        }
+
+        .sprite-box {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .sprite-box img {
+            width: 4rem;
+            height: 4rem;
+            image-rendering: pixelated;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 0.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .type-badges {
+            display: flex;
+            gap: 0.375rem;
+            justify-content: center;
+        }
+
+        .type-badge {
+            font-size: 0.45rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            color: white;
+            letter-spacing: 0.05rem;
+        }
+
+        /* Selection Group (Items/Abilities) */
+        .selection-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .trigger {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 0.4rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .trigger:hover,
+        .trigger.active {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .trigger.active {
+            background: rgba(var(--primary-rgb), 0.1);
+        }
+
+        .trigger-icon img {
+            width: 1.2rem;
+            height: 1.2rem;
+            image-rendering: pixelated;
+        }
+
+        .trigger-label {
+            font-size: 0.45rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .trigger-value {
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .trigger:hover .trigger-value,
+        .trigger.active .trigger-value {
+            color: var(--primary);
+        }
+
+        .ability-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .ability-trigger {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .ability-trigger:hover,
+        .ability-trigger.active {
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Stats Panel */
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .panel-header h4 {
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.1rem;
+        }
+
+        .header-icon {
+            color: var(--primary);
+        }
+
+        .stat-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-label {
+            width: 2.2rem;
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .stat-bg {
+            flex: 1;
+            height: 4px;
+            background: #000;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        [data-theme='cyberpunk'] .stat-bg {
+            border-radius: 0;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: var(--stat-color, var(--primary));
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-val {
+            width: 1.5rem;
+            font-size: 0.6rem;
+            text-align: right;
+            font-family: monospace;
+            color: var(--text-muted);
+        }
+
+        /* Moves Panel */
+        .moves-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .move-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .move-row:hover,
+        .move-row.active {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .move-row.active {
+            border: 1px solid var(--primary);
+        }
+
+        .move-row .move-name {
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .move-row.active .move-name {
+            color: var(--primary);
+        }
+
+        .move-row .move-code {
+            font-size: 0.45rem;
+            font-family: monospace;
+            color: var(--text-muted);
+        }
+
+        /* DESCRIPTION (DROPDOWN) AREA */
+        .dropdown {
+            border-top: 1px solid var(--border);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .dropdown.expanded {
+            max-height: 15rem;
+            opacity: 1;
+        }
+
+        .dropdown-content {
+            padding: 1rem 1.25rem;
+            position: relative;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .desc-info {
+            flex: 1;
+        }
+
+        .desc-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .desc-type {
+            font-size: 0.45rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .desc-name {
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .desc-text {
+            font-size: 0.65rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .stats-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            width: 8rem;
+        }
+
+        .btn-close-desc {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .btn-close-desc:hover {
+            color: var(--primary);
+        }
+
+        /* Close Button Main Card */
+        .btn-close-card {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.5rem;
+            padding: 0.2rem 0.5rem;
+            cursor: pointer;
+            font-weight: 900;
+            z-index: 10;
+            border-radius: 4px;
+        }
+
+        .btn-close-card:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Theme Switcher -->
+    <div class="controls">
+        <h5>Theme System</h5>
+        <div class="btn-group">
+            <button class="btn active" onclick="setTheme('default')">Default</button>
+            <button class="btn" onclick="setTheme('neon')">Neon</button>
+            <button class="btn" onclick="setTheme('cyberpunk')">Cyber</button>
+        </div>
+        <h5>Appearance</h5>
+        <div class="btn-group">
+            <button class="btn" onclick="setAppearance('light')">Light</button>
+            <button class="btn active" onclick="setAppearance('dark')">Dark</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <span class="title">COLLECTION_V4</span>
+            <div class="line"></div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="card-container" id="card-root">
+            <div class="aesthetic-shell card-shell">
+                <div class="layers">
+                    <div class="scanlines"></div>
+                    <div class="tactical-grid"></div>
+                </div>
+                <div class="content">
+                    <button class="btn-close-card" onclick="closeCard()">TERMINATE_SESSION</button>
+
+                    <div class="card-main">
+                        <!-- Brand Panel -->
+                        <div class="panel brand-panel">
+                            <div class="sprite-box">
+                                <img id="card-sprite" src="" alt="">
+                            </div>
+                            <h3 id="card-name" class="card-title">NAME</h3>
+                            <div id="card-types" class="type-badges"></div>
+
+                            <div class="selection-group">
+                                <div id="item-trigger" class="trigger" onclick="toggleDetail('item')">
+                                    <div class="trigger-icon"><img id="item-icon" src="" alt=""></div>
+                                    <div class="trigger-text">
+                                        <p class="trigger-label">Held Item</p>
+                                        <p id="item-name" class="trigger-value">---</p>
+                                    </div>
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </div>
+
+                                <div class="ability-section" style="text-align: left;">
+                                    <p class="trigger-label" style="margin-bottom: 0.3rem;">Abilities</p>
+                                    <div id="ability-list" class="ability-list"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Panel -->
+                        <div class="panel stats-panel">
+                            <div class="panel-header">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="header-icon">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                                <h4>Performance_Metrics</h4>
+                            </div>
+                            <div id="stats-list" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+                        </div>
+
+                        <!-- Moves Panel -->
+                        <div class="panel moves-panel">
+                            <div class="panel-header">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="header-icon">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                </svg>
+                                <h4>Operations</h4>
+                            </div>
+                            <div id="moves-list" class="moves-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown (Description Display) -->
+                    <div id="dropdown" class="dropdown">
+                        <div class="dropdown-content">
+                            <button class="btn-close-desc" onclick="hideDetail()">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <div class="desc-info">
+                                <div class="desc-header">
+                                    <span id="desc-type" class="desc-type">DATA_STREAM:</span>
+                                    <h5 id="desc-name" class="desc-name">DETAIL_NAME</h5>
+                                </div>
+                                <p id="desc-text" class="desc-text">Synthesizing decrypted data packets... Connection
+                                    stable. Outputting summary based on latest generation protocols. No errors detected.
+                                </p>
+                            </div>
+                            <div id="move-stats" class="stats-preview" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pokemon Grid -->
+        <div class="grid" id="pokemon-grid"></div>
+    </div>
+
+    <script>
+        const POKEMON_DATA = [
+            {
+                name: 'Cloyster',
+                types: ['water', 'ice'],
+                stats: { HP: 50, ATK: 95, DEF: 180, SPA: 85, SPD: 45, SPE: 70 },
+                item: { name: 'Focus Sash', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/focus-sash.png' },
+                abilities: ['Shell Armor', 'Skill Link', 'Overcoat'],
+                moves: [{ name: 'Shell Smash', pwr: 0, acc: 0, pp: 15 }, { name: 'Icicle Spear', pwr: 25, acc: 100, pp: 30 }, { name: 'Rock Blast', pwr: 25, acc: 90, pp: 10 }, { name: 'Ice Shard', pwr: 40, acc: 100, pp: 30 }]
+            },
+            {
+                name: 'Flygon',
+                types: ['ground', 'dragon'],
+                stats: { HP: 80, ATK: 100, DEF: 80, SPA: 80, SPD: 80, SPE: 100 },
+                item: { name: 'Choice Scarf', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-scarf.png' },
+                abilities: ['Levitate'],
+                moves: [{ name: 'Earthquake', pwr: 100, acc: 100, pp: 10 }, { name: 'U-turn', pwr: 70, acc: 100, pp: 20 }, { name: 'Outrage', pwr: 120, acc: 100, pp: 10 }, { name: 'Defog', pwr: 0, acc: 0, pp: 15 }]
+            },
+            {
+                name: 'Marowak',
+                types: ['ground'],
+                stats: { HP: 60, ATK: 80, DEF: 110, SPA: 50, SPD: 80, SPE: 45 },
+                item: { name: 'Thick Club', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/thick-club.png' },
+                abilities: ['Rock Head', 'Lightning Rod', 'Battle Armor'],
+                moves: [{ name: 'Bonemerang', pwr: 50, acc: 90, pp: 10 }, { name: 'Flare Blitz', pwr: 120, acc: 100, pp: 15 }, { name: 'Stone Edge', pwr: 100, acc: 80, pp: 5 }, { name: 'Shadow Bone', pwr: 85, acc: 100, pp: 10 }]
+            },
+            {
+                name: 'Zapdos',
+                types: ['electric', 'flying'],
+                stats: { HP: 90, ATK: 90, DEF: 85, SPA: 125, SPD: 90, SPE: 100 },
+                item: { name: 'Leftovers', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/leftovers.png' },
+                abilities: ['Pressure', 'Static'],
+                moves: [{ name: 'Thunderbolt', pwr: 90, acc: 100, pp: 15 }, { name: 'Roost', pwr: 0, acc: 0, pp: 10 }, { name: 'Heat Wave', pwr: 95, acc: 90, pp: 10 }, { name: 'Volt Switch', pwr: 70, acc: 100, pp: 20 }]
+            },
+            {
+                name: 'Serperior',
+                types: ['grass'],
+                stats: { HP: 75, ATK: 75, DEF: 95, SPA: 75, SPD: 95, SPE: 113 },
+                item: { name: 'Choice Specs', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-specs.png' },
+                abilities: ['Overgrow', 'Contrary'],
+                moves: [{ name: 'Leaf Storm', pwr: 130, acc: 90, pp: 5 }, { name: 'Taunt', pwr: 0, acc: 100, pp: 20 }, { name: 'Synthesis', pwr: 0, acc: 0, pp: 5 }, { name: 'Giga Drain', pwr: 75, acc: 100, pp: 10 }]
+            },
+            {
+                name: 'Chandelure',
+                types: ['ghost', 'fire'],
+                stats: { HP: 60, ATK: 55, DEF: 90, SPA: 145, SPD: 90, SPE: 80 },
+                item: { name: 'Choice Specs', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-specs.png' },
+                abilities: ['Flash Fire', 'Flame Body', 'Infiltrator'],
+                moves: [{ name: 'Shadow Ball', pwr: 80, acc: 100, pp: 15 }, { name: 'Fire Blast', pwr: 110, acc: 85, pp: 5 }, { name: 'Energy Ball', pwr: 90, acc: 100, pp: 10 }, { name: 'Trick', pwr: 0, acc: 100, pp: 10 }]
+            },
+            {
+                name: 'Malamar',
+                types: ['dark', 'psychic'],
+                stats: { HP: 86, ATK: 92, DEF: 88, SPA: 68, SPD: 75, SPE: 73 },
+                item: { name: 'Choice Band', sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/choice-band.png' },
+                abilities: ['Contrary', 'Suction Cups', 'Infiltrator'],
+                moves: [{ name: 'Superpower', pwr: 120, acc: 100, pp: 5 }, { name: 'Knock Off', pwr: 65, acc: 100, pp: 20 }, { name: 'Psycho Cut', pwr: 70, acc: 100, pp: 20 }, { name: 'Topsy-Turvy', pwr: 0, acc: 0, pp: 20 }]
+            }
+        ];
+
+        let activePokemon = null;
+        let activeDetail = null;
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelectorAll('.controls .btn-group:first-of-type .btn').forEach(b => b.classList.toggle('active', b.innerText.toLowerCase().includes(theme === 'cyberpunk' ? 'cyber' : theme)));
+        }
+
+        function setAppearance(app) {
+            document.documentElement.setAttribute('data-appearance', app);
+            document.querySelectorAll('.controls .btn-group:last-of-type .btn').forEach(b => b.classList.toggle('active', b.innerText.toLowerCase() === app));
+        }
+
+        function getStatColor(val) {
+            if (val >= 120) return 'var(--stat-cyan)';
+            if (val >= 90) return 'var(--stat-green)';
+            if (val >= 60) return 'var(--stat-orange)';
+            return 'var(--stat-red)';
+        }
+
+        function renderTile(pkmn) {
+            const tile = document.createElement('div');
+            tile.className = 'aesthetic-shell tile';
+            tile.id = `tile-${pkmn.name.toLowerCase()}`;
+            tile.innerHTML = `
+                <div class="layers"><div class="scanlines"></div><div class="tactical-grid"></div></div>
+                <div class="content tile-inner">
+                    <img class="tile-sprite" src="https://play.pokemonshowdown.com/sprites/gen5ani/${pkmn.name.toLowerCase()}.gif" alt="">
+                    <span class="name">${pkmn.name}</span>
+                </div>
+            `;
+            tile.onclick = () => selectPokemon(pkmn);
+            document.getElementById('pokemon-grid').appendChild(tile);
+        }
+
+        function selectPokemon(pkmn) {
+            activePokemon = pkmn;
+            document.getElementById('card-root').style.display = 'block';
+            document.getElementById('card-name').innerText = pkmn.name;
+            document.getElementById('card-sprite').src = `https://play.pokemonshowdown.com/sprites/gen5ani/${pkmn.name.toLowerCase()}.gif`;
+
+            document.getElementById('card-types').innerHTML = pkmn.types.map(t =>
+                `<span class="type-badge" style="background-color: var(--type-${t})">${t}</span>`
+            ).join('');
+
+            document.getElementById('item-name').innerText = pkmn.item.name;
+            document.getElementById('item-icon').src = pkmn.item.sprite;
+
+            document.getElementById('ability-list').innerHTML = pkmn.abilities.map(a =>
+                `<div class="ability-trigger" id="ability-${a.replace(/ /g, '-')}" onclick="toggleDetail('ability', '${a}')">${a}</div>`
+            ).join('');
+
+            document.getElementById('stats-list').innerHTML = Object.entries(pkmn.stats).map(([label, val]) => `
+                <div class="stat-bar">
+                    <div class="stat-row">
+                        <span class="stat-label">${label}</span>
+                        <div class="stat-bg"><div class="stat-fill" style="width: ${(val / 200) * 100}%; background-color: ${getStatColor(val)}"></div></div>
+                        <span class="stat-val">${val}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('moves-list').innerHTML = pkmn.moves.map((m, i) => `
+                <div class="move-row" id="move-${m.name.replace(/ /g, '-')}" onclick="toggleDetail('move', '${m.name}')">
+                    <span class="move-name">${m.name}</span>
+                    <span class="move-code">0${i + 1}</span>
+                </div>
+            `).join('');
+
+            hideDetail();
+            document.querySelectorAll('.tile').forEach(t => t.classList.remove('active'));
+            document.getElementById(`tile-${pkmn.name.toLowerCase()}`).classList.add('active');
+            window.scrollTo({ top: document.getElementById('card-root').offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function toggleDetail(type, name) {
+            const dropdown = document.getElementById('dropdown');
+            const newDetail = type === 'item' ? activePokemon.item.name : name;
+
+            if (activeDetail === newDetail) {
+                hideDetail();
+                return;
+            }
+
+            activeDetail = newDetail;
+            dropdown.classList.add('expanded');
+            document.getElementById('desc-type').innerText = type.toUpperCase() + ':';
+            document.getElementById('desc-name').innerText = activeDetail;
+            document.getElementById('desc-text').innerText = `Decrypted data for ${activeDetail} (${type}). High operational value detected. Protocols updated for current system load. Data integrity: 99.9%.`;
+
+            // Update active states
+            document.querySelectorAll('.trigger, .ability-trigger, .move-row').forEach(el => el.classList.remove('active'));
+            if (type === 'item') document.getElementById('item-trigger').classList.add('active');
+            if (type === 'ability') document.getElementById(`ability-${name.replace(/ /g, '-')}`).classList.add('active');
+            if (type === 'move') {
+                const moveObj = activePokemon.moves.find(m => m.name === name);
+                document.getElementById(`move-${name.replace(/ /g, '-')}`).classList.add('active');
+                document.getElementById('move-stats').style.display = 'flex';
+                document.getElementById('move-stats').innerHTML = `
+                    <div class="stat-bar"><div class="stat-row"><span class="stat-label">PWR</span><div class="stat-bg"><div class="stat-fill" style="width: ${(moveObj.pwr / 150) * 100}%"></div></div><span class="stat-val">${moveObj.pwr}</span></div></div>
+                    <div class="stat-bar"><div class="stat-row"><span class="stat-label">ACC</span><div class="stat-bg"><div class="stat-fill" style="width: ${moveObj.acc}%"></div></div><span class="stat-val">${moveObj.acc}</span></div></div>
+                `;
+            } else {
+                document.getElementById('move-stats').style.display = 'none';
+            }
+        }
+
+        function hideDetail() {
+            document.getElementById('dropdown').classList.remove('expanded');
+            document.querySelectorAll('.trigger, .ability-trigger, .move-row').forEach(el => el.classList.remove('active'));
+            activeDetail = null;
+        }
+
+        function closeCard() {
+            document.getElementById('card-root').style.display = 'none';
+            document.querySelectorAll('.tile').forEach(t => t.classList.remove('active'));
+            activePokemon = null;
+        }
+
+        // Init
+        POKEMON_DATA.forEach(renderTile);
+    </script>
+</body>
+
+</html>

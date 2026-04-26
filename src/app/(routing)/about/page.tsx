@@ -1,4 +1,4 @@
-import { AboutMeComponent } from '../../website/pages/about-me/about-me.component';
+import { AboutMeComponent } from '@/features/about/components/about-me.component';
 
 export default function Page() {
   return <AboutMeComponent />;

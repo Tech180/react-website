@@ -1,0 +1,28 @@
+.grid {
+  padding: 2rem 1.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &-title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    color: var(--primary);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  &-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    opacity: 0.3;
+  }
+}

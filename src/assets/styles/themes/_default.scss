@@ -1,0 +1,9 @@
+[data-theme='default'] {
+  --primary: $pantone-canal-blue;
+  --primary-hover: $pantone-air-force-blue;
+
+  &[data-appearance='dark'] {
+    --primary: $pantone-lavendula;
+    --primary-hover: $pantone-purple-heather;
+  }
+}

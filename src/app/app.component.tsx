@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavbarComponent } from './website/components/navbar/navbar.component';
-import { FooterComponent } from './website/components/footer/footer.component';
-import { INTER_FONT } from './website/consts/ui/fonts.const';
-import { ThemeProvider } from './website/contexts/theme.context';
-import { ThemeScript } from './website/utils/theme-script';
+import { NavbarComponent } from '@/app/layout/navbar/navbar.component';
+import { FooterComponent } from '@/app/layout/footer/footer.component';
+import { INTER_FONT } from '@/shared/ui/consts/fonts.const';
+import { ThemeProvider } from '@/app/providers/theme-provider';
+import { ThemeScript } from '@/shared/utils/theme-script';
 
 export function AppComponent({ children }: { children: React.ReactNode }) {
   return (
