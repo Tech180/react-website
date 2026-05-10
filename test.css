@@ -1,0 +1,7 @@
+:root {
+  --color: $my-color;
+  --bg: red;
+  --surface: rgba($my-color, 0.5);
+}
+
+/*# sourceMappingURL=test.css.map */

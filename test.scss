@@ -1,0 +1,7 @@
+$my-color: red;
+
+:root {
+  --color: $my-color;
+  --bg: #{$my-color};
+  --surface: rgba($my-color, 0.5);
+}

@@ -1,26 +1,28 @@
-[data-theme='cyberpunk'] {
-  --primary: $pantone-blazing-yellow;
-  --primary-hover: $pantone-blazing-yellow-light;
+[data-theme="cyberpunk"] {
+  --primary: #fcee0a;
+  --primary-hover: #fff31a;
   --radius-md: 0;
   --radius-sm: 0;
 
-  &[data-appearance='light'] {
-    --bg: $pantone-blazing-yellow;
-    --surface: rgba($pantone-blazing-yellow, 0.8);
-    --border: $pantone-black-pure;
-    --border-light: rgba($pantone-black-pure, 0.3);
-    --text: $pantone-black-pure;
-    --primary: $pantone-black-pure;
-    --text-muted: $pantone-caviar;
+  &[data-appearance="light"] {
+    --bg: #fcee0a;
+    --surface: rgba(0, 0, 0, 0.05);
+    --border: #000000;
+    --border-light: rgba(0, 0, 0, 0.3);
+    --text: #000000;
+    --text-muted: #333333;
+    --primary: #000000;
+    --primary-hover: #333333;
   }
 
-  &[data-appearance='dark'] {
-    --bg: $pantone-black-pure;
-    --surface: rgba($pantone-black-pure, 0.8);
-    --border: $pantone-blazing-yellow;
-    --border-light: rgba($pantone-blazing-yellow, 0.4);
-    --text: $pantone-blazing-yellow;
-    --primary: $pantone-blazing-yellow;
-    --text-muted: $pantone-olive-gold;
+  &[data-appearance="dark"] {
+    --bg: #000000;
+    --surface: rgba(0, 0, 0, 0.8);
+    --border: #fcee0a;
+    --border-light: rgba(252, 238, 10, 0.4);
+    --text: #fcee0a;
+    --text-muted: #a8a02a;
+    --primary: #fcee0a;
+    --primary-hover: #fff31a;
   }
 }

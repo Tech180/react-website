@@ -145,7 +145,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px color-mix(in srgb, $text 10%, transparent);
 
   &:hover {
     opacity: 0.8;
@@ -161,7 +161,7 @@
   transform: translateX(-50%);
   width: 50rem;
   height: 37.5rem;
-  background: radial-gradient(ellipse at top, var(--glow-color, rgba(255, 255, 255, 0.15)) 0%, transparent 70%);
+  background: radial-gradient(ellipse at top, var(--glow-color, color-mix(in srgb, $text 15%, transparent)) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }

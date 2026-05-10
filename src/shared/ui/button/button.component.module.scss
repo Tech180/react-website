@@ -36,7 +36,7 @@
     &:focus {
       background-color: $primary-hover;
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); // Removed raw hex
+      box-shadow: 0 4px 12px color-mix(in srgb, $text 20%, transparent); // Removed raw hex
     }
 
     &:active {

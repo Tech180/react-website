@@ -1,25 +1,27 @@
+@use "../variables" as *;
+
 // Light Appearance
 [data-appearance='light'] {
-  --bg: $pantone-bright-white;
-  --surface: rgba($pantone-white-pure, 0.7);
-  --surface-hover: rgba($pantone-black-pure, 0.05);
-  --border: rgba($pantone-black-pure, 0.1);
-  --border-light: rgba($pantone-black-pure, 0.2);
-  --text: $pantone-black-beauty-muted;
-  --text-muted: $pantone-smoked-pearl;
-  --accent: $pantone-harbor-mist;
+  --bg: #{$pantone-bright-white};
+  --surface: #{rgba($pantone-white-pure, 0.7)};
+  --surface-hover: #{rgba($pantone-black-pure, 0.05)};
+  --border: #{rgba($pantone-black-pure, 0.1)};
+  --border-light: #{rgba($pantone-black-pure, 0.2)};
+  --text: #{$pantone-black-beauty-muted};
+  --text-muted: #{$pantone-smoked-pearl};
+  --accent: #{$pantone-harbor-mist};
 }
 
 // Dark Appearance
 [data-appearance='dark'] {
-  --bg: $pantone-jet-black;
-  --surface: rgba($pantone-black-pure, 0.7);
-  --surface-hover: rgba($pantone-white-pure, 0.05);
-  --border: rgba($pantone-white-pure, 0.1);
-  --border-light: rgba($pantone-white-pure, 0.2);
-  --text: $pantone-cloud-dancer;
-  --text-muted: $pantone-silver;
-  --accent: $pantone-black-pure;
+  --bg: #{$pantone-jet-black};
+  --surface: #{rgba($pantone-black-pure, 0.7)};
+  --surface-hover: #{rgba($pantone-white-pure, 0.05)};
+  --border: #{rgba($pantone-white-pure, 0.1)};
+  --border-light: #{rgba($pantone-white-pure, 0.2)};
+  --text: #{$pantone-cloud-dancer};
+  --text-muted: #{$pantone-silver};
+  --accent: #{$pantone-black-pure};
 }
 
 // Global tokens

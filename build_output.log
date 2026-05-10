@@ -1,0 +1,140 @@
+$ bun --bun next build
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/features/pokemon/components/information-card/sub-components/move-card/move-card.module.scss
+Error evaluating Node.js code
+Error: Undefined variable.
+  ╷
+6 │     background: linear-gradient(135deg, color-mix(in srgb, $text 4%, transparent) 0%, color-mix(in srgb, $text 30%, transparent) 100%);
+  │                                                            ^^^^^
+  ╵
+  src/features/pokemon/components/information-card/sub-components/move-card/move-card.module.scss 6:60  root stylesheet
+Caused by: Error: Undefined variable.
+  ╷
+6 │     background: linear-gradient(135deg, color-mix(in srgb, $text 4%, transparent) 0%, color-mix(in srgb, $text 30%, transparent) 100%);
+  │                                                            ^^^^^
+  ╵
+  src/features/pokemon/components/information-card/sub-components/move-card/move-card.module.scss 6:60  root stylesheet
+    [at wrapException (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:2337:51)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91300:23)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at _asyncStartSync (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4969:20)]
+    [at visitVariableExpression$body$_EvaluateVisitor0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91306:16)]
+    [at visitVariableExpression$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91280:19)]
+    [at accept$1$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129386:22)]
+    [at accept$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129389:19)]
+    [at call$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:97120:25)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:32677:45)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at _asyncStartSync (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4969:20)]
+    [at mapAsync$body0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:32698:16)]
+    [at mapAsync0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:32653:16)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91921:38)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at _asyncStartSync (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4969:20)]
+    [at visitListExpression$body$_EvaluateVisitor0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91933:16)]
+    [at visitListExpression$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91906:19)]
+    [at accept$1$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:112796:22)]
+    [at accept$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:112799:19)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:94000:31)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at _asyncStartSync (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4969:20)]
+    [at _evaluateToCss$body$_EvaluateVisitor0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:94014:16)]
+    [at _async_evaluate0$_evaluateToCss$2$quote (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:93984:19)]
+    [at _async_evaluate0$_evaluateToCss$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:93987:19)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:92758:48)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at call$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38674:32)]
+    [at _rootRunUnary (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5429:18)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129707:16)]
+    [at runUnary$2$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40115:39)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39175:51)]
+    [at _Future__propagateToListeners (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5215:93)]
+    [at _completeWithValue$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39038:9)]
+    [at complete$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38661:14)]
+    [at _asyncReturn (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4977:17)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:94011:24)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at call$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38674:32)]
+    [at _rootRunUnary (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5429:18)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129707:16)]
+    [at runUnary$2$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40115:39)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39175:51)]
+    [at _Future__propagateToListeners (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5215:93)]
+    [at _completeWithValue$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39038:9)]
+    [at complete$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38661:14)]
+    [at _asyncReturn (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4977:17)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:91930:24)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at call$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38674:32)]
+    [at _rootRunUnary (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5429:18)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129707:16)]
+    [at runUnary$2$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40115:39)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39175:51)]
+    [at _Future__propagateToListeners (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5215:93)]
+    [at _completeWithValue$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39038:9)]
+    [at complete$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38661:14)]
+    [at _asyncReturn (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:4977:17)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:32695:24)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5005:15)]
+    [at call$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38686:12)]
+    [at call$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38674:32)]
+    [at _rootRunUnary (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5429:18)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129707:16)]
+    [at runUnary$2$2 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40115:39)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39175:51)]
+    [at _Future__propagateToListeners (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5215:93)]
+    [at _completeWithValue$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39038:9)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:39103:18)]
+    [at _rootRun (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5419:16)]
+    [at <anonymous> (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:129703:16)]
+    [at run$1$1 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40110:39)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:40207:25)]
+    [at _microtaskLoop (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5273:24)]
+    [at _startMicrotaskLoop (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:5279:11)]
+    [at call$0 (/home/tech180/Documents/projects/react-website/node_modules/sass/sass.dart.js:38587:21)]
+
+Import traces:
+  Client Component Browser:
+    ./src/features/pokemon/components/information-card/sub-components/move-card/move-card.module.scss [Client Component Browser]
+    ./src/features/pokemon/components/information-card/sub-components/move-card/move-card.component.tsx [Client Component Browser]
+    ./src/features/pokemon/components/information-card/information-card.view.tsx [Client Component Browser]
+    ./src/features/pokemon/components/information-card/information-card.component.tsx [Client Component Browser]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.view.tsx [Client Component Browser]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.component.tsx [Client Component Browser]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.component.tsx [Server Component]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid.view.tsx [Server Component]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid.component.tsx [Server Component]
+    ./src/features/about/components/about-me.view.tsx [Server Component]
+    ./src/features/about/components/about-me.component.tsx [Server Component]
+    ./src/app/(routing)/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/features/pokemon/components/information-card/sub-components/move-card/move-card.module.scss [Client Component SSR]
+    ./src/features/pokemon/components/information-card/sub-components/move-card/move-card.component.tsx [Client Component SSR]
+    ./src/features/pokemon/components/information-card/information-card.view.tsx [Client Component SSR]
+    ./src/features/pokemon/components/information-card/information-card.component.tsx [Client Component SSR]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.view.tsx [Client Component SSR]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.component.tsx [Client Component SSR]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid-client.component.tsx [Server Component]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid.view.tsx [Server Component]
+    ./src/features/pokemon/components/pokemon-grid/pokemon-grid.component.tsx [Server Component]
+    ./src/features/about/components/about-me.view.tsx [Server Component]
+    ./src/features/about/components/about-me.component.tsx [Server Component]
+    ./src/app/(routing)/about/page.tsx [Server Component]
+
+
+    at processTicksAndRejections (unknown:7:39)
+error: "next" exited with code 1
+error: script "build" exited with code 1

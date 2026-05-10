@@ -33,7 +33,7 @@
     border-radius: 2.5rem;
     overflow: hidden;
     background: $surface;
-    box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.375rem 1.25rem color-mix(in srgb, $text 10%, transparent);
     transition: transform $transition-speed;
 
     &:hover {
@@ -68,15 +68,15 @@
       left: 0;
       width: 100%;
       padding: 2rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      color: white;
+      background: linear-gradient(transparent, color-mix(in srgb, $text 80%, transparent));
+      color: $bg;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
 
       .label {
         align-self: flex-start;
-        background: rgba(0, 0, 0, 0.4);
+        background: color-mix(in srgb, $text 40%, transparent);
         padding: 0.3125rem 0.75rem;
         border-radius: 0.5rem;
         font-weight: bold;

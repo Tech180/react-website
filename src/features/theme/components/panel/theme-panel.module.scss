@@ -347,7 +347,7 @@
     color: $bg;
     border-color: transparent;
     transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px color-mix(in srgb, $text 20%, transparent);
   }
 }
 
@@ -399,13 +399,13 @@
   &-swatch-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.15);
+    background: color-mix(in srgb, $text 15%, transparent);
   }
 
   &-swatch-icon {
     position: relative;
     z-index: 1;
-    color: white;
+    color: $bg;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -419,14 +419,14 @@
     position: absolute;
     top: -4px;
     right: -4px;
-    background: #22c55e;
+    background: $pantone-green-flash-deep;
     border-radius: 50%;
     padding: 2px;
     border: 2px solid $bg;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: $bg;
     z-index: 2;
 
     svg {

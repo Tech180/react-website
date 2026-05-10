@@ -16,7 +16,7 @@
 
 .scrolled {
   @include glass;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px color-mix(in srgb, $text 10%, transparent);
 }
 
 // Logo Container
@@ -99,7 +99,7 @@
   display: inline-block;
   font-size: 1.25rem;
   padding: 0.5rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px color-mix(in srgb, $text 5%, transparent);
   font-family: $font-main;
   font-weight: 700;
   text-decoration: none;

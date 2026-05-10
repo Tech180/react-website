@@ -34,7 +34,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: color-mix(in srgb, $text 50%, transparent);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     color: var(--text-muted);
@@ -45,7 +45,7 @@
     z-index: 20;
 
     &:hover {
-        color: #fff;
+        color: $bg;
         border-color: var(--primary);
         background: var(--primary);
     }
@@ -79,12 +79,12 @@
         font-weight: 900;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: #fff;
-        box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+        color: $bg;
+        box-shadow: inset 0 1px 2px color-mix(in srgb, $text 20%, transparent);
         background: var(--type-color, var(--primary));
 
         &.category {
-            background: rgba(0, 0, 0, 0.6);
+            background: color-mix(in srgb, $text 60%, transparent);
             border: 1px solid var(--type-color, var(--primary));
             color: var(--type-color, var(--primary));
         }
@@ -98,7 +98,7 @@
 
     &-stat {
         &-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.5) 100%);
+            background: linear-gradient(145deg, color-mix(in srgb, $text 3%, transparent) 0%, color-mix(in srgb, $text 50%, transparent) 100%);
             border: 1px solid var(--border-light);
             border-radius: 8px;
             padding: 0.8rem;
@@ -107,8 +107,8 @@
             gap: 0.3rem;
             transition: all 0.2s;
             box-shadow:
-                0 4px 6px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+                0 4px 6px color-mix(in srgb, $text 20%, transparent),
+                inset 0 1px 0 color-mix(in srgb, $text 5%, transparent);
 
             &.primary-stat {
                 border-bottom: 2px solid var(--type-color, var(--primary));
@@ -116,7 +116,7 @@
 
             &:hover {
                 border-color: var(--primary);
-                background: color-mix(in srgb, var(--primary) 5%, rgba(0, 0, 0, 0.5));
+                background: color-mix(in srgb, var(--primary) 5%, color-mix(in srgb, $text 50%, transparent));
                 transform: translateY(-2px);
             }
         }
@@ -194,7 +194,7 @@
         line-height: 1.6;
         color: var(--text);
         padding: 1rem;
-        background: rgba(0, 0, 0, 0.3);
+        background: color-mix(in srgb, $text 30%, transparent);
         border: 1px solid var(--border);
         border-radius: 6px;
         max-height: 20rem;
@@ -209,7 +209,7 @@
         line-height: 1.6;
         padding: 1rem;
         border-left: 2px solid var(--border-light);
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+        background: linear-gradient(90deg, color-mix(in srgb, $text 2%, transparent), transparent);
         height: 12rem;
         overflow-y: auto;
     }

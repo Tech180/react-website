@@ -23,6 +23,6 @@
 
     &:hover {
         border-color: var(--primary);
-        box-shadow: 0 0 15px rgba($pantone-black-pure, 0.3);
+        box-shadow: 0 0 15px color-mix(in srgb, $text 30%, transparent);
     }
 }

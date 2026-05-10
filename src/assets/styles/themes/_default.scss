@@ -1,9 +1,26 @@
-[data-theme='default'] {
-  --primary: $pantone-canal-blue;
-  --primary-hover: $pantone-air-force-blue;
+@use "../variables" as *;
 
-  &[data-appearance='dark'] {
-    --primary: $pantone-lavendula;
-    --primary-hover: $pantone-purple-heather;
+[data-theme="default"] {
+  --primary: #{$pantone-canal-blue};
+  --primary-hover: #{$pantone-air-force-blue};
+
+  &[data-appearance="light"] {
+    --bg: #{$pantone-bright-white};
+    --surface: #{rgba($pantone-white-pure, 0.7)};
+    --border: #{rgba($pantone-black-pure, 0.1)};
+    --text: #{$pantone-black-beauty-muted};
+    --text-muted: #{$pantone-smoked-pearl};
+    --primary: #{$pantone-canal-blue};
+    --primary-hover: #{$pantone-air-force-blue};
+  }
+
+  &[data-appearance="dark"] {
+    --bg: #{$pantone-jet-black};
+    --surface: #{rgba($pantone-black-pure, 0.7)};
+    --border: #{rgba($pantone-white-pure, 0.1)};
+    --text: #{$pantone-cloud-dancer};
+    --text-muted: #{$pantone-silver};
+    --primary: #{$pantone-lavendula};
+    --primary-hover: #{$pantone-purple-heather};
   }
 }

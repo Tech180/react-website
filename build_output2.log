@@ -1,0 +1,40 @@
+$ bun --bun next build
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.0s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/6) ...
+Error fetching IGDB covers: Error [AppError]: NOT_FOUND
+    at c (.next/server/chunks/ssr/_9f5e6cab._.js:1:2508)
+    at processTicksAndRejections (null) {
+  code: 'ERR_API_GENERIC',
+  status: 500,
+  severity: 'high',
+  isPublic: true
+}
+Error fetching IGDB games: Error [AppError]: NOT_FOUND
+    at c (.next/server/chunks/ssr/_9f5e6cab._.js:1:2508)
+    at processTicksAndRejections (null) {
+  code: 'ERR_API_GENERIC',
+  status: 500,
+  severity: 'high',
+  isPublic: true
+}
+  Generating static pages using 7 workers (1/6) 
+  Generating static pages using 7 workers (2/6) 
+  Generating static pages using 7 workers (4/6) 
+✓ Generating static pages using 7 workers (6/6) in 1361.8ms
+  Finalizing page optimization ...
+
+Route (app)      Revalidate  Expire
+┌ ○ /                    1h      1y
+├ ○ /_not-found
+├ ○ /about               1h      1y
+├ ○ /contact
+└ ○ /resume
+
+
+○  (Static)  prerendered as static content
+
